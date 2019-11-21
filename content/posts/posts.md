@@ -5,6 +5,8 @@ date: 2019-20-20
 tags:
   - Javascript
   - Algorithms
+categories:
+  - Problems
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id gravida sem. Aenean fringilla mattis diam sed vulputate. Duis dictum turpis id semper rutrum. Aenean nec aliquet risus, id viverra justo. Vivamus blandit tempus turpis, at viverra odio. Pellentesque sed arcu vulputate, viverra mauris id, accumsan est. Sed dictum consectetur ligula, id efficitur risus commodo non.

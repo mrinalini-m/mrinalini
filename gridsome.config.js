@@ -18,11 +18,23 @@ module.exports = {
       options: {
         path: 'content/posts/**/*.md',
         typeName: 'Post',
-        route: '/blog/:slug'
+        refs: {
+          tags: 'Tag'
+        }
+      }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/tags/**/*.md',
+        typeName: 'Tag'
       }
     }
   ],
-
+  templates: {
+    Post: '/posts/:title',
+    Tag: '/tags/:name'
+  },
   transformers: {
     remark: {
       externalLinksTarget: '_blank',

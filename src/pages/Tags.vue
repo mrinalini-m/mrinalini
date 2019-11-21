@@ -1,20 +1,20 @@
 <template>
   <Layout>
-    <section class="posts">
-      <PostList
-        v-for="edge in $page.allPost.edges"
+    <section class="tags">
+      <TagList
+        v-for="edge in $page.allTag.edges"
         :key="edge.node.id"
-        :post="edge.node"
+        :tag="edge.node"
       />
     </section>
   </Layout>
 </template>
 
 <script>
-  import PostList from '@/components/PostList'
+  import TagList from '@/components/TagList'
   export default {
     components: {
-      PostList
+      TagList
     },
     metaInfo: {
       title: 'Mrinalini'
@@ -30,17 +30,13 @@
 
 <page-query>
 query {
-  allPost {
+  allTag {
     totalCount
     edges {
       node {
         id
-        title
-        timeToRead
-        description
-        date (format: "D MMMM YYYY")
         path
-        tags{name}
+        name
       }
     }
   }

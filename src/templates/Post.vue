@@ -9,6 +9,9 @@
       </p>
     </div>
     <div class="content">
+      <div v-for="tag in $page.post.tags" :key="tag.id">
+        <p>{{ tag.name }}</p>
+      </div>
       <p v-html="$page.post.content" />
     </div>
   </Layout>
@@ -22,6 +25,7 @@ query Post ($path: String!) {
     content
     date (format: "D MMMM YYYY")
     timeToRead
+    tags{name}
   }
 }
 </page-query>

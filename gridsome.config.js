@@ -12,6 +12,22 @@ module.exports = {
       options: {
         resources: '@/assets/styles/_variables.scss'
       }
+    },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'content/posts/**/*.md',
+        typeName: 'Post',
+        route: '/blog/:slug'
+      }
     }
-  ]
+  ],
+
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      plugins: ['@gridsome/remark-prismjs']
+    }
+  }
 }

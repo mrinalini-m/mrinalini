@@ -2,13 +2,13 @@
   <header class="custom-header" v-bind:class="{ scroll: scrolled }">
     <nav class="nav">
       <div class="brand">
-        <g-link class="nav__link" to="/">
+        <g-link to="/">
           <span class="text">{{ $static.metadata.siteName }}</span></g-link
         >
-        <!-- <g-link class="nav__link" to="/about/">About</g-link> -->
       </div>
       <div class="links">
         <div class="links">
+          <g-link to="/posts/">Posts</g-link>
           <button>
             <img
               class="theme-icon"
@@ -75,7 +75,7 @@ query {
     &.scroll {
       box-shadow: $box-shadow;
       .nav {
-        height: 3rem;
+        height: calc(#{$nav-height} - 1rem);
         .brand {
           a {
             color: black;
@@ -96,14 +96,17 @@ query {
       align-items: center;
       justify-content: space-between;
       max-width: $max-width;
-      height: 4rem;
+      height: $nav-height;
       margin: auto;
       padding: 0 1.5rem;
       transition: all 0.3s ease;
       .brand {
         display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
         align-items: center;
-        font-family: 'Medieval', 'Arial';
+        flex: 1;
+        margin: 0;
         a {
           display: flex;
           align-items: center;

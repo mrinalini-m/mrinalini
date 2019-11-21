@@ -6,6 +6,7 @@
         <slot />
       </div>
     </main>
+    <Footer />
   </div>
 </template>
 
@@ -19,10 +20,10 @@
     }
   }
 </script>
-<style>
+<style lang="scss" scoped>
   #main-content {
     margin-top: 55px;
     padding: 40px 0 0;
-    min-height: calc(100vh - 162px);
+    min-height: calc(100vh - #{$nav-height});
   }
 </style>

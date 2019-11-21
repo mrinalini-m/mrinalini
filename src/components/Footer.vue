@@ -1,7 +1,7 @@
 <template>
   <footer>
-    <p>
-      Footer Placeholder
+    <p class="home-links">
+      <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
     </p>
   </footer>
 </template>

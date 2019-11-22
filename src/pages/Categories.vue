@@ -37,6 +37,7 @@ query {
         id
         path
         name
+        description
       }
     }
   }

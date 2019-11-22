@@ -4,7 +4,7 @@
     <p class="date" v-html="post.date" />
     <h3 class="title" v-html="post.title" />
     <p class="description" v-html="post.description" />
-    <b>{{ post.timeToRead }} min read</b> &nbsp;
+    <!-- <b>{{ post.timeToRead }} min read</b> &nbsp; -->
     <g-link :to="post.path" class="read">Read More</g-link>
   </div>
 </template>
@@ -15,7 +15,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .line {
     border: 0.5px solid black;
     margin: 30px 0;

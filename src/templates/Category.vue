@@ -1,6 +1,7 @@
 <template>
   <Layout>
-    <h1>{{ $page.category.title }}</h1>
+    <h1>{{ $page.category.name }}</h1>
+    <p>{{ $page.category.description }}</p>
     <ul>
       <li v-for="edge in $page.category.belongsTo.edges" :key="edge.node.id">
         <g-link :to="edge.node.path">
@@ -14,6 +15,7 @@
 query ($id: ID!) {
   category(id: $id) {
     name
+    description
     belongsTo {
       edges {
         node {

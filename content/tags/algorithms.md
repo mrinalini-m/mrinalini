@@ -1,4 +1,4 @@
 ---
 name: 'Algorithms'
-id: 'Algorithms'
+id: 'algorithms'
 ---

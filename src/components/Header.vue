@@ -8,7 +8,7 @@
       </div>
       <div class="links">
         <div class="links">
-          <g-link to="/posts/">Posts</g-link>
+          <g-link to="/blog/">Posts</g-link>
           <button>
             <img
               class="theme-icon"

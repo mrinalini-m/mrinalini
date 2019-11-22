@@ -16,8 +16,8 @@ module.exports = {
     {
       use: '@gridsome/source-filesystem',
       options: {
-        path: 'content/posts/**/*.md',
         typeName: 'Post',
+        path: 'content/posts/**/*.md',
         refs: {
           tags: 'Tag',
           categories: 'Category'
@@ -40,9 +40,9 @@ module.exports = {
     }
   ],
   templates: {
-    Post: '/posts/:title',
-    Tag: '/tags/:name',
-    Category: '/categories/:name'
+    Post: '/blog/:title',
+    Tag: '/tags/:id',
+    Category: '/categories/:id'
   },
   transformers: {
     remark: {

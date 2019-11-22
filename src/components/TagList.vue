@@ -16,7 +16,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .line {
     border: 0.5px solid black;
     margin: 30px 0;

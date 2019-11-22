@@ -1,4 +1,4 @@
 ---
 name: 'Javascript'
-id: 'Javascript'
+id: 'javascript'
 ---

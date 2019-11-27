@@ -2,6 +2,7 @@
 title: 'Another Testing'
 description: 'Testing Testing Lorem ipsum'
 date: 2019-20-20
+slug: 'ankother-testing'
 tags:
   - javascript
 categories:

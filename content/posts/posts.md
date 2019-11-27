@@ -1,6 +1,7 @@
 ---
 title: 'Testing Testing'
 description: 'Testing Testing Lorem ipsum'
+slug: 'testing-testing'
 date: 2019-20-20
 tags:
   - javascript

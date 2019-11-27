@@ -40,7 +40,7 @@ module.exports = {
     }
   ],
   templates: {
-    Post: '/blog/:title',
+    Post: '/blog/:slug',
     Tag: '/tags/:id',
     Category: '/categories/:id'
   },

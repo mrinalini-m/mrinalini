@@ -48,7 +48,9 @@ module.exports = {
     remark: {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      plugins: ['@gridsome/remark-prismjs']
+      plugins: [
+        [ 'gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Darker-High-Contrast', skipInline: true } ]
+      ]
     }
   }
 }

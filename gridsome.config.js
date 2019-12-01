@@ -3,7 +3,8 @@
 
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
-
+const shiki = require('shiki');
+const mtc= shiki.loadTheme('./src/assets/styles/material-theme-darker-high-contrast-custom.json');
 module.exports = {
   siteName: 'Mrinalini',
   plugins: [
@@ -49,7 +50,7 @@ module.exports = {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       plugins: [
-        [ 'gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Darker-High-Contrast', skipInline: true } ]
+        [ 'gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true } ]
       ]
     }
   }

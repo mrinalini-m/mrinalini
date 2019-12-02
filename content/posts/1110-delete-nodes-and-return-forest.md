@@ -1,11 +1,12 @@
 ---
-title: '1110. delete nodes and return forest'
+title: '1110. Delete Nodes And Return Forest'
 link: 'https://leetcode.com/problems/delete-nodes-and-return-forest'
 date: 2019-11-22
 slug: '1110-delete-nodes-and-return-forest'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

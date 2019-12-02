@@ -1,11 +1,12 @@
 ---
-title: '21. merge two sorted lists'
+title: '21. Merge Two Sorted Lists'
 link: 'https://leetcode.com/problems/merge-two-sorted-lists'
 date: 2019-11-22
 slug: '0021-merge-two-sorted-lists'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '875. koko eating bananas'
+title: '875. Koko Eating Bananas'
 link: 'https://leetcode.com/problems/koko-eating-bananas'
 date: 2019-11-22
 slug: '0875-koko-eating-bananas'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

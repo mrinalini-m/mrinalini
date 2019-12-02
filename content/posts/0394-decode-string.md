@@ -1,11 +1,12 @@
 ---
-title: '394. decode string'
+title: '394. Decode String'
 link: 'https://leetcode.com/problems/decode-string'
 date: 2019-11-22
 slug: '0394-decode-string'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

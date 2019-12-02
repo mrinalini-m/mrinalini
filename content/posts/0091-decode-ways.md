@@ -1,11 +1,12 @@
 ---
-title: '91. decode ways'
+title: '91. Decode Ways'
 link: 'https://leetcode.com/problems/decode-ways'
 date: 2019-11-22
 slug: '0091-decode-ways'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

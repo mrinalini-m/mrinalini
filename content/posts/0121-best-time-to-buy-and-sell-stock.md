@@ -1,11 +1,12 @@
 ---
-title: '121. best time to buy and sell stock'
+title: '121. Best Time to Buy and Sell Stock'
 link: 'https://leetcode.com/problems/best-time-to-buy-and-sell-stock'
 date: 2019-11-22
 slug: '0121-best-time-to-buy-and-sell-stock'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

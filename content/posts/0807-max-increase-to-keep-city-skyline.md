@@ -1,11 +1,12 @@
 ---
-title: '807. max increase to keep city skyline'
+title: '807. Max Increase to Keep City Skyline'
 link: 'https://leetcode.com/problems/max-increase-to-keep-city-skyline'
 date: 2019-11-22
 slug: '0807-max-increase-to-keep-city-skyline'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

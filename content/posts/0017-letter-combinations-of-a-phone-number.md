@@ -1,11 +1,12 @@
 ---
-title: '17. letter combinations of a phone number'
+title: '17. Letter Combinations of a Phone Number'
 link: 'https://leetcode.com/problems/letter-combinations-of-a-phone-number'
 date: 2019-11-22
 slug: '0017-letter-combinations-of-a-phone-number'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

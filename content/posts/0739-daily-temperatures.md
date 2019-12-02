@@ -1,11 +1,12 @@
 ---
-title: '739. daily temperatures'
+title: '739. Daily Temperatures'
 link: 'https://leetcode.com/problems/daily-temperatures'
 date: 2019-11-22
 slug: '0739-daily-temperatures'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

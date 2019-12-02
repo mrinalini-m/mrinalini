@@ -1,11 +1,12 @@
 ---
-title: '199. binary tree right side view'
+title: '199. Binary Tree Right Side View'
 link: 'https://leetcode.com/problems/binary-tree-right-side-view'
 date: 2019-11-22
 slug: '0199-binary-tree-right-side-view'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

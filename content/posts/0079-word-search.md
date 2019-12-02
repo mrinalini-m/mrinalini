@@ -1,11 +1,12 @@
 ---
-title: '79. word search'
+title: '79. Word Search'
 link: 'https://leetcode.com/problems/word-search'
 date: 2019-11-22
 slug: '0079-word-search'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

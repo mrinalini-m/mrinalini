@@ -1,11 +1,12 @@
 ---
-title: '70. climbing stairs'
+title: '70. Climbing Stairs'
 link: 'https://leetcode.com/problems/climbing-stairs'
 date: 2019-11-22
 slug: '0070-climbing-stairs'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '98. validate binary search tree'
+title: '98. Validate Binary Search Tree'
 link: 'https://leetcode.com/problems/validate-binary-search-tree'
 date: 2019-11-22
 slug: '0098-validate-binary-search-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

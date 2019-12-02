@@ -1,11 +1,12 @@
 ---
-title: '977. squares of a sorted array'
+title: '977. Squares of a Sorted Array'
 link: 'https://leetcode.com/problems/squares-of-a-sorted-array'
 date: 2019-11-22
 slug: '0977-squares-of-a-sorted-array'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

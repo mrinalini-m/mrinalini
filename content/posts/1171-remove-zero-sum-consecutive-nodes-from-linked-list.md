@@ -1,11 +1,12 @@
 ---
-title: '1171. remove zero sum consecutive nodes from linked list'
+title: '1171. Remove Zero Sum Consecutive Nodes from Linked List'
 link: 'https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list'
 date: 2019-11-22
 slug: '1171-remove-zero-sum-consecutive-nodes-from-linked-list'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

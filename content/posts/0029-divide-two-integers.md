@@ -1,11 +1,12 @@
 ---
-title: '29. divide two integers'
+title: '29. Divide Two Integers'
 link: 'https://leetcode.com/problems/divide-two-integers'
 date: 2019-11-22
 slug: '0029-divide-two-integers'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '6. zigzag conversion'
+title: '6. ZigZag Conversion'
 link: 'https://leetcode.com/problems/zigzag-conversion'
 date: 2019-11-22
 slug: '0006-zigzag-conversion'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

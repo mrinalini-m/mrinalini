@@ -1,11 +1,12 @@
 ---
-title: '49. group anagrams'
+title: '49. Group Anagrams'
 link: 'https://leetcode.com/problems/group-anagrams'
 date: 2019-11-22
 slug: '0049-group-anagrams'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '138. copy list with random pointer'
+title: '138. Copy List with Random Pointer'
 link: 'https://leetcode.com/problems/copy-list-with-random-pointer'
 date: 2019-11-22
 slug: '0138-copy-list-with-random-pointer'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

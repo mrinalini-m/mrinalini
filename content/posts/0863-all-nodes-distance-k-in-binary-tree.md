@@ -1,11 +1,12 @@
 ---
-title: '863. all nodes distance k in binary tree'
+title: '863. All Nodes Distance K in Binary Tree'
 link: 'https://leetcode.com/problems/all-nodes-distance-k-in-binary-tree'
 date: 2019-11-22
 slug: '0863-all-nodes-distance-k-in-binary-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

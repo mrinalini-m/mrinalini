@@ -1,11 +1,12 @@
 ---
-title: '544. output contest matches'
+title: '544. Output Contest Matches'
 link: 'https://leetcode.com/problems/output-contest-matches'
 date: 2019-11-22
 slug: '0544-output-contest-matches'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

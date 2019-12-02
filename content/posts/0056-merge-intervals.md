@@ -1,11 +1,12 @@
 ---
-title: '56. merge intervals'
+title: '56. Merge Intervals'
 link: 'https://leetcode.com/problems/merge-intervals'
 date: 2019-11-22
 slug: '0056-merge-intervals'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

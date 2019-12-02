@@ -1,11 +1,12 @@
 ---
-title: '3. longest substring without repeating characters'
+title: '3. Longest Substring Without Repeating Characters'
 link: 'https://leetcode.com/problems/longest-substring-without-repeating-characters'
 date: 2019-11-22
 slug: '0003-longest-substring-without-repeating-characters'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

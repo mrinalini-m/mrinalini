@@ -1,11 +1,12 @@
 ---
-title: '1. two sum'
+title: '1. Two Sum'
 link: 'https://leetcode.com/problems/two-sum'
 date: 2019-11-22
 slug: '0001-two-sum'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

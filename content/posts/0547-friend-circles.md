@@ -1,11 +1,12 @@
 ---
-title: '547. friend circles'
+title: '547. Friend Circles'
 link: 'https://leetcode.com/problems/friend-circles'
 date: 2019-11-22
 slug: '0547-friend-circles'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

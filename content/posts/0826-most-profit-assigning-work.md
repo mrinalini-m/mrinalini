@@ -1,11 +1,12 @@
 ---
-title: '826. most profit assigning work'
+title: '826. Most Profit Assigning Work'
 link: 'https://leetcode.com/problems/most-profit-assigning-work'
 date: 2019-11-22
 slug: '0826-most-profit-assigning-work'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

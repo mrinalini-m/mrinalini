@@ -45,7 +45,6 @@
           id
           title
           timeToRead
-          description
           date (format: "D MMMM YYYY")
           path
           tags{name}

@@ -1,11 +1,12 @@
 ---
-title: '701. insert into a binary search tree'
+title: '701. Insert into a Binary Search Tree'
 link: 'https://leetcode.com/problems/insert-into-a-binary-search-tree'
 date: 2019-11-22
 slug: '0701-insert-into-a-binary-search-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

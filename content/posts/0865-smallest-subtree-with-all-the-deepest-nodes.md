@@ -1,11 +1,12 @@
 ---
-title: '865. smallest subtree with all the deepest nodes'
+title: '865. Smallest Subtree with all the Deepest Nodes'
 link: 'https://leetcode.com/problems/smallest-subtree-with-all-the-deepest-nodes'
 date: 2019-11-22
 slug: '0865-smallest-subtree-with-all-the-deepest-nodes'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

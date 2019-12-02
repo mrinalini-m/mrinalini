@@ -1,11 +1,12 @@
 ---
-title: '109. convert sorted list to binary search tree'
+title: '109. Convert Sorted List to Binary Search Tree'
 link: 'https://leetcode.com/problems/convert-sorted-list-to-binary-search-tree'
 date: 2019-11-22
 slug: '0109-convert-sorted-list-to-binary-search-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

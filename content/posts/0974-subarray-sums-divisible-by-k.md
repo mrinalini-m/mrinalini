@@ -1,11 +1,12 @@
 ---
-title: '974. subarray sums divisible by k'
+title: '974. Subarray Sums Divisible by K'
 link: 'https://leetcode.com/problems/subarray-sums-divisible-by-k'
 date: 2019-11-22
 slug: '0974-subarray-sums-divisible-by-k'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

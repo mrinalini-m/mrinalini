@@ -1,11 +1,12 @@
 ---
-title: '102. binary tree level order traversal'
+title: '102. Binary Tree Level Order Traversal'
 link: 'https://leetcode.com/problems/binary-tree-level-order-traversal'
 date: 2019-11-22
 slug: '0102-binary-tree-level-order-traversal'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

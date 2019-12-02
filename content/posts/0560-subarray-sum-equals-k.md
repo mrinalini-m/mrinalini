@@ -1,11 +1,12 @@
 ---
-title: '560. subarray sum equals k'
+title: '560. Subarray Sum Equals K'
 link: 'https://leetcode.com/problems/subarray-sum-equals-k'
 date: 2019-11-22
 slug: '0560-subarray-sum-equals-k'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

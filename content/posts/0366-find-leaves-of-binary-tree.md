@@ -6,6 +6,7 @@ slug: '0366-find-leaves-of-binary-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

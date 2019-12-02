@@ -5,7 +5,7 @@
     <div class="title">
       <h1>{{ $page.post.title }}</h1>
       <p class="date">
-        {{ $page.post.date }} | {{ $page.post.timeToRead }} min read
+        {{ $page.post.date }}
       </p>
     </div>
     <div class="content">

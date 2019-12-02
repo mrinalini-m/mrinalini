@@ -1,11 +1,12 @@
 ---
-title: '881. boats to save people'
+title: '881. Boats to Save People'
 link: 'https://leetcode.com/problems/boats-to-save-people'
 date: 2019-11-22
 slug: '0881-boats-to-save-people'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

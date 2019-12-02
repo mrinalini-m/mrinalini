@@ -1,11 +1,12 @@
 ---
-title: '1091. shortest path in binary matrix'
+title: '1091. Shortest Path in Binary Matrix'
 link: 'https://leetcode.com/problems/shortest-path-in-binary-matrix'
 date: 2019-11-22
 slug: '1091-shortest-path-in-binary-matrix'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

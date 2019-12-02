@@ -1,11 +1,12 @@
 ---
-title: '208. implement trie (prefix tree)'
+title: '208. Implement Trie (Prefix Tree)'
 link: 'https://leetcode.com/problems/implement-trie-prefix-tree'
 date: 2019-11-22
 slug: '0208-implement-trie-prefix-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

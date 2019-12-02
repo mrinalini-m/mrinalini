@@ -1,11 +1,12 @@
 ---
-title: '20. valid parentheses'
+title: '20. Valid Parentheses'
 link: 'https://leetcode.com/problems/valid-parentheses'
 date: 2019-11-22
 slug: '0020-valid-parentheses'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

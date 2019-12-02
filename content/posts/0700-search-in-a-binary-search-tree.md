@@ -1,11 +1,12 @@
 ---
-title: '700. search in a binary search tree'
+title: '700. Search in a Binary Search Tree'
 link: 'https://leetcode.com/problems/search-in-a-binary-search-tree'
 date: 2019-11-22
 slug: '0700-search-in-a-binary-search-tree'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '179. largest number'
+title: '179. Largest Number'
 link: 'https://leetcode.com/problems/largest-number'
 date: 2019-11-22
 slug: '0179-largest-number'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

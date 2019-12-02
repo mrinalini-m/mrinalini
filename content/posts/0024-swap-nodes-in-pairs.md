@@ -1,11 +1,12 @@
 ---
-title: '24. swap nodes in pairs'
+title: '24. Swap Nodes in Pairs'
 link: 'https://leetcode.com/problems/swap-nodes-in-pairs'
 date: 2019-11-22
 slug: '0024-swap-nodes-in-pairs'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

@@ -1,11 +1,12 @@
 ---
-title: '36. valid sudoku'
+title: '36. Valid Sudoku'
 link: 'https://leetcode.com/problems/valid-sudoku'
 date: 2019-11-22
 slug: '0036-valid-sudoku'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

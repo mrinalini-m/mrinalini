@@ -1,11 +1,12 @@
 ---
-title: '1057. campus bikes'
+title: '1057. Campus Bikes'
 link: 'https://leetcode.com/problems/campus-bikes'
 date: 2019-11-22
 slug: '1057-campus-bikes'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

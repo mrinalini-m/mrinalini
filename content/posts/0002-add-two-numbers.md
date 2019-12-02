@@ -1,11 +1,12 @@
 ---
-title: '2. add two numbers'
+title: '2. Add Two Numbers'
 link: 'https://leetcode.com/problems/add-two-numbers'
 date: 2019-11-22
 slug: '0002-add-two-numbers'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

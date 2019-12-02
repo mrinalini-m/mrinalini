@@ -1,11 +1,12 @@
 ---
-title: '133. clone graph'
+title: '133. Clone Graph'
 link: 'https://leetcode.com/problems/clone-graph'
 date: 2019-11-22
 slug: '0133-clone-graph'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

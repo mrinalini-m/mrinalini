@@ -1,11 +1,12 @@
 ---
-title: '51. n-queens'
+title: '51. N-Queens'
 link: 'https://leetcode.com/problems/n-queens'
 date: 2019-11-22
 slug: '0051-n-queens'
 tags:
   - javascript
   - leetcode
+  - algorithms
 categories:
   - problems
 ---

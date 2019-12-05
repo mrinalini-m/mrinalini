@@ -34,7 +34,6 @@ query ($id: ID!) {
     font-size: 30px;
     line-height: 10px;
     padding: 2em 0;
-    font-family: 'Stylish';
   }
 
   .date {

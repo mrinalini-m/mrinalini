@@ -6,18 +6,17 @@
 					<span class="text">{{ $static.metadata.siteName }}</span></g-link
 				>
 			</div>
+
 			<div class="links">
-				<div class="links">
-					<g-link to="/blog/">Posts</g-link>
-					<!-- TODO: Add theme switcher -->
-					<!-- <button>
+				<g-link to="/blog/">Posts</g-link>
+				<!-- TODO: Add theme switcher -->
+				<!-- <button>
             <img
               class="theme-icon"
               alt="Theme"
               src="../assets/images/moon.svg"
             />
           </button> -->
-				</div>
 			</div>
 		</nav>
 	</header>
@@ -70,7 +69,7 @@ query {
 		margin: 0;
 		padding: 0 1.5rem;
 		font-size: 1.5rem;
-		transition: all 0.3s ease;
+		transition: height 0.3s ease, box-shadow 0.3s ease;
 		z-index: 3;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
 		&.scroll {
@@ -79,14 +78,17 @@ query {
 				height: calc(#{$nav-height} - 1rem);
 				.brand {
 					a {
-						color: black;
+						color: $heading-font-color;
 						text-decoration: none;
 						&:hover {
-							color: black;
+							color: $heading-font-color;
 						}
-						&:active {
-							color: black;
-						}
+					}
+				}
+				.links {
+					a {
+						height: calc(#{$nav-height} - 1rem);
+						transition: height 0.3s ease;
 					}
 				}
 			}
@@ -100,7 +102,7 @@ query {
 			height: $nav-height;
 			margin: auto;
 			padding: 0 1.5rem;
-			transition: all 0.3s ease;
+			transition: height 0.3s ease, box-shadow 0.3s ease;
 			.brand {
 				display: flex;
 				flex-direction: row;
@@ -111,15 +113,13 @@ query {
 				a {
 					display: flex;
 					align-items: center;
-					color: black;
+					color: $heading-font-color;
 					font-size: 1.5rem;
 					&:hover {
-						color: black;
-					}
-					&:active {
-						color: black;
+						color: $heading-font-color;
 					}
 				}
+
 				span.text {
 					white-space: nowrap;
 				}
@@ -134,7 +134,13 @@ query {
 					align-items: center;
 					text-align: center;
 					margin: 0;
-					padding: 1rem 0.75rem;
+					height: $nav-height;
+					padding: 0 0.75rem;
+					transition: height 0.3s ease;
+				}
+				.active--exact {
+					color: $primary;
+					border-bottom: 1px solid $primary;
 				}
 			}
 		}

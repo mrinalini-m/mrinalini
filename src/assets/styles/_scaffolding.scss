@@ -16,6 +16,7 @@ body {
 	margin-right: auto;
 }
 
+//buttons
 button {
 	color: inherit;
 	border: 0;
@@ -41,6 +42,16 @@ button::-moz-focus-inner {
 	border-style: none;
 }
 
+// links
+a {
+	color: #354061;
+	&:visited,
+	&:active {
+		color: #354061;
+	}
+}
+
+//headings
 h1,
 h2,
 h3,
@@ -56,27 +67,24 @@ h6 {
 	margin-bottom: 0.5rem;
 }
 
+//tags/chips
 .tag-container {
-	span {
+	a {
 		display: inline-block;
 		padding: 0.3rem 0.5rem;
-		background: $accent-bg-color;
+		border: 1px solid $primary;
 		border-radius: $border-radius;
-		color: $gray-medium;
 		font-size: 0.8rem;
+		color: $primary;
 		font-weight: 400;
 		margin: 0 0.5rem 0.5rem 0;
 		font-weight: 600;
+		transition: background-color 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
 		&:hover,
 		&:active,
 		&:focus {
-			background: darken($accent-bg-color, 5%);
-			color: $font-color;
+			background: $accent-bg-color;
 		}
-	}
-
-	&.articles-page-tags {
-		margin-bottom: 1rem;
 	}
 }

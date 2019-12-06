@@ -23,7 +23,7 @@
 
 <style lang="scss" scoped>
 	#main-content {
-		margin-top: $nav-height;
+		margin-top: calc(#{$nav-height} + 2rem);
 		min-height: calc(100vh - #{$nav-height} - #{$footer-height});
 	}
 </style>

@@ -2,14 +2,24 @@
 $gray-dark: #273849;
 $gray-medium: #304455;
 $gray-light: #4f5959;
-
-$accent-bg-color: lighten($gray-light, 60%);
+$primary: rgb(63, 187, 131);
+$accent-bg-color: rgba(63, 187, 131, 0.1);
 $font-color: $gray-medium;
+
+// $dark   : #273849;
+// $medium : #304455;
+// $light  : #4f5959;
+// $green  : #42b983;
+// $border : #dddddd;
+// $codebg : #f8f8f8;
+// $red : #ff6666;
+// $info : #1C90F3;
+// 34495E
 
 $max-width: 800px;
 
 //Borders and box-shadows
-$border-radius: 4px;
+$border-radius: 16px;
 $box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
 	0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
 	0 16px 16px rgba(0, 0, 0, 0.03);

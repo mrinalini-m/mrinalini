@@ -6,16 +6,18 @@
 				<p class="date">
 					{{ $page.post.date }}
 				</p>
-				<div class="tag-container">
-					<g-link
-						v-for="tag in $page.post.tags"
-						:key="tag.id"
-						:to="tag.path"
-						class="link"
-					>
-						<span>{{ tag.name }}</span>
-					</g-link>
-				</div>
+				<ul class="tag-container">
+					<li>
+						<g-link
+							v-for="tag in $page.post.tags"
+							:key="tag.id"
+							:to="tag.path"
+							class="link"
+						>
+							{{ tag.name.toLowerCase() }}
+						</g-link>
+					</li>
+				</ul>
 			</div>
 			<p v-html="$page.post.content" />
 		</div>
@@ -38,7 +40,7 @@ query Post ($path: String!) {
 <style lang="scss">
 	.title {
 		text-align: center;
-		padding: 2rem 0;
+		padding-bottom: 2rem;
 	}
 
 	.post-meta {
@@ -46,7 +48,7 @@ query Post ($path: String!) {
 		.date {
 			font-size: 0.8rem;
 			font-weight: 400;
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.75rem;
 		}
 	}
 

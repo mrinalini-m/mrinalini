@@ -1,8 +1,27 @@
-$max-width: 1024px;
+//Colors
+$gray-dark: #273849;
+$gray-medium: #304455;
+$gray-light: #4f5959;
+
+$accent-bg-color: lighten($gray-light, 60%);
+$font-color: $gray-medium;
+
+$max-width: 800px;
+
+//Borders and box-shadows
+$border-radius: 4px;
 $box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
 	0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
 	0 16px 16px rgba(0, 0, 0, 0.03);
+
 $nav-height: 4rem;
 $footer-height: 4rem;
-
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+
+//Headings
+$heading-font-weight: 600;
+$heading-line-height: 1.3;
+$heading-font-color: $gray-dark;
+
+// Heading font size
+$h1: 1.9rem;

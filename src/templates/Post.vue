@@ -1,15 +1,21 @@
 <template>
 	<Layout>
-		<br />
 		<div class="title">
 			<h1>{{ $page.post.title }}</h1>
-			<p class="date">
-				{{ $page.post.date }}
-			</p>
-		</div>
-		<div class="content">
-			<div v-for="tag in $page.post.tags" :key="tag.id">
-				<p>{{ tag.name }}</p>
+			<div class="post-meta">
+				<p class="date">
+					{{ $page.post.date }}
+				</p>
+				<div class="tag-container">
+					<g-link
+						v-for="tag in $page.post.tags"
+						:key="tag.id"
+						:to="tag.path"
+						class="link"
+					>
+						<span>{{ tag.name }}</span>
+					</g-link>
+				</div>
 			</div>
 			<p v-html="$page.post.content" />
 		</div>
@@ -22,9 +28,9 @@ query Post ($path: String!) {
     id
     title
     content
-    date (format: "D MMMM YYYY")
+    date (format: "D MMMM, YYYY")
     timeToRead
-    tags{name}
+    tags{name, path}
   }
 }
 </page-query>
@@ -32,17 +38,16 @@ query Post ($path: String!) {
 <style lang="scss">
 	.title {
 		text-align: center;
-		font-size: 30px;
-		padding: 2em 0;
+		padding: 2rem 0;
 	}
 
-	.date {
-		font-size: 16px;
-		font-weight: 400;
-	}
-
-	.content {
-		font-size: 20px;
+	.post-meta {
+		text-align: start;
+		.date {
+			font-size: 0.8rem;
+			font-weight: 400;
+			margin-bottom: 0.5rem;
+		}
 	}
 
 	code[class*='language-'],

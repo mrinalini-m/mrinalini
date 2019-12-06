@@ -23,8 +23,7 @@
 
 <style lang="scss" scoped>
 	#main-content {
-		margin-top: 55px;
-		padding: 40px 0 0;
+		margin-top: $nav-height;
 		min-height: calc(100vh - #{$nav-height} - #{$footer-height});
 	}
 </style>

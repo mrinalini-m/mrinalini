@@ -5,6 +5,8 @@ $gray-light: #4f5959;
 $primary: rgb(63, 187, 131);
 $accent-bg-color: rgba(63, 187, 131, 0.1);
 $font-color: $gray-medium;
+$link-color: $primary;
+$link-hover-color: darken($primary, 10%);
 
 // $dark   : #273849;
 // $medium : #304455;
@@ -16,7 +18,9 @@ $font-color: $gray-medium;
 // $info : #1C90F3;
 // 34495E
 
+//Miscellaneous
 $max-width: 800px;
+$transition: 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 
 //Borders and box-shadows
 $border-radius: 16px;

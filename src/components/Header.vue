@@ -68,7 +68,6 @@ query {
 		width: 100%;
 		margin: 0;
 		padding: 0 1.5rem;
-		font-size: 1.5rem;
 		transition: height 0.3s ease, box-shadow 0.3s ease;
 		z-index: 3;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
@@ -88,7 +87,7 @@ query {
 				.links {
 					a {
 						height: calc(#{$nav-height} - 1rem);
-						transition: height 0.3s ease;
+						transition: height 0.3s ease, color $transition;
 					}
 				}
 			}
@@ -136,7 +135,16 @@ query {
 					margin: 0;
 					height: $nav-height;
 					padding: 0 0.75rem;
-					transition: height 0.3s ease;
+					transition: height 0.3s ease, color $transition;
+					font-size: 1.25rem;
+					font-weight: 500;
+					color: $heading-font-color;
+					&:active {
+						color: $heading-font-color;
+					}
+					&:hover {
+						color: $link-color;
+					}
 				}
 				.active--exact {
 					color: $primary;
@@ -144,21 +152,5 @@ query {
 				}
 			}
 		}
-	}
-
-	button.dark-switcher {
-		margin: 0;
-		border: 0;
-		padding: 1rem;
-		background: transparent;
-		&:focus {
-			outline: none;
-		}
-	}
-
-	.theme-icon {
-		height: 1.5rem;
-		width: 1.5rem;
-		margin-bottom: 0;
 	}
 </style>

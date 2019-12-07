@@ -1,14 +1,16 @@
 <template>
 	<div class="layout" id="app">
 		<Header class="header" />
-		<Sidebar
-			:links="[
-				{ id: 1, text: 'Link 1', url: 'https://github.com' },
-				{ id: 2, text: 'Link 2', url: 'https://github.com' },
-				{ id: 3, text: 'Link 3', url: 'https://github.com' }
-			]"
-		>
-		</Sidebar>
+		<div v-if="sidebar">
+			<Sidebar
+				:links="[
+					{ id: 1, text: 'Link 1', url: 'https://github.com' },
+					{ id: 2, text: 'Link 2', url: 'https://github.com' },
+					{ id: 3, text: 'Link 3', url: 'https://github.com' }
+				]"
+			>
+			</Sidebar>
+		</div>
 		<main id="main-content">
 			<div class="container">
 				<slot />
@@ -23,6 +25,7 @@
 	import Footer from '../components/Footer'
 	import Sidebar from '../components/Sidebar'
 	export default {
+		props: ['sidebar'],
 		components: {
 			Header,
 			Footer,

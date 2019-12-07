@@ -1,5 +1,5 @@
 <template>
-	<Layout>
+	<Layout :sidebar="true">
 		<section class="posts">
 			<CategoryList
 				v-for="edge in $page.allCategory.edges"

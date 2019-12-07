@@ -8,7 +8,7 @@
 			</div>
 
 			<div class="links">
-				<g-link to="/blog/">Posts</g-link>
+				<g-link to="/posts/">Posts</g-link>
 				<!-- TODO: Add theme switcher -->
 				<!-- <button>
             <img
@@ -146,7 +146,7 @@ query {
 						color: $link-color;
 					}
 				}
-				.active--exact {
+				.active {
 					color: $primary;
 					border-bottom: 1px solid $primary;
 				}

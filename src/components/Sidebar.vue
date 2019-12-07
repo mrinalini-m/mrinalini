@@ -13,7 +13,7 @@
 
 <script>
 	export default {
-		name: 'slider',
+		name: 'sidebar',
 		props: {
 			width: {
 				type: Number,

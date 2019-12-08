@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout :links="$page.allCategory.edges">
+	<PostsLayout :showCategories="true">
 		<section class="posts">
 			<PostList
 				v-for="edge in $page.allPost.edges"

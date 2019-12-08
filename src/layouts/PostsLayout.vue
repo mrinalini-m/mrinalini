@@ -1,7 +1,7 @@
 <template>
 	<Layout>
 		<div class="layout" id="posts">
-			<Sidebar :links="links" />
+			<Sidebar :showCategories="showCategories" :showPosts="showPosts" />
 			<slot />
 		</div>
 	</Layout>
@@ -10,14 +10,12 @@
 <script>
 	import Sidebar from '../components/Sidebar'
 	export default {
-		props: { links: { type: Array, default: () => [] } },
+		props: {
+			showCategories: { type: Boolean, default: false },
+			showPosts: { type: Boolean, default: false }
+		},
 		components: {
 			Sidebar
-		},
-		mounted() {
-			for (const link of this.links) {
-				console.log(link.node.name)
-			}
 		}
 	}
 </script>

@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout>
+	<PostsLayout :showCategories="true">
 		<h1>{{ $page.category.name }}</h1>
 		<p>{{ $page.category.description }}</p>
 		<ul>
@@ -11,6 +11,7 @@
 		</ul>
 	</PostsLayout>
 </template>
+
 <page-query>
 query ($id: ID!) {
   category(id: $id) {
@@ -28,20 +29,10 @@ query ($id: ID!) {
       }
     }
   }
-	allCategory {
-		totalCount
-		edges {
-			node {
-				id
-				path
-				name
-				description
-			}
-		}
-	}
   
 }
 </page-query>
+
 <style lang="scss" scoped>
 	.title {
 		text-align: center;

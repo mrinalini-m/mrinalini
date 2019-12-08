@@ -1,5 +1,5 @@
 <template>
-	<Layout>
+	<PostsLayout :showCategories="true" :showPosts="true">
 		<div class="title">
 			<h1>{{ $page.post.title }}</h1>
 			<div class="post-meta">
@@ -21,7 +21,7 @@
 			</div>
 			<p v-html="$page.post.content" />
 		</div>
-	</Layout>
+	</PostsLayout>
 </template>
 
 <page-query>

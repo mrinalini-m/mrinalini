@@ -1,5 +1,5 @@
 <template>
-	<div class="categories-list">
+	<div class="category">
 		<hr class="line" />
 		<g-link :to="category.path" class="read">{{ category.name }}</g-link>
 		<p class="description">{{ category.description }}</p>

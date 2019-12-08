@@ -1,28 +1,20 @@
 <template>
-	<Layout :sidebar="true">
+	<PostsLayout :links="$page.allCategory.edges">
 		<section class="posts">
-			<CategoryList
-				v-for="edge in $page.allCategory.edges"
-				:key="edge.node.id"
-				:category="edge.node"
-			/>
 			<PostList
 				v-for="edge in $page.allPost.edges"
 				:key="edge.node.id"
 				:post="edge.node"
 			/>
 		</section>
-	</Layout>
+	</PostsLayout>
 </template>
 
 <script>
 	import PostList from '@/components/PostList'
-	import CategoryList from '@/components/CategoryList'
-
 	export default {
 		components: {
-			PostList,
-			CategoryList
+			PostList
 		},
 		metaInfo: {
 			title: 'Mrinalini'

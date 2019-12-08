@@ -1,5 +1,5 @@
 <template>
-	<Layout>
+	<PostsLayout>
 		<h1>{{ $page.category.name }}</h1>
 		<p>{{ $page.category.description }}</p>
 		<ul>
@@ -9,7 +9,7 @@
 				</g-link>
 			</li>
 		</ul>
-	</Layout>
+	</PostsLayout>
 </template>
 <page-query>
 query ($id: ID!) {
@@ -28,6 +28,18 @@ query ($id: ID!) {
       }
     }
   }
+	allCategory {
+		totalCount
+		edges {
+			node {
+				id
+				path
+				name
+				description
+			}
+		}
+	}
+  
 }
 </page-query>
 <style lang="scss" scoped>

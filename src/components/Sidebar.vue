@@ -1,10 +1,14 @@
 <template>
 	<div class="sidebar">
 		<nav class="menu-button" :style="[menuWidth]">
+			<slot />
 			<template v-if="links.length">
-				<a v-for="link in links" :key="link.id" :href="link.url">{{
-					link.text
-				}}</a>
+				<g-link
+					v-for="link in links"
+					:key="link.node.id"
+					:to="link.node.path"
+					>{{ link.node.name }}</g-link
+				>
 			</template>
 			<slot v-else />
 		</nav>
@@ -42,6 +46,10 @@
 		},
 		mounted() {
 			this.mainContent.style['margin-left'] = this.marginLeft
+			// console.log(this.links, 'sidebar links')
+			for (const link of this.links) {
+				console.log(link.node.name, 'sidebar links')
+			}
 		}
 	}
 </script>
@@ -54,7 +62,7 @@
 		left: 0;
 		z-index: 1;
 		top: 0;
-		background: palevioletred;
+		background: gray;
 		overflow-x: hidden;
 		padding-top: 60px;
 		transition: 0.5s;

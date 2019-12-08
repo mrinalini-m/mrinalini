@@ -2,7 +2,7 @@
 	<div class="sidebar">
 		<nav class="menu" :style="[menuWidth]">
 			<slot />
-			<div class="categories" v-if="categories.length">
+			<div class="categories" v-if="Object.keys(categories).length">
 				<ul>
 					<li v-for="category in categories" :key="category.id">
 						<g-link class="category-link" :to="category.path">
@@ -32,15 +32,11 @@
 				required: false,
 				default: 400
 			},
-			showCategories: {
-				type: Boolean,
+
+			postCategory: {
+				type: String,
 				required: false,
-				default: false
-			},
-			showPosts: {
-				type: Boolean,
-				required: false,
-				default: false
+				default: ''
 			}
 		},
 		data() {
@@ -49,43 +45,53 @@
 					width: this.width + 'px'
 				},
 				marginLeft: this.width + 'px',
-				categories: []
+				categories: {
+					type: Object,
+					required: false,
+					default: () => ({})
+				}
 			}
 		},
+
 		computed: {
 			mainContent() {
 				return document.getElementById('main-content')
 			}
 		},
+
 		async mounted() {
 			this.mainContent.style['margin-left'] = this.marginLeft
 			let results
+
 			try {
 				results = await this.$fetch('/posts')
 			} catch (error) {
 				console.error(error)
 			}
-			if (this.showCategories) {
-				const categories = results.data.allCategory.edges
-				const parsedCategories = []
-				for (const category of categories) {
-					const catObj = {
-						id: category.node.id,
-						name: category.node.name,
-						path: category.node.path,
-						posts: []
-					}
-					if (this.showPosts) {
-						try {
-							const categoryList = await this.$fetch(`/posts/${catObj.id}`)
-							catObj.posts = categoryList.data.category.belongsTo.edges
-						} catch (error) {
-							console.error(error)
-						}
-					}
-					parsedCategories.push(catObj)
+
+			const categories = results.data.allCategory.edges,
+				parsedCategories = {}
+
+			for (const category of categories) {
+				const catObj = {
+					id: category.node.id,
+					name: category.node.name,
+					path: category.node.path,
+					posts: []
 				}
-				this.categories = parsedCategories
+				parsedCategories[category.node.id] = catObj
+			}
+
+			this.categories = parsedCategories
+
+			if (this.postCategory) {
+				try {
+					const categoryList = await this.$fetch(`/posts/${this.postCategory}`)
+					this.categories[this.postCategory].posts =
+						categoryList.data.category.belongsTo.edges
+				} catch (error) {
+					console.error(error)
+				}
 			}
 		}
 	}
@@ -103,7 +109,7 @@
 		overflow-x: hidden;
 		padding-top: 60px;
 		transition: 0.5s;
-		margin-top: 40px;
+		padding: 60px 0;
 		.categories {
 			.category-link {
 				padding: 8px 8px 8px 32px;

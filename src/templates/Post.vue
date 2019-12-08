@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout :showCategories="true" :showPosts="true">
+	<PostsLayout :postCategory="this.$page.post.category.id">
 		<div class="title">
 			<h1>{{ $page.post.title }}</h1>
 			<div class="post-meta">
@@ -33,6 +33,7 @@ query Post ($path: String!) {
     date (format: "D MMMM, YYYY")
     timeToRead
     tags{name, path}
+		category{id, name}
   }
 }
 </page-query>

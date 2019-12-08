@@ -1,7 +1,7 @@
 <template>
 	<Layout>
 		<div class="layout" id="posts">
-			<Sidebar :showCategories="showCategories" :showPosts="showPosts" />
+			<Sidebar :postCategory="postCategory" />
 			<slot />
 		</div>
 	</Layout>
@@ -11,8 +11,7 @@
 	import Sidebar from '../components/Sidebar'
 	export default {
 		props: {
-			showCategories: { type: Boolean, default: false },
-			showPosts: { type: Boolean, default: false }
+			postCategory: { type: String, required: false }
 		},
 		components: {
 			Sidebar

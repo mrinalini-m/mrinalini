@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout :showCategories="true">
+	<PostsLayout>
 		<h1>{{ $page.category.name }}</h1>
 		<p>{{ $page.category.description }}</p>
 		<ul>

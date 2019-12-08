@@ -1,14 +1,14 @@
 <template>
-  <Layout>
-    <h1>{{ $page.tag.title }}</h1>
-    <ul>
-      <li v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id">
-        <g-link :to="edge.node.path">
-          {{ edge.node.title }}
-        </g-link>
-      </li>
-    </ul>
-  </Layout>
+	<Layout>
+		<h1>{{ $page.tag.title }}</h1>
+		<ul>
+			<li v-for="edge in $page.tag.belongsTo.edges" :key="edge.node.id">
+				<g-link :to="edge.node.path">
+					{{ edge.node.title }}
+				</g-link>
+			</li>
+		</ul>
+	</Layout>
 </template>
 <page-query>
 query ($id: ID!) {
@@ -29,19 +29,18 @@ query ($id: ID!) {
 }
 </page-query>
 <style>
-  .title {
-    text-align: center;
-    font-size: 30px;
-    line-height: 10px;
-    padding: 2em 0;
-  }
+	.title {
+		text-align: center;
+		font-size: 30px;
+		padding: 2em 0;
+	}
 
-  .date {
-    font-size: 16px;
-    font-weight: 400;
-  }
+	.date {
+		font-size: 16px;
+		font-weight: 400;
+	}
 
-  .content {
-    font-size: 20px;
-  }
+	.content {
+		font-size: 20px;
+	}
 </style>

@@ -37,7 +37,6 @@ query ($id: ID!) {
 	.title {
 		text-align: center;
 		font-size: 30px;
-		line-height: 10px;
 		padding: 2em 0;
 	}
 

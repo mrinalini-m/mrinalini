@@ -97,7 +97,6 @@ query {
 			flex-wrap: no-wrap;
 			align-items: center;
 			justify-content: space-between;
-			max-width: $max-width;
 			height: $nav-height;
 			margin: auto;
 			padding: 0 1.5rem;

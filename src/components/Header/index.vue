@@ -6,35 +6,20 @@
 					<span class="text">{{ $static.metadata.siteName }}</span></g-link
 				>
 			</div>
-
-			<div class="links">
-				<g-link to="/posts/">Posts</g-link>
-				<!-- TODO: Add theme switcher -->
-				<!-- <button>
-            <img
-              class="theme-icon"
-              alt="Theme"
-              src="../assets/images/moon.svg"
-            />
-          </button> -->
-			</div>
+			<Header />
 		</nav>
 	</header>
 </template>
 
-<static-query>
-query {
-  metadata {
-    siteName
-  }
-}
-</static-query>
-
 <script>
+	import Header from './Header'
 	export default {
 		name: 'custom-header',
 		data() {
 			return { scrolled: false }
+		},
+		components: {
+			Header
 		},
 		mounted() {
 			window.addEventListener('scroll', this.onScroll)
@@ -50,7 +35,7 @@ query {
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.favicon {
 		height: 1.5rem;
 		width: 1.5rem;
@@ -84,12 +69,6 @@ query {
 						}
 					}
 				}
-				.links {
-					a {
-						height: calc(#{$nav-height} - 1rem);
-						transition: height 0.3s ease, color $transition;
-					}
-				}
 			}
 		}
 		.nav {
@@ -117,39 +96,18 @@ query {
 						color: $heading-font-color;
 					}
 				}
-
 				span.text {
 					white-space: nowrap;
-				}
-			}
-
-			.links {
-				display: flex;
-				align-items: center;
-				margin-left: auto; //flex item will align to the right since you can't use justify-items or justify-self with flexbox
-				a {
-					display: flex;
-					align-items: center;
-					text-align: center;
-					margin: 0;
-					height: $nav-height;
-					padding: 0 0.75rem;
-					transition: height 0.3s ease, color $transition;
-					font-size: 1.25rem;
-					font-weight: 500;
-					color: $heading-font-color;
-					&:active {
-						color: $heading-font-color;
-					}
-					&:hover {
-						color: $link-color;
-					}
-				}
-				.active {
-					color: $primary;
-					border-bottom: 1px solid $primary;
 				}
 			}
 		}
 	}
 </style>
+
+<static-query>
+query {
+  metadata {
+    siteName
+  }
+}
+</static-query>

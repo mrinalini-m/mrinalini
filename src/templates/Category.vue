@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout>
+	<PostsLayout :postCategory="this.$page.category.id">
 		<h1>{{ $page.category.name }}</h1>
 		<p>{{ $page.category.description }}</p>
 		<ul>
@@ -15,6 +15,7 @@
 <page-query>
 query ($id: ID!) {
   category(id: $id) {
+		id
     name
     description
     belongsTo {

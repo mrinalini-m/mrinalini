@@ -1,7 +1,7 @@
 <template>
 	<Layout>
 		<div class="layout" id="posts">
-			<Sidebar :postCategory="postCategory" />
+			<Sidebar :postCategory="this.postCategory" />
 			<slot />
 		</div>
 	</Layout>

@@ -8,8 +8,8 @@
 						<g-link class="category-link" :to="category.path">
 							{{ category.name }}
 						</g-link>
-						<ul v-if="category.posts">
-							<li v-for="edge in category.posts" :key="edge.node.id">
+						<ul v-if="category.id === postCategory">
+							<li v-for="edge in posts[category.id]" :key="edge.node.id">
 								<g-link :to="edge.node.path">
 									{{ edge.node.title }}
 								</g-link>
@@ -49,6 +49,11 @@
 					type: Object,
 					required: false,
 					default: () => ({})
+				},
+				posts: {
+					type: Object,
+					required: false,
+					default: () => ({})
 				}
 			}
 		},
@@ -61,38 +66,31 @@
 
 		async mounted() {
 			this.mainContent.style['margin-left'] = this.marginLeft
-			let results
-
+			let results,
+				posts = {}
 			try {
 				results = await this.$fetch('/posts')
 			} catch (error) {
 				console.error(error)
 			}
-
 			const categories = results.data.allCategory.edges,
 				parsedCategories = {}
-
 			for (const category of categories) {
 				const catObj = {
 					id: category.node.id,
 					name: category.node.name,
-					path: category.node.path,
-					posts: []
+					path: category.node.path
 				}
 				parsedCategories[category.node.id] = catObj
-			}
-
-			this.categories = parsedCategories
-
-			if (this.postCategory) {
 				try {
-					const categoryList = await this.$fetch(`/posts/${this.postCategory}`)
-					this.categories[this.postCategory].posts =
-						categoryList.data.category.belongsTo.edges
+					const categoryList = await this.$fetch(`/posts/${catObj.id}`)
+					posts[catObj.id] = categoryList.data.category.belongsTo.edges
 				} catch (error) {
 					console.error(error)
 				}
 			}
+			this.posts = posts
+			this.categories = parsedCategories
 		}
 	}
 </script>

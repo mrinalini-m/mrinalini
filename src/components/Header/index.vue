@@ -1,6 +1,7 @@
 <template>
 	<header class="custom-header" v-bind:class="{ scroll: scrolled }">
 		<nav class="nav">
+			<Mobile />
 			<div class="brand">
 				<g-link to="/">
 					<span class="text">{{ $static.metadata.siteName }}</span></g-link
@@ -13,13 +14,15 @@
 
 <script>
 	import Header from './Header'
+	import Mobile from './Mobile'
 	export default {
 		name: 'custom-header',
 		data() {
 			return { scrolled: false }
 		},
 		components: {
-			Header
+			Header,
+			Mobile
 		},
 		mounted() {
 			window.addEventListener('scroll', this.onScroll)
@@ -98,6 +101,25 @@
 				}
 				span.text {
 					white-space: nowrap;
+				}
+			}
+		}
+	}
+
+	//mobile header center brand
+	@media screen and (max-width: 900px) {
+		.custom-header {
+			padding: 0;
+			.nav {
+				margin: 0;
+				padding: 0;
+				.brand {
+					display: flex;
+					flex-direction: row;
+					justify-content: center;
+					align-items: center;
+					flex: 1;
+					margin: 0;
 				}
 			}
 		}

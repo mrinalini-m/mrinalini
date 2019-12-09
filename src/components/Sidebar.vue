@@ -1,5 +1,5 @@
 <template>
-	<div class="sidebar">
+	<div class="sidebar" :style="[sidebarDisplay]">
 		<nav class="menu" :style="[menuWidth]">
 			<slot />
 			<div class="categories" v-if="Object.keys(categories).length">
@@ -32,7 +32,6 @@
 				required: false,
 				default: 300
 			},
-
 			postCategory: {
 				type: String,
 				required: false,
@@ -54,7 +53,8 @@
 					type: Object,
 					required: false,
 					default: () => ({})
-				}
+				},
+				sidebarDisplay: {}
 			}
 		},
 
@@ -91,11 +91,17 @@
 			}
 			this.posts = posts
 			this.categories = parsedCategories
+			this.$root.$on('toggle-sidebar', data => {
+				this.sidebarDisplay =
+					data && window.innerWidth < 900
+						? { display: 'block' }
+						: { display: 'none' }
+			})
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	.menu {
 		height: 100%;
 		width: 0;
@@ -146,6 +152,26 @@
 			padding-top: 15px;
 			a {
 				font-size: 18px;
+			}
+		}
+	}
+	@media screen and (max-width: 900px) {
+		#main-content {
+			margin-left: 0px !important;
+		}
+		.sidebar {
+			display: none;
+		}
+	}
+	@media screen and (min-width: 900px) {
+		.sidebar {
+			display: block !important;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.sidebar {
+			.menu {
+				width: 100% !important;
 			}
 		}
 	}

@@ -44,4 +44,13 @@
 			}
 		}
 	}
+
+	//Hide Right links for mobile
+	@media (max-width: 900px) {
+		.nav {
+			.links {
+				display: none;
+			}
+		}
+	}
 </style>

@@ -60,7 +60,9 @@
 		z-index: 3;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
 		&.scroll {
-			box-shadow: $box-shadow;
+			box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
+				0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
+				0 16px 16px rgba(0, 0, 0, 0.03);
 			.nav {
 				height: calc(#{$nav-height} - 1rem);
 				.brand {

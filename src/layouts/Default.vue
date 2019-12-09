@@ -2,9 +2,7 @@
 	<div class="layout" id="app">
 		<Header class="header" />
 		<main id="main-content">
-			<div class="container">
-				<slot />
-			</div>
+			<slot />
 		</main>
 		<Footer />
 	</div>
@@ -23,7 +21,7 @@
 
 <style lang="scss" scoped>
 	#main-content {
-		margin-top: calc(#{$nav-height} + 2rem);
+		margin-top: calc(#{$nav-height});
 		min-height: calc(100vh - #{$nav-height} - #{$footer-height});
 	}
 </style>

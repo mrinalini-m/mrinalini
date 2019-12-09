@@ -1,8 +1,10 @@
 <template>
 	<Layout>
-		<div class="layout" id="posts">
-			<Sidebar :postCategory="this.postCategory" />
-			<slot />
+		<Sidebar :postCategory="this.postCategory" />
+		<div class="container">
+			<div class="layout" id="posts">
+				<slot />
+			</div>
 		</div>
 	</Layout>
 </template>

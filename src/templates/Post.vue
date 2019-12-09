@@ -59,6 +59,7 @@ query Post ($path: String!) {
 		::selection {
 			background: rgba(150, 150, 150, 0.3) !important;
 		}
+		border-radius: $border-radius;
 		code {
 			font-family: $code-font-family;
 			font-size: 13px;

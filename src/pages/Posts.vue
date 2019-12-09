@@ -1,13 +1,15 @@
 <template>
-	<PostsLayout>
-		<section class="posts">
-			<PostList
-				v-for="edge in $page.allPost.edges"
-				:key="edge.node.id"
-				:post="edge.node"
-			/>
-		</section>
-	</PostsLayout>
+	<div class="post-list-wrapper">
+		<PostsLayout>
+			<section class="posts">
+				<PostList
+					v-for="edge in $page.allPost.edges"
+					:key="edge.node.id"
+					:post="edge.node"
+				/>
+			</section>
+		</PostsLayout>
+	</div>
 </template>
 
 <script>
@@ -22,7 +24,11 @@
 	}
 </script>
 
-<style></style>
+<style>
+	.post-list-wrapper {
+		background-color: #f5f5f5;
+	}
+</style>
 
 <page-query>
   query {

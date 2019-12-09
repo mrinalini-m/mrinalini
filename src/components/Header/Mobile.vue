@@ -34,7 +34,7 @@
 		align-items: flex-start;
 		background-image: none;
 		border-bottom-color: rgb(51, 51, 51);
-		border-radius: 4px;
+		border-radius: $border-radius;
 		border-color: rgb(51, 51, 51);
 		color: rgb(51, 51, 51);
 		cursor: pointer;

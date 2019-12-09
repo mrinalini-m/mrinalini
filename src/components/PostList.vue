@@ -1,34 +1,37 @@
 <template>
-  <div class="post-list">
-    <hr class="line" />
-    <p class="date" v-html="post.date" />
-    <h3 class="title" v-html="post.title" />
-    <!-- <p class="description" v-html="post.description" /> -->
-    <!-- <b>{{ post.timeToRead }} min read</b> &nbsp; -->
-    <g-link :to="post.path" class="read">Read More</g-link>
-  </div>
+	<Card>
+		<p class="date" v-html="post.date" />
+		<h3 class="title" v-html="post.title" />
+		<!-- <p class="description" v-html="post.description" /> -->
+		<!-- <b>{{ post.timeToRead }} min read</b> &nbsp; -->
+		<g-link :to="post.path" class="read">Read More</g-link>
+	</Card>
 </template>
 
 <script>
-  export default {
-    props: ['post']
-  }
+	import Card from '../common/Card'
+	export default {
+		components: {
+			Card
+		},
+		props: ['post']
+	}
 </script>
 
-<style scoped>
-  .line {
-    border: 0.5px solid black;
-    margin: 30px 0;
-  }
+<style lang="scss" scoped>
+	.line {
+		border: 0.5px solid black;
+		margin: 30px 0;
+	}
 
-  .date {
-    padding: 1rem;
-    font-weight: 300;
-  }
+	.date {
+		padding: 1rem;
+		font-weight: 300;
+	}
 
-  .read {
-    color: black;
-    text-decoration: none;
-    border: 2px dashed red;
-  }
+	.read {
+		color: black;
+		text-decoration: none;
+		border: 2px dashed red;
+	}
 </style>

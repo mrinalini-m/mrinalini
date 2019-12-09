@@ -30,7 +30,7 @@
 			width: {
 				type: Number,
 				required: false,
-				default: 400
+				default: 300
 			},
 
 			postCategory: {

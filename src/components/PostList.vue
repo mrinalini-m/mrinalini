@@ -1,25 +1,23 @@
 <template>
 	<Card class="post">
 		<g-link :to="post.path" class="post-link">
-			<div class="flex-col-1">
-				<h4 class="title">{{ post.title }}</h4>
-				<div class="post-meta">
-					<p class="date">
-						{{ post.date }}
-					</p>
-					<ul class="tag-container">
-						<li>
-							<g-link
-								v-for="tag in post.tags"
-								:key="tag.id"
-								:to="tag.path"
-								class="link"
-							>
-								{{ tag.name.toLowerCase() }}
-							</g-link>
-						</li>
-					</ul>
-				</div>
+			<h5 class="title">{{ post.title }}</h5>
+			<div class="post-meta">
+				<p class="date">
+					{{ post.date }}
+				</p>
+				<ul class="tag-container">
+					<li>
+						<g-link
+							v-for="tag in post.tags"
+							:key="tag.id"
+							:to="tag.path"
+							class="link"
+						>
+							{{ tag.name.toLowerCase() }}
+						</g-link>
+					</li>
+				</ul>
 			</div>
 		</g-link>
 	</Card>
@@ -40,6 +38,7 @@
 		padding: 0;
 		.post-link {
 			display: flex;
+			flex-direction: column;
 			padding: 0.75rem 1.5rem;
 			.title {
 				line-height: normal;

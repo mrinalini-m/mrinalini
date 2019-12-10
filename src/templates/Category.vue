@@ -1,16 +1,25 @@
 <template>
-	<PostsLayout :postCategory="this.$page.category.id">
-		<h1>{{ $page.category.name }}</h1>
-		<p>{{ $page.category.description }}</p>
-		<ul>
-			<li v-for="edge in $page.category.belongsTo.edges" :key="edge.node.id">
-				<g-link :to="edge.node.path">
-					{{ edge.node.title }}
-				</g-link>
-			</li>
-		</ul>
-	</PostsLayout>
+	<div class="post-list-wrapper">
+		<PostsLayout :postCategory="this.$page.category.id">
+			<h3>{{ $page.category.name }}</h3>
+			<p>{{ $page.category.description }}</p>
+			<PostList
+				v-for="edge in $page.category.belongsTo.edges"
+				:key="edge.node.id"
+				:post="edge.node"
+			/>
+		</PostsLayout>
+	</div>
 </template>
+
+<script>
+	import PostList from '@/components/PostList'
+	export default {
+		components: {
+			PostList
+		}
+	}
+</script>
 
 <style lang="scss" scoped>
 	.title {
@@ -41,7 +50,9 @@ query ($id: ID!) {
           ... on Post {
             id
             title
+						date (format: "D MMMM YYYY")
             path
+						tags{name, path}
           }
         }
       }

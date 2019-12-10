@@ -29,7 +29,6 @@ query Post ($path: String!) {
     title
     content
     date (format: "D MMMM, YYYY")
-    timeToRead
     tags{name, path}
 		category{id, name}
   }

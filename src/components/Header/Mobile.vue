@@ -51,8 +51,7 @@
 		padding-left: 5px;
 		padding-right: 5px;
 		padding-top: 9px;
-		position: relative;
-		text-align: center;
+		position: absolute;
 	}
 	.icon-bar {
 		border-radius: 1px;

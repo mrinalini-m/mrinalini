@@ -41,7 +41,7 @@
           timeToRead
           date (format: "D MMMM YYYY")
           path
-          tags{name}
+          tags{name, path}
         }
       }
     }

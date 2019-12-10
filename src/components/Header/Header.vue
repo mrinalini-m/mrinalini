@@ -46,7 +46,7 @@
 	}
 
 	//Hide Right links for mobile
-	@media (max-width: 900px) {
+	@mixin medium-breakpoint {
 		.nav {
 			.links {
 				display: none;

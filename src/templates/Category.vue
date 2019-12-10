@@ -12,6 +12,23 @@
 	</PostsLayout>
 </template>
 
+<style lang="scss" scoped>
+	.title {
+		text-align: center;
+		font-size: 30px;
+		padding: 2em 0;
+	}
+
+	.date {
+		font-size: 16px;
+		font-weight: 400;
+	}
+
+	.content {
+		font-size: 20px;
+	}
+</style>
+
 <page-query>
 query ($id: ID!) {
   category(id: $id) {
@@ -33,20 +50,3 @@ query ($id: ID!) {
   
 }
 </page-query>
-
-<style lang="scss" scoped>
-	.title {
-		text-align: center;
-		font-size: 30px;
-		padding: 2em 0;
-	}
-
-	.date {
-		font-size: 16px;
-		font-weight: 400;
-	}
-
-	.content {
-		font-size: 20px;
-	}
-</style>

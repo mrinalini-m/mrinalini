@@ -155,7 +155,12 @@
 			}
 		}
 	}
-	@media screen and (max-width: 900px) {
+	@media screen and (min-width: 900px) {
+		.sidebar {
+			display: block !important;
+		}
+	}
+	@include medium-breakpoint {
 		#main-content {
 			margin-left: 0px !important;
 		}
@@ -163,12 +168,7 @@
 			display: none;
 		}
 	}
-	@media screen and (min-width: 900px) {
-		.sidebar {
-			display: block !important;
-		}
-	}
-	@media screen and (max-width: 500px) {
+	@include small-breakpoint {
 		.sidebar {
 			.menu {
 				width: 100% !important;

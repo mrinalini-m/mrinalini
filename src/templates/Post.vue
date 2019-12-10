@@ -1,23 +1,21 @@
 <template>
 	<PostsLayout :postCategory="this.$page.post.category.id">
 		<div class="title">
-			<h1>{{ $page.post.title }}</h1>
+			<h3>{{ $page.post.title }}</h3>
 			<div class="post-meta">
 				<p class="date">
 					{{ $page.post.date }}
 				</p>
-				<ul class="tag-container">
-					<li>
-						<g-link
-							v-for="tag in $page.post.tags"
-							:key="tag.id"
-							:to="tag.path"
-							class="link"
-						>
-							{{ tag.name.toLowerCase() }}
-						</g-link>
-					</li>
-				</ul>
+				<div class="tag-container">
+					<g-link
+						v-for="tag in $page.post.tags"
+						:key="tag.id"
+						:to="tag.path"
+						class="link"
+					>
+						{{ tag.name.toLowerCase() }}
+					</g-link>
+				</div>
 			</div>
 			<p v-html="$page.post.content" />
 		</div>
@@ -38,7 +36,7 @@ query Post ($path: String!) {
 }
 </page-query>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.title {
 		text-align: center;
 		padding-bottom: 2rem;
@@ -50,35 +48,6 @@ query Post ($path: String!) {
 			font-size: 0.8rem;
 			font-weight: 400;
 			margin-bottom: 0.75rem;
-		}
-	}
-
-	code[class*='language-'],
-	pre[class*='language-'],
-	pre {
-		::selection {
-			background: rgba(150, 150, 150, 0.3) !important;
-		}
-		border-radius: $border-radius;
-		code {
-			font-family: $code-font-family;
-			font-size: 13px;
-			direction: ltr;
-			text-align: left;
-			white-space: pre-wrap;
-			word-spacing: normal;
-			word-break: normal;
-			line-height: 1.7;
-			font-weight: 400;
-			margin: 2rem 0;
-			tab-size: 2;
-			hyphens: none;
-			-webkit-font-smoothing: antialiased;
-			display: block;
-			padding: 1.5rem;
-			overflow: auto;
-			border: 0;
-			box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
 		}
 	}
 </style>

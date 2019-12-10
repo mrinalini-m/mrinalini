@@ -28,7 +28,7 @@ query ($id: ID!) {
   }
 }
 </page-query>
-<style>
+<style scoped>
 	.title {
 		text-align: center;
 		font-size: 30px;

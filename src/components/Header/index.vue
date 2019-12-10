@@ -109,7 +109,7 @@
 	}
 
 	//mobile header center brand
-	@media screen and (max-width: 900px) {
+	@include medium-breakpoint {
 		.custom-header {
 			padding: 0;
 			.nav {

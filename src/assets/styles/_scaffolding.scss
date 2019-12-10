@@ -61,15 +61,35 @@ h1,
 h2,
 h3,
 h4,
-h5,
-h6 {
+h5 {
 	text-align: start;
 	margin: 0 auto;
 	line-height: $heading-line-height;
-	font-size: $h1;
 	font-weight: $heading-font-weight;
 	color: $heading-font-color;
 	margin-bottom: 0.5rem;
+}
+
+h1 {
+	font-size: $h1;
+}
+h2 {
+	font-size: $h2;
+}
+h3 {
+	font-size: $h3;
+}
+h4 {
+	font-size: $h4;
+}
+h5 {
+	font-size: $h5;
+}
+
+@include medium-breakpoint {
+	.container {
+		padding: 1rem;
+	}
 }
 
 //tags/chips
@@ -81,7 +101,6 @@ h6 {
 		border-radius: 16px;
 		font-size: 0.8rem;
 		color: $primary;
-		font-weight: 400;
 		margin: 0 0.5rem 0.5rem 0;
 		font-weight: 600;
 		transition: background-color $transition;
@@ -91,5 +110,36 @@ h6 {
 		&:focus {
 			background: $accent-bg-color;
 		}
+	}
+}
+
+//code
+
+code[class*='language-'],
+pre[class*='language-'],
+pre {
+	::selection {
+		background: rgba(150, 150, 150, 0.3) !important;
+	}
+	border-radius: $border-radius;
+	code {
+		font-family: $code-font-family;
+		font-size: 13px;
+		direction: ltr;
+		text-align: left;
+		white-space: pre-wrap;
+		word-spacing: normal;
+		word-break: normal;
+		line-height: 1.7;
+		font-weight: 400;
+		margin: 2rem 0;
+		tab-size: 2;
+		hyphens: none;
+		-webkit-font-smoothing: antialiased;
+		display: block;
+		padding: 1.5rem;
+		overflow: auto;
+		border: 0;
+		box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
 	}
 }

@@ -184,6 +184,7 @@
 						}
 						border: 1px solid transparent;
 						&:hover {
+							background-color: scale-color($primary, $lightness: 90%);
 							border: 1px solid $link-hover-color;
 							position: relative;
 							&:before {

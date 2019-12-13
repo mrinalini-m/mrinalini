@@ -42,18 +42,11 @@ button::-moz-focus-inner {
 }
 
 // links
+.active {
+	transition: background-color $transition;
+}
 a {
-	color: $link-color;
-	transition: color $transition;
-	&:visited,
-	&:active {
-		color: $link-color;
-		transition: color $transition;
-	}
-	&:hover {
-		color: $link-hover-color;
-		transition: color $transition;
-	}
+	@include style-as-link($link-color, $link-hover-color, $link-color);
 }
 
 //headings
@@ -61,7 +54,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
 	text-align: start;
 	line-height: $heading-line-height;
 	font-weight: $heading-font-weight;
@@ -84,10 +78,21 @@ h4 {
 h5 {
 	font-size: $h5;
 }
+h6 {
+	font-size: $h6;
+}
+
+//lists
+ul {
+	li {
+		text-align: left;
+		color: $font-color;
+	}
+}
 
 @include medium-breakpoint {
 	.container {
-		padding: 1rem;
+		padding: 0.5rem;
 	}
 }
 
@@ -103,11 +108,11 @@ h5 {
 		margin: 0 0.5rem 0.5rem 0;
 		font-weight: 600;
 		transition: background-color $transition;
-
+		background-color: $background;
 		&:hover,
 		&:active,
 		&:focus {
-			background: $accent-bg-color;
+			background: scale-color($primary, $lightness: 85%);
 		}
 	}
 }

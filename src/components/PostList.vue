@@ -1,5 +1,5 @@
 <template>
-	<Card class="post">
+	<div class="post">
 		<g-link :to="post.path" class="post-link">
 			<h5 class="title">{{ post.title }}</h5>
 			<div class="post-meta">
@@ -20,29 +20,43 @@
 				</ul>
 			</div>
 		</g-link>
-	</Card>
+	</div>
 </template>
 
 <script>
-	import Card from '../common/Card'
 	export default {
-		components: {
-			Card
-		},
 		props: ['post']
 	}
 </script>
 
 <style lang="scss" scoped>
-	.card {
-		padding: 0;
+	.post:first-of-type {
+		margin-top: 0.75rem;
+	}
+	.post:last-of-type {
+		border-bottom: $border;
+	}
+	.post {
+		border: 1px solid transparent;
+		border-top: $border;
+		margin-bottom: -1px;
+		transition: backgroundo-color 0.2s ease, border 0.2s ease;
+
+		&:hover {
+			border: $border;
+			border-radius: $border-radius;
+			background-color: $background-secondary;
+			+ .post {
+				border-top: 1px solid transparent;
+			}
+		}
 		.post-link {
 			display: flex;
 			flex-direction: column;
 			padding: 0.75rem 1.5rem;
 			.title {
 				line-height: normal;
-				margin-bottom: 0.5rem;
+				margin-bottom: 0.2rem;
 				text-align: left;
 			}
 			.tag-container {
@@ -55,14 +69,13 @@
 		text-align: left;
 		.date {
 			font-size: 0.8rem;
-			font-weight: 400;
-			color: $gray-medium;
+			font-weight: 500;
+			color: $post-meta;
 			margin-bottom: 0.5rem;
 		}
 	}
 	@include medium-breakpoint {
-		.card {
-			margin-bottom: 1rem;
+		.post {
 			.post-link {
 				padding: 0.75rem 1rem;
 			}

@@ -33,29 +33,21 @@
 	.navbar-toggle {
 		align-items: flex-start;
 		background-image: none;
-		border-bottom-color: rgb(51, 51, 51);
-		border-radius: $border-radius;
-		border-color: rgb(51, 51, 51);
-		color: rgb(51, 51, 51);
+		color: $secondary-dark;
 		cursor: pointer;
 		display: block;
 		font-size: 14px;
 		font-weight: 400;
 		letter-spacing: normal;
 		line-height: 20px;
-		margin-bottom: 8px;
-		margin-left: 8px;
-		margin-right: 0px;
-		margin-top: 8px;
-		padding-bottom: 9px;
-		padding-left: 5px;
-		padding-right: 5px;
-		padding-top: 9px;
+		margin: 14px 0 14px 8px;
+		padding: 9px 5px;
 		position: absolute;
+		top: 0;
 	}
 	.icon-bar {
 		border-radius: 1px;
-		color: rgb(51, 51, 51);
+		color: $secondary-dark;
 		cursor: pointer;
 		transition: 0.4s all ease;
 		font-weight: 400;
@@ -63,7 +55,7 @@
 		font-size: 14px;
 		letter-spacing: normal;
 		display: block;
-		background-color: $gray-dark;
+		background-color: $secondary-dark;
 		line-height: 20px;
 		margin-top: 4px;
 		text-align: center;
@@ -75,16 +67,7 @@
 			display: none;
 		}
 	}
-	.navbar-toggle {
-		padding: 9px 5px;
-		margin-left: 8px;
-		margin-right: 0;
-	}
-	.navbar-toggle,
-	.navbar-toggle:hover {
-		border: 0;
-		background-color: transparent !important;
-	}
+
 	.navbar-toggle .icon-bar {
 		-webkit-transition: 0.4s all;
 		-o-transition: 0.4s all;

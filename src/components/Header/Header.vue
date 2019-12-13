@@ -1,6 +1,6 @@
 <template>
 	<div class="links">
-		<g-link to="/posts/">Posts</g-link>
+		<g-link class="style-as-link-header" to="/posts/">Posts</g-link>
 	</div>
 </template>
 
@@ -30,16 +30,9 @@
 				transition: height 0.3s ease, color $transition;
 				font-size: 1.25rem;
 				font-weight: 500;
-				color: $heading-font-color;
-				&:active {
-					color: $heading-font-color;
-				}
-				&:hover {
-					color: $link-color;
-				}
 			}
+			@include style-as-link-header;
 			.active {
-				color: $primary;
 				border-bottom: 1px solid $primary;
 			}
 		}

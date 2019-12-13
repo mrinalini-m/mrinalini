@@ -1,24 +1,24 @@
 <template>
-	<PostsLayout :postCategory="this.$page.post.category.id">
-		<div class="title">
-			<h3>{{ $page.post.title }}</h3>
-			<div class="post-meta">
-				<p class="date">
-					{{ $page.post.date }}
-				</p>
-				<div class="tag-container">
-					<g-link
-						v-for="tag in $page.post.tags"
-						:key="tag.id"
-						:to="tag.path"
-						class="link"
-					>
-						{{ tag.name.toLowerCase() }}
-					</g-link>
-				</div>
+	<PostsLayout :postCategory="this.$page.post.category.id" :showPosts="true">
+		<h3>{{ $page.post.title }}</h3>
+
+		<div class="post-meta">
+			<p class="date">
+				{{ $page.post.date }}
+			</p>
+			<div class="tag-container">
+				<g-link
+					v-for="tag in $page.post.tags"
+					:key="tag.id"
+					:to="tag.path"
+					class="link"
+				>
+					{{ tag.name.toLowerCase() }}
+				</g-link>
 			</div>
-			<p v-html="$page.post.content" />
 		</div>
+
+		<div class="post-content" v-html="$page.post.content" />
 	</PostsLayout>
 </template>
 
@@ -48,5 +48,8 @@ query Post ($path: String!) {
 			font-weight: 400;
 			margin-bottom: 0.75rem;
 		}
+	}
+	.post-content {
+		margin-top: 2rem;
 	}
 </style>

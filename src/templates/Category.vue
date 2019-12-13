@@ -1,15 +1,15 @@
 <template>
-	<div class="post-list-wrapper">
-		<PostsLayout :postCategory="this.$page.category.id">
-			<h3>{{ $page.category.name }}</h3>
-			<p>{{ $page.category.description }}</p>
-			<PostList
-				v-for="edge in $page.category.belongsTo.edges"
-				:key="edge.node.id"
-				:post="edge.node"
-			/>
-		</PostsLayout>
-	</div>
+	<PostsLayout :postCategory="this.$page.category.id" :showPosts="true">
+		<header class="title-wrapper">
+			<h4 class="title">{{ $page.category.name }}</h4>
+			<p class="description">{{ $page.category.description }}</p>
+		</header>
+		<PostList
+			v-for="edge in $page.category.belongsTo.edges"
+			:key="edge.node.id"
+			:post="edge.node"
+		/>
+	</PostsLayout>
 </template>
 
 <script>
@@ -21,20 +21,16 @@
 	}
 </script>
 
-<style lang="scss" scoped>
-	.title {
-		text-align: center;
-		font-size: 30px;
-		padding: 2em 0;
-	}
-
-	.date {
-		font-size: 16px;
-		font-weight: 400;
-	}
-
-	.content {
-		font-size: 20px;
+<style lang="scss">
+	.title-wrapper {
+		padding: 0.5rem;
+		.title {
+			margin-bottom: 0.7rem;
+		}
+		.description {
+			margin-bottom: 1.5rem;
+			text-align: left;
+		}
 	}
 </style>
 

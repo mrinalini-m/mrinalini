@@ -1,29 +1,51 @@
 <template>
-	<div class="sidebar" :style="[sidebarDisplay]">
-		<nav class="menu" :style="[menuWidth]">
-			<slot />
-			<div class="categories" v-if="Object.keys(categories).length">
-				<ul>
-					<li v-for="category in categories" :key="category.id">
-						<g-link class="category-link" :to="category.path">
-							{{ category.name }}
-						</g-link>
-						<ul v-if="category.id === postCategory">
-							<li v-for="edge in posts[category.id]" :key="edge.node.id">
-								<g-link :to="edge.node.path">
-									{{ edge.node.title }}
+	<div class="sidebar">
+		<transition name="slide">
+			<nav v-show="show" class="menu" :style="[menuWidth]">
+				<div v-if="showTags" class="tags">
+					<ul>
+						<li v-for="tag in tags" :key="tag.id" class="tag">
+							<h6>
+								<g-link class="style-as-link-header" :to="tag.path">
+									{{ tag.name }}
 								</g-link>
-							</li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-			<slot v-else />
-		</nav>
+							</h6>
+						</li>
+					</ul>
+				</div>
+				<div v-if="showCategories || showPosts" class="categories">
+					<ul>
+						<li
+							v-for="category in categories"
+							:key="category.id"
+							class="category"
+						>
+							<h6>
+								<g-link class="style-as-link-header" :to="category.path">
+									{{ category.name }}
+								</g-link>
+							</h6>
+							<ul v-if="category.id === postCategory">
+								<li
+									v-for="post in posts[category.id]"
+									:key="post.id"
+									class="post"
+								>
+									<g-link class="style-as-link-header" :to="post.path">
+										{{ post.title }}
+									</g-link>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</transition>
 	</div>
 </template>
 
 <script>
+	import { getTags, getCatsAndPosts } from '@/utils'
 	export default {
 		name: 'sidebar',
 		props: {
@@ -36,8 +58,12 @@
 				type: String,
 				required: false,
 				default: ''
-			}
+			},
+			showPosts: { type: Boolean, required: false, default: false },
+			showTags: { type: Boolean, required: false, default: false },
+			showCategories: { type: Boolean, required: false, default: false }
 		},
+
 		data() {
 			return {
 				menuWidth: {
@@ -54,7 +80,13 @@
 					required: false,
 					default: () => ({})
 				},
-				sidebarDisplay: {}
+				tags: {
+					type: Object,
+					required: false,
+					default: () => ({})
+				},
+
+				show: false
 			}
 		},
 
@@ -66,68 +98,125 @@
 
 		async mounted() {
 			this.mainContent.style['margin-left'] = this.marginLeft
-			let results,
-				posts = {}
-			try {
-				results = await this.$fetch('/posts')
-			} catch (error) {
-				console.error(error)
-			}
-			const categories = results.data.allCategory.edges,
-				parsedCategories = {}
-			for (const category of categories) {
-				const catObj = {
-					id: category.node.id,
-					name: category.node.name,
-					path: category.node.path
-				}
-				parsedCategories[category.node.id] = catObj
-				try {
-					const categoryList = await this.$fetch(`/posts/${catObj.id}`)
-					posts[catObj.id] = categoryList.data.category.belongsTo.edges
-				} catch (error) {
-					console.error(error)
-				}
-			}
-			this.posts = posts
-			this.categories = parsedCategories
+			const boundFetch = this.$fetch.bind(this)
+
 			this.$root.$on('toggle-sidebar', data => {
-				this.sidebarDisplay =
-					data && window.innerWidth < 900
-						? { display: 'block' }
-						: { display: 'none' }
+				this.show = data && !this.show
 			})
+			const { parsedCategories, parsedPosts } = await getCatsAndPosts(
+				boundFetch
+			)
+			this.categories = parsedCategories
+			this.posts = parsedPosts
+			this.tags = await getTags(boundFetch)
 		}
 	}
 </script>
 
 <style lang="scss">
+	.slide-enter-active {
+		transition: $transition;
+	}
+	.slide-leave-active {
+		transition: $transition;
+	}
+	.slide-enter,
+	.slide-leave-to {
+		transform: translateX(-100%);
+	}
 	.menu {
 		height: 100%;
+		border-right: $border;
 		width: 0;
 		position: fixed;
 		left: 0;
+		margin-top: calc(#{$nav-height} - 1rem);
 		z-index: 1;
 		top: 0;
-		background: gray;
+		background: $background-secondary;
 		overflow-x: hidden;
-		padding-top: 60px;
-		transition: 0.5s;
-		padding: 60px 0;
-		.categories {
-			.category-link {
-				padding: 8px 8px 8px 32px;
-				text-decoration: none;
-				font-size: 25px;
-				display: block;
-				transition: 0.3s;
+		padding: 2rem 0;
+		padding-bottom: 6rem;
+		.categories,
+		.tags {
+			a {
+				&:after {
+					background-color: $primary;
+					opacity: 1;
+					transform: translateX(-92px);
+					width: 0px;
+					border-radius: 4px;
+					content: '';
+					left: calc(0.5rem);
+					top: 12px;
+					height: 8px;
+					position: absolute;
+					transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+				}
+			}
+			.active {
+				position: relative;
+				&:after {
+					width: 100px;
+				}
+				font-weight: 700;
+				background-color: scale-color($primary, $lightness: 90%);
+			}
+			ul {
+				li {
+					a.style-as-link-header {
+						padding: 0.3rem;
+						text-decoration: none;
+						display: block;
+						line-height: 1.5rem;
+						position: relative;
+						&:before {
+							content: '';
+							left: calc(0.5rem);
+							top: 12px;
+							height: 0px;
+							width: 0px;
+							position: absolute;
+							transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+							background-color: $primary;
+							transform: scale(1);
+							border-radius: 100%;
+						}
+						border: 1px solid transparent;
+						&:hover {
+							border: 1px solid $link-hover-color;
+							position: relative;
+							&:before {
+								width: 8px;
+								height: 8px;
+							}
+						}
+					}
+					&.category,
+					&.tag {
+						h6 {
+							margin-bottom: 0;
+							a.style-as-link-header {
+								padding-left: 1.5rem;
+							}
+						}
+					}
+					&.post {
+						a.style-as-link-header {
+							font-weight: 500;
+							padding-left: 2rem;
+						}
+					}
+					@include style-as-link-header;
+				}
 			}
 			.posts {
 				ul {
 					li {
-						a {
+						a.style-as-link-header {
 							font-size: 1rem;
 						}
+						@include style-as-link-header;
 					}
 				}
 			}
@@ -157,20 +246,20 @@
 	}
 	@media screen and (min-width: 900px) {
 		.sidebar {
-			display: block !important;
+			.menu {
+				display: block !important;
+			}
 		}
 	}
 	@include medium-breakpoint {
 		#main-content {
 			margin-left: 0px !important;
 		}
-		.sidebar {
-			display: none;
-		}
 	}
 	@include small-breakpoint {
 		.sidebar {
 			.menu {
+				border: none;
 				width: 100% !important;
 			}
 		}

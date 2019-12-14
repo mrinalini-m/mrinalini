@@ -1,7 +1,5 @@
 <template>
 	<Layout>
-		<!-- Learn how to use images here: https://gridsome.org/docs/images -->
-
 		<h1>I'm Mrinalini</h1>
 
 		<p>

@@ -26,8 +26,5 @@
 		components: {
 			Sidebar
 		}
-		// mounted() {
-		// 	console.log(this.postCategory)
-		// }
 	}
 </script>

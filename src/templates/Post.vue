@@ -22,19 +22,6 @@
 	</PostsLayout>
 </template>
 
-<page-query>
-query Post ($path: String!) {
-   post: post (path: $path) {
-    id
-    title
-    content
-    date (format: "D MMMM, YYYY")
-    tags{name, path}
-		category{id, name}
-  }
-}
-</page-query>
-
 <style lang="scss" scoped>
 	.title {
 		text-align: center;
@@ -53,3 +40,16 @@ query Post ($path: String!) {
 		margin-top: 2rem;
 	}
 </style>
+
+<page-query>
+query Post ($path: String!) {
+   post: post (path: $path) {
+    id
+    title
+    content
+    date (format: "D MMMM, YYYY")
+    tags{name, path}
+		category{id, name}
+  }
+}
+</page-query>

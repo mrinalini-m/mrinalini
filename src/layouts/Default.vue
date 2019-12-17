@@ -4,17 +4,17 @@
 		<main id="main-content">
 			<slot />
 		</main>
-		<Footer />
+		<!-- <Footer /> -->
 	</div>
 </template>
 
 <script>
 	import Header from '../components/Header'
-	import Footer from '../components/Footer'
+	// import Footer from '../components/Footer'
 	export default {
 		components: {
-			Header,
-			Footer
+			Header
+			// Footer
 		}
 	}
 </script>

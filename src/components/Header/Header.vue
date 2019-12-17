@@ -28,11 +28,10 @@
 				margin: 0;
 				height: $nav-height;
 				padding: 0 0.75rem;
-				transition: height 0.3s ease, color $transition;
 				font-size: 1.25rem;
 				font-weight: 500;
 			}
-			@include style-as-link-header;
+			@include style-as-link-header('height 0.3s ease, color $transition');
 			.active {
 				border-bottom: 1px solid $primary;
 			}

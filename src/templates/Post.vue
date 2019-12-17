@@ -1,12 +1,12 @@
 <template>
 	<PostsLayout :postCategory="this.$page.post.category.id" :showPosts="true">
-		<h3>{{ $page.post.title }}</h3>
+		<h1 class="post-title">{{ $page.post.title }}</h1>
 
 		<div class="post-meta">
-			<p class="date">
+			<div class="date">
 				{{ $page.post.date }}
-			</p>
-			<div class="tag-container">
+			</div>
+			<ul class="tag-container">
 				<g-link
 					v-for="tag in $page.post.tags"
 					:key="tag.id"
@@ -15,7 +15,7 @@
 				>
 					{{ tag.name.toLowerCase() }}
 				</g-link>
-			</div>
+			</ul>
 		</div>
 
 		<div class="post-content" v-html="$page.post.content" />
@@ -23,9 +23,11 @@
 </template>
 
 <style lang="scss" scoped>
-	.title {
-		text-align: center;
-		padding-bottom: 2rem;
+	.post {
+		background-color: red;
+	}
+	.post-title {
+		font-size: 1.9rem;
 	}
 
 	.post-meta {
@@ -38,6 +40,7 @@
 	}
 	.post-content {
 		margin-top: 2rem;
+		text-align: left;
 	}
 </style>
 

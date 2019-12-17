@@ -29,7 +29,7 @@ query ($id: ID!) {
           ... on Post {
             id
             title
-						date (format: "D MMMM YYYY")
+						date (format: "D MMMM, YYYY")
             path
 						tags{name, path}
           }

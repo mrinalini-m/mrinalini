@@ -86,9 +86,6 @@
 				transform: translate(14px, -6px) scale(0.75);
 			}
 			.outlined-input-wrapper {
-				.outlined-label {
-					outline: 0;
-				}
 				.outlined-input-fieldset {
 					border-width: 2px;
 					padding-left: 8px;

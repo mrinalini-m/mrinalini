@@ -7,7 +7,7 @@
 	>
 		<article class="posts">
 			<header class="title-wrapper">
-				<h4 class="title">{{ title }}</h4>
+				<h2 class="title">{{ title }}</h2>
 				<p v-if="description" class="description">
 					{{ $page.category.description }}
 				</p>
@@ -134,7 +134,7 @@
         node {
           id
           title
-          date (format: "D MMMM YYYY")
+          date (format: "D MMMM, YYYY")
           path
           tags{name, path}
         }

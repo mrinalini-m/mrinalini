@@ -28,7 +28,7 @@ query ($id: ID!) {
             id
             title
             path
-						date (format: "D MMMM YYYY")
+						date (format: "D MMMM, YYYY")
 						tags{name, path}
           }
         }

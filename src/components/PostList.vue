@@ -1,11 +1,11 @@
 <template>
 	<div class="post">
 		<g-link :to="post.path" class="post-link">
-			<h5 class="title">{{ post.title }}</h5>
+			<h3 class="title">{{ post.title }}</h3>
 			<div class="post-meta">
-				<p class="date">
+				<div class="date">
 					{{ post.date }}
-				</p>
+				</div>
 				<ul class="tag-container">
 					<li>
 						<g-link
@@ -34,7 +34,7 @@
 		border: 1px solid transparent;
 		border-top: $border;
 		margin-bottom: -1px;
-		transition: backgroundo-color 0.2s ease, border 0.2s ease;
+		transition: background-color 0.2s ease, border 0.2s ease;
 		&:first-of-type {
 			border-top: 1px solid transparent;
 		}
@@ -57,11 +57,6 @@
 				line-height: normal;
 				margin-bottom: 0.5rem;
 				text-align: left;
-			}
-			.tag-container {
-				a {
-					padding: 3px 6px;
-				}
 			}
 		}
 

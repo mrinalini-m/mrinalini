@@ -4,6 +4,9 @@ $primary: rgb(63, 187, 131);
 $secondary-dark: #273849;
 $secondary-medium: #304455;
 $secondary-light: #4f5959;
+$yellow: #f6d55c;
+$red: #ff6666;
+// $info: #1c90f3;
 
 $background: white;
 $font-color: $secondary-medium;
@@ -12,9 +15,7 @@ $link-hover-color: scale-color($link-color, $lightness: -15%);
 $border-color: #dddddd;
 $background-secondary: #f8f8f8;
 $post-meta: scale-color($secondary-light, $lightness: 25%);
-
-// $red: #ff6666;
-// $info: #1c90f3;
+$inline-code-color: #d63200;
 
 //Miscellaneous
 $max-width: 800px;
@@ -23,7 +24,7 @@ $footer-height: 4rem;
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 
 //Borders and box-shadows
-$border-radius: 4px;
+$border-radius: 2px;
 $border: 1px solid $border-color;
 $box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
 	0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
@@ -34,13 +35,12 @@ $heading-line-height: 1.3;
 $heading-font-color: $secondary-dark;
 
 // Heading font size
-$h1: 2.25rem;
-$h2: 2.2rem;
-$h3: 1.75rem;
-$h4: 1.6rem;
-$h5: 1.3rem;
-$h6: 1.17rem;
-
+$h1: 2rem;
+$h2: 1.5rem;
+$h3: 1.17rem;
+$h4: 1rem;
+$h5: 0.83rem;
+$h6: 0.67rem;
 /* Containers */
 
 $small: 500px;
@@ -66,23 +66,28 @@ $large: 1200px;
 	}
 }
 
-@mixin style-as-link($link, $link-hover, $active) {
-	transition: color $transition;
+@mixin style-as-link($link, $link-hover, $active, $transition) {
+	transition: $transition;
 	color: $link;
 	&:visited,
 	&:active {
 		color: $active;
-		transition: color $transition;
+		transition: $transition;
 	}
 	&:hover {
 		color: $link-hover;
-		transition: color $transition;
+		transition: $transition;
 	}
 }
 
-@mixin style-as-link-header {
+@mixin style-as-link-header($transition) {
 	a.style-as-link-header {
-		@include style-as-link($secondary-dark, $link-hover-color, $secondary-dark);
+		@include style-as-link(
+			$secondary-dark,
+			$link-hover-color,
+			$secondary-dark,
+			$transition
+		);
 		&.active {
 			color: $link-hover-color;
 			&:hover {
@@ -96,4 +101,5 @@ $large: 1200px;
 	$transition: $time cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 	@return $transition;
 }
+
 $transition: getTransition(0.3s);

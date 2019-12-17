@@ -1,38 +1,21 @@
 <template>
-	<PostsLayout :postCategory="this.$page.category.id" :showPosts="true">
-		<header class="title-wrapper">
-			<h4 class="title">{{ $page.category.name }}</h4>
-			<p class="description">{{ $page.category.description }}</p>
-		</header>
-		<PostList
-			v-for="edge in $page.category.belongsTo.edges"
-			:key="edge.node.id"
-			:post="edge.node"
-		/>
-	</PostsLayout>
+	<Posts
+		:postCategory="this.$page.category.id"
+		:showPosts="true"
+		:edges="$page.category.belongsTo.edges"
+		:title="$page.category.name"
+		:description="$page.category.description"
+	/>
 </template>
 
 <script>
-	import PostList from '@/components/PostList'
+	import Posts from '@/pages/Posts'
 	export default {
 		components: {
-			PostList
+			Posts
 		}
 	}
 </script>
-
-<style lang="scss">
-	.title-wrapper {
-		padding: 0.5rem;
-		.title {
-			margin-bottom: 0.7rem;
-		}
-		.description {
-			margin-bottom: 1.5rem;
-			text-align: left;
-		}
-	}
-</style>
 
 <page-query>
 query ($id: ID!) {
@@ -40,7 +23,7 @@ query ($id: ID!) {
 		id
     name
     description
-    belongsTo {
+    belongsTo(sort: [{ by: "date" , order: DESC}, { by: "title", order: ASC }]) {
       edges {
         node {
           ... on Post {

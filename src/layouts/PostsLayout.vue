@@ -7,9 +7,7 @@
 			:showCategories="this.showCategories"
 		/>
 		<section class="container">
-			<article class="layout" id="posts">
-				<slot />
-			</article>
+			<slot />
 		</section>
 	</Layout>
 </template>

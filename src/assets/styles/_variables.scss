@@ -18,7 +18,6 @@ $post-meta: scale-color($secondary-light, $lightness: 25%);
 
 //Miscellaneous
 $max-width: 800px;
-$transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 $nav-height: 4rem;
 $footer-height: 4rem;
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
@@ -92,3 +91,9 @@ $large: 1200px;
 		}
 	}
 }
+
+@function getTransition($time) {
+	$transition: $time cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+	@return $transition;
+}
+$transition: getTransition(0.3s);

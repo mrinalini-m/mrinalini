@@ -95,7 +95,6 @@
 				return document.getElementById('main-content')
 			}
 		},
-
 		async mounted() {
 			this.mainContent.style['margin-left'] = this.marginLeft
 			const boundFetch = this.$fetch.bind(this)

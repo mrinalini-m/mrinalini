@@ -30,24 +30,23 @@
 </script>
 
 <style lang="scss" scoped>
-	.post:first-of-type {
-		margin-top: 0.75rem;
-	}
-	.post:last-of-type {
-		border-bottom: $border;
-	}
 	.post {
 		border: 1px solid transparent;
 		border-top: $border;
 		margin-bottom: -1px;
 		transition: backgroundo-color 0.2s ease, border 0.2s ease;
-
+		&:first-of-type {
+			border-top: 1px solid transparent;
+		}
+		&:last-of-type {
+			border-bottom: $border;
+		}
 		&:hover {
 			border: $border;
 			border-radius: $border-radius;
 			background-color: $background-secondary;
 			+ .post {
-				border-top: 1px solid transparent;
+				border-top-color: transparent;
 			}
 		}
 		.post-link {
@@ -56,7 +55,7 @@
 			padding: 0.75rem 1.5rem;
 			.title {
 				line-height: normal;
-				margin-bottom: 0.2rem;
+				margin-bottom: 0.5rem;
 				text-align: left;
 			}
 			.tag-container {

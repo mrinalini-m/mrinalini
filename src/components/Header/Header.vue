@@ -10,6 +10,7 @@
 			.links {
 				a {
 					height: calc(#{$nav-height} - 1rem);
+
 					transition: height 0.3s ease, color $transition;
 				}
 			}

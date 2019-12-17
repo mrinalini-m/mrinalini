@@ -1,22 +1,17 @@
 <template>
-	<PostsLayout :showTags="true">
-		<section class="posts">
-			<header class="title-wrapper">
-				<h4 class="title">{{ $page.tag.name }}</h4>
-			</header>
-			<PostList
-				v-for="edge in $page.tag.belongsTo.edges"
-				:key="edge.node.id"
-				:post="edge.node"
-			/>
-		</section>
-	</PostsLayout>
+	<Posts
+		:showTags="true"
+		:showCategories="false"
+		:edges="$page.tag.belongsTo.edges"
+		:title="$page.tag.name"
+		:postTag="$page.tag.id"
+	/>
 </template>
 <script>
-	import PostList from '@/components/PostList'
+	import Posts from '@/pages/Posts'
 	export default {
 		components: {
-			PostList
+			Posts
 		}
 	}
 </script>
@@ -25,6 +20,7 @@
 query ($id: ID!) {
   tag(id: $id) {
     name
+		id
     belongsTo {
       edges {
         node {

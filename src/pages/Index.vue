@@ -1,5 +1,6 @@
 <template>
 	<Layout>
+		<Sidebar :isIndex="true" />
 		<h1>I'm Mrinalini</h1>
 
 		<p>
@@ -18,7 +19,11 @@
 </template>
 
 <script>
+	import Sidebar from '@/components/Sidebar'
 	export default {
+		components: {
+			Sidebar
+		},
 		metaInfo: {
 			title: 'Mrinalini'
 		}

@@ -1,7 +1,27 @@
 <template>
 	<div class="sidebar">
 		<transition name="slide">
-			<nav v-show="show" class="menu" :style="[menuWidth]">
+			<nav
+				v-show="show"
+				class="menu"
+				:class="{ index: isIndex }"
+				:style="[menuWidth]"
+			>
+				<div v-if="isIndex" class="nav-links">
+					<ul>
+						<li class="nav-link">
+							<h3>
+								<g-link
+									:style="paddingLeft"
+									class="style-as-link-header"
+									to="/posts/"
+								>
+									Posts
+								</g-link>
+							</h3>
+						</li>
+					</ul>
+				</div>
 				<div v-if="showTags" class="tags">
 					<ul>
 						<li v-for="tag in tags" :key="tag.id" class="tag">
@@ -73,7 +93,8 @@
 			},
 			showPosts: { type: Boolean, required: false, default: false },
 			showTags: { type: Boolean, required: false, default: false },
-			showCategories: { type: Boolean, required: false, default: false }
+			showCategories: { type: Boolean, required: false, default: false },
+			isIndex: { type: Boolean, required: false, default: false }
 		},
 
 		data() {
@@ -115,11 +136,13 @@
 				}
 				this.marginLeft = '300px'
 			}
-			if (!this.showPosts && (this.showCategories || this.showTags)) {
+			if (
+				!this.showPosts &&
+				(this.showCategories || this.showTags || this.isIndex)
+			) {
 				this.paddingLeft = { 'padding-left': '2rem' }
 			}
-
-			this.mainContent.style['margin-left'] = this.marginLeft
+			if (!this.isIndex) this.mainContent.style['margin-left'] = this.marginLeft
 			const boundFetch = this.$fetch.bind(this)
 
 			this.$root.$on('toggle-sidebar', data => {
@@ -161,7 +184,8 @@
 			padding: 2rem 0;
 			padding-bottom: 6rem;
 			.categories,
-			.tags {
+			.tags,
+			.nav-links {
 				.active {
 					position: relative;
 					&:after {
@@ -245,6 +269,9 @@
 								padding-left: 2rem;
 							}
 						}
+						&.tag {
+							font-weight: 500;
+						}
 						@include style-as-link-header(
 							'padding-left 0.3s ease,
 							color $transition'
@@ -266,7 +293,8 @@
 				}
 			}
 			.tags,
-			.accent {
+			.accent,
+			.nav-links {
 				ul {
 					li {
 						h3 {
@@ -310,6 +338,9 @@
 		@media screen and (min-width: 900px) {
 			.menu {
 				display: block !important;
+				&.index {
+					display: none !important;
+				}
 			}
 		}
 

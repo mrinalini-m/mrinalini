@@ -65,6 +65,10 @@
 				0 16px 16px rgba(0, 0, 0, 0.03);
 			.nav {
 				height: calc(#{$nav-height} - 1rem);
+				.navbar-toggle {
+					margin: 6px 0 6px 8px;
+					transition: margin 0.3s ease;
+				}
 				.brand {
 					a {
 						color: $heading-font-color;

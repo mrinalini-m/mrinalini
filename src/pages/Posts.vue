@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout
+	<Layout
 		:showCategories="showCategories"
 		:postCategory="postCategory"
 		:showPosts="showPosts"
@@ -21,7 +21,7 @@
 				/>
 			</div>
 		</article>
-	</PostsLayout>
+	</Layout>
 </template>
 
 <script>

@@ -1,8 +1,6 @@
 <template>
-	<Layout>
-		<Sidebar :isIndex="true" />
+	<Layout :isIndex="true">
 		<h1>I'm Mrinalini</h1>
-
 		<p>
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 			tempor incididunt ut labore et dolore magna aliqua. Arcu felis bibendum ut
@@ -19,11 +17,7 @@
 </template>
 
 <script>
-	import Sidebar from '@/components/Sidebar'
 	export default {
-		components: {
-			Sidebar
-		},
 		metaInfo: {
 			title: 'Mrinalini'
 		}

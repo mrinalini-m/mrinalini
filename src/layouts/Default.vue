@@ -2,19 +2,37 @@
 	<div class="layout" id="app">
 		<Header class="header" />
 		<main id="main-content">
-			<slot />
+			<Sidebar
+				:isIndex="isIndex"
+				:postCategory="this.postCategory"
+				:showPosts="this.showPosts"
+				:showTags="this.showTags"
+				:showCategories="this.showCategories"
+			/>
+			<section class="container">
+				<slot />
+			</section>
 		</main>
 		<!-- <Footer /> -->
 	</div>
 </template>
 
 <script>
+	import Sidebar from '../components/Sidebar'
 	import Header from '../components/Header'
 	// import Footer from '../components/Footer'
 	export default {
 		components: {
-			Header
+			Header,
+			Sidebar
 			// Footer
+		},
+		props: {
+			postCategory: { type: String, required: false },
+			showTags: { type: Boolean, required: false },
+			showPosts: { type: Boolean, required: false },
+			showCategories: { type: Boolean, required: false },
+			isIndex: { type: Boolean, required: false }
 		}
 	}
 </script>

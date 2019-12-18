@@ -191,7 +191,7 @@
 					&:after {
 						width: 100px;
 					}
-					font-weight: 700;
+					font-weight: 600;
 					background-color: scale-color($primary, $lightness: 90%);
 				}
 				ul {
@@ -211,16 +211,16 @@
 						}
 						// before for link tag. Can't have :before and :after in same css selection
 						a.style-as-link-header {
-							padding: 0.3rem 1rem 0.3rem;
+							padding: 0.75rem 1.5rem 0.75rem;
 							text-decoration: none;
 							display: block;
-							line-height: 1.5rem;
+							line-height: 1.5;
 							position: relative;
 
 							&:before {
 								content: '';
 								left: 0.75rem;
-								top: 12px;
+								top: 1.3rem;
 								height: 0px;
 								width: 0px;
 								position: absolute;
@@ -250,7 +250,7 @@
 								border-radius: 4px;
 								content: '';
 								left: 0.75rem;
-								top: 12px;
+								top: 1.3rem;
 								height: 8px;
 								position: absolute;
 								transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
@@ -264,7 +264,6 @@
 						}
 						&.post {
 							a.style-as-link-header {
-								font-weight: 400;
 								font-size: 0.875rem;
 								padding-left: 2rem;
 							}

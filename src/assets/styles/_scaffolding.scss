@@ -26,7 +26,7 @@ table {
 }
 
 p {
-	line-height: 1rem;
+	line-height: 1.5rem;
 }
 //buttons
 button {
@@ -147,21 +147,22 @@ ul {
 	&.tag-container {
 		margin: 0;
 		a {
+			text-transform: uppercase;
 			display: inline-block;
-			padding: 3px 6px;
-			border: 1px solid $primary;
-			border-radius: 16px;
+			padding: 0.125rem 0.5rem;
+
+			border-radius: 5px;
 			font-size: 0.8rem;
-			color: $primary;
-			margin: 0 0.5rem 0.5rem 0;
+			color: $white;
+			margin: 0 0.625rem 0.5rem 0;
 			font-weight: 600;
 			transition: background-color $transition;
-			background-color: $background;
+			background-color: $primary;
 			line-height: normal;
 			&:hover,
 			&:active,
 			&:focus {
-				background: scale-color($primary, $lightness: 85%);
+				background: $link-hover-color;
 			}
 		}
 	}

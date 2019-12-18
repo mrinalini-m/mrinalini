@@ -1,5 +1,5 @@
 <template>
-	<PostsLayout :postCategory="this.$page.post.category.id" :showPosts="true">
+	<Layout :postCategory="this.$page.post.category.id" :showPosts="true">
 		<h1 class="post-title">{{ $page.post.title }}</h1>
 
 		<div class="post-meta">
@@ -19,7 +19,7 @@
 		</div>
 
 		<div class="post-content" v-html="$page.post.content" />
-	</PostsLayout>
+	</Layout>
 </template>
 
 <style lang="scss" scoped>

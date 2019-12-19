@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/add-two-numbers'
 date: 2019-11-22
 slug: '0002-add-two-numbers'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

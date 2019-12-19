@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/longest-substring-without-repeating-charact
 date: 2019-11-22
 slug: '0003-longest-substring-without-repeating-characters'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

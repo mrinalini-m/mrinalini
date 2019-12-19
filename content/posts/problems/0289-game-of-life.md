@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/game-of-life'
 date: 2019-11-22
 slug: '0289-game-of-life'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

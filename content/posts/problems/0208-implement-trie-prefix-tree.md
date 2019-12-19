@@ -4,10 +4,10 @@ link: 'https://leetcode.com/problems/implement-trie-prefix-tree'
 date: 2019-11-22
 slug: '0208-implement-trie-prefix-tree'
 tags:
-  - javascript
   - leetcode
   - algorithms
-category:  problems
+  - tree
+category: problems
 ---
 
 ```js
@@ -16,39 +16,39 @@ category:  problems
  */
 // Mine
 class Trie {
-  constructor() {
-    this.letters = {}
-  }
+	constructor() {
+		this.letters = {}
+	}
 
-  insert(word) {
-    const len = word.length
-    let curr = this.letters
-    for (let i = 0; i < len; i++) {
-      const letter = word[i]
-      if (!curr[letter]) curr[letter] = {}
-      curr = curr[letter]
-    }
-    curr.isEnd = true
-  }
+	insert(word) {
+		const len = word.length
+		let curr = this.letters
+		for (let i = 0; i < len; i++) {
+			const letter = word[i]
+			if (!curr[letter]) curr[letter] = {}
+			curr = curr[letter]
+		}
+		curr.isEnd = true
+	}
 
-  traverse(word) {
-    const len = word.length
-    let curr = this.letters
-    for (let i = 0; i < len; i++) {
-      const letter = word[i]
-      if (!curr[letter]) return false
-      curr = curr[letter]
-    }
-    return curr
-  }
+	traverse(word) {
+		const len = word.length
+		let curr = this.letters
+		for (let i = 0; i < len; i++) {
+			const letter = word[i]
+			if (!curr[letter]) return false
+			curr = curr[letter]
+		}
+		return curr
+	}
 
-  search(word) {
-    return !!this.traverse(word).isEnd
-  }
+	search(word) {
+		return !!this.traverse(word).isEnd
+	}
 
-  startsWith(prefix) {
-    return !!this.traverse(prefix)
-  }
+	startsWith(prefix) {
+		return !!this.traverse(prefix)
+	}
 }
 // https://leetcode.com/problems/implement-trie-prefix-tree/discuss/58965/Concise-JavaScript-solution
 //ES5 Constructor function version
@@ -87,5 +87,4 @@ console.log(trie)
 console.log(trie.search('app'))
 console.log(trie.search('apple'))
 console.log(trie.startsWith('app'))
-
 ```

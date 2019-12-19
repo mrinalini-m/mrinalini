@@ -4,10 +4,10 @@ link: 'https://leetcode.com/problems/decode-string'
 date: 2019-11-22
 slug: '0394-decode-string'
 tags:
-  - javascript
   - leetcode
   - algorithms
-category:  problems
+  - stack
+category: problems
 ---
 
 ```js
@@ -61,28 +61,28 @@ category:  problems
 
 //Second Attempt with Stack
 function decodeString(str) {
-  const stack = []
-  let subStr = '',
-    multiplier = ''
-  for (curr of str) {
-    if (curr === '[') {
-      stack.push(subStr)
-      stack.push(parseInt(multiplier))
-      multiplier = ''
-      subStr = ''
-    } else if (curr === ']') {
-      multiplier = stack.pop()
-      const prevStr = stack.pop()
-      subStr = prevStr + subStr.repeat(multiplier)
-      multiplier = ''
-    } else if (Number.isInteger(parseInt(curr))) {
-      multiplier += curr
-    } else {
-      subStr += curr
-    }
-  }
+	const stack = []
+	let subStr = '',
+		multiplier = ''
+	for (curr of str) {
+		if (curr === '[') {
+			stack.push(subStr)
+			stack.push(parseInt(multiplier))
+			multiplier = ''
+			subStr = ''
+		} else if (curr === ']') {
+			multiplier = stack.pop()
+			const prevStr = stack.pop()
+			subStr = prevStr + subStr.repeat(multiplier)
+			multiplier = ''
+		} else if (Number.isInteger(parseInt(curr))) {
+			multiplier += curr
+		} else {
+			subStr += curr
+		}
+	}
 
-  return subStr
+	return subStr
 }
 
 //Test cases
@@ -93,5 +93,4 @@ console.log(decodeString(''))
 console.log(decodeString('2[]dfsd'))
 console.log(decodeString('2[a]3[b]4[c]5[d]'))
 console.log(decodeString('0[ad]fd1[b]'))
-
 ```

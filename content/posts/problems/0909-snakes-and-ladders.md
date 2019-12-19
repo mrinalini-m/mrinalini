@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/snakes-and-ladders'
 date: 2019-11-22
 slug: '0909-snakes-and-ladders'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

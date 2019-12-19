@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/two-sum'
 date: 2019-11-22
 slug: '0001-two-sum'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

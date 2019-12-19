@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/k-closest-points'
 date: 2019-11-22
 slug: '0973-k-closest-points'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

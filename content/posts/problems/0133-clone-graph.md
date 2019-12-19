@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/clone-graph'
 date: 2019-11-22
 slug: '0133-clone-graph'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

@@ -4,10 +4,11 @@ link: 'https://leetcode.com/problems/insert-into-a-binary-search-tree'
 date: 2019-11-22
 slug: '0701-insert-into-a-binary-search-tree'
 tags:
-  - javascript
   - leetcode
   - algorithms
-category:  problems
+  - tree
+  - recursion
+category: problems
 ---
 
 ```js
@@ -30,26 +31,26 @@ const TreeNode = require('./utils.js')
 // Space Complexity - Same as time complexity
 
 var insertIntoBSTRecursive = function(root, val) {
-  const nodeToReturn = root
-  const recurseAndFind = node => {
-    if (val < node.val) {
-      if (!node.left) {
-        node.left = new TreeNode(val)
-        return
-      } else {
-        return recurseAndFind(node.left)
-      }
-    } else if (val > node.val) {
-      if (!node.right) {
-        node.right = new TreeNode(val)
-        return
-      } else {
-        return recurseAndFind(node.right)
-      }
-    }
-  }
-  recurseAndFind(root)
-  return nodeToReturn
+	const nodeToReturn = root
+	const recurseAndFind = node => {
+		if (val < node.val) {
+			if (!node.left) {
+				node.left = new TreeNode(val)
+				return
+			} else {
+				return recurseAndFind(node.left)
+			}
+		} else if (val > node.val) {
+			if (!node.right) {
+				node.right = new TreeNode(val)
+				return
+			} else {
+				return recurseAndFind(node.right)
+			}
+		}
+	}
+	recurseAndFind(root)
+	return nodeToReturn
 }
 
 //Iterative
@@ -57,45 +58,64 @@ var insertIntoBSTRecursive = function(root, val) {
 // Space Complexity - O(1)
 
 var insertIntoBST = function(root, val) {
-  const nodeToReturn = root
-  while (root) {
-    if (val < root.val) {
-      if (!root.left) {
-        root.left = new TreeNode(val)
-        break
-      }
-      root = root.left
-    } else if (val > root.val) {
-      if (!root.right) {
-        root.right = new TreeNode(val)
-        break
-      }
-      root = root.right
-    }
-  }
-  return nodeToReturn
+	const nodeToReturn = root
+	while (root) {
+		if (val < root.val) {
+			if (!root.left) {
+				root.left = new TreeNode(val)
+				break
+			}
+			root = root.left
+		} else if (val > root.val) {
+			if (!root.right) {
+				root.right = new TreeNode(val)
+				break
+			}
+			root = root.right
+		}
+	}
+	return nodeToReturn
 }
 
 const node1 = {
-  val: 4,
-  right: { val: 7, right: null, left: null },
-  left: { val: 2, right: { val: 3, right: null, left: null }, left: { val: 1, right: null, left: null } }
+	val: 4,
+	right: { val: 7, right: null, left: null },
+	left: {
+		val: 2,
+		right: { val: 3, right: null, left: null },
+		left: { val: 1, right: null, left: null }
+	}
 }
 
 const node2 = {
-  val: 40,
-  right: { val: 60, right: { val: 70, right: null, left: null }, left: { val: 50, right: null, left: null } },
-  left: { val: 20, right: { val: 30, right: null, left: null }, left: { val: 10, right: null, left: null } }
+	val: 40,
+	right: {
+		val: 60,
+		right: { val: 70, right: null, left: null },
+		left: { val: 50, right: null, left: null }
+	},
+	left: {
+		val: 20,
+		right: { val: 30, right: null, left: null },
+		left: { val: 10, right: null, left: null }
+	}
 }
 
 const node3 = {
-  val: 40,
-  right: { val: 60, right: { val: 70, right: null, left: null }, left: { val: 50, right: null, left: null } },
-  left: { val: 20, right: { val: 30, right: null, left: null }, left: { val: 10, right: null, left: null } }
+	val: 40,
+	right: {
+		val: 60,
+		right: { val: 70, right: null, left: null },
+		left: { val: 50, right: null, left: null }
+	},
+	left: {
+		val: 20,
+		right: { val: 30, right: null, left: null },
+		left: { val: 10, right: null, left: null }
+	}
 }
 //Test cases
 console.log(JSON.stringify(insertIntoBST(node1, 5)))
 console.log(JSON.stringify(insertIntoBSTRecursive(node2, 25)))
 console.log(JSON.stringify(insertIntoBST(node3, 25)))
-
 ```

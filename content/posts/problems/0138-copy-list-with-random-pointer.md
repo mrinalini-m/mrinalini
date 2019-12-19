@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/copy-list-with-random-pointer'
 date: 2019-11-22
 slug: '0138-copy-list-with-random-pointer'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/climbing-stairs'
 date: 2019-11-22
 slug: '0070-climbing-stairs'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

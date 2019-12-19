@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/friend-circles'
 date: 2019-11-22
 slug: '0547-friend-circles'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

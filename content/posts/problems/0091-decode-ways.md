@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/decode-ways'
 date: 2019-11-22
 slug: '0091-decode-ways'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

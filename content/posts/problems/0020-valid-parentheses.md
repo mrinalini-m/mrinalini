@@ -4,10 +4,11 @@ link: 'https://leetcode.com/problems/valid-parentheses'
 date: 2019-11-22
 slug: '0020-valid-parentheses'
 tags:
-  - javascript
   - leetcode
   - algorithms
-category:  problems
+	- stack
+	- string
+category: problems
 ---
 
 ```js
@@ -47,25 +48,24 @@ Output: true */
 
 //Time = O(n), Sapce = O(n)
 var isValid = function(s) {
-  const bracketHash = {
-      '{': '}',
-      '[': ']',
-      '(': ')'
-    },
-    stack = [],
-    len = s.length
+	const bracketHash = {
+			'{': '}',
+			'[': ']',
+			'(': ')'
+		},
+		stack = [],
+		len = s.length
 
-  for (let i = 0; i < len; i++) {
-    const char = s[i]
-    if (bracketHash.hasOwnProperty(char)) {
-      stack.push(char)
-    } else if (bracketHash[stack.pop()] !== char) return false
-  }
-  return !stack.length //return true returns true for array of length 1
+	for (let i = 0; i < len; i++) {
+		const char = s[i]
+		if (bracketHash.hasOwnProperty(char)) {
+			stack.push(char)
+		} else if (bracketHash[stack.pop()] !== char) return false
+	}
+	return !stack.length //return true returns true for array of length 1
 }
 
 //Test cases
 console.log(isValid('()[]{}'))
 console.log(isValid('['))
-
 ```

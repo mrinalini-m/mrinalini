@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/find-the-celebrity'
 date: 2019-11-22
 slug: '0277-find-the-celebrity'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

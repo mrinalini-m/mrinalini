@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/subarray-sum-equals-k'
 date: 2019-11-22
 slug: '0560-subarray-sum-equals-k'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

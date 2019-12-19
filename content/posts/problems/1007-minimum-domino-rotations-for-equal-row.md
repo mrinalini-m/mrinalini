@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/minimum-domino-rotations-for-equal-row'
 date: 2019-11-22
 slug: '1007-minimum-domino-rotations-for-equal-row'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-link
 date: 2019-11-22
 slug: '1171-remove-zero-sum-consecutive-nodes-from-linked-list'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

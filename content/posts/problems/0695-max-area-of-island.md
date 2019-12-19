@@ -4,7 +4,6 @@ link: 'https://leetcode.com/problems/max-area-of-island'
 date: 2019-11-22
 slug: '0695-max-area-of-island'
 tags:
-  - javascript
   - leetcode
   - algorithms
 category:  problems

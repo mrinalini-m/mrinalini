@@ -51,7 +51,7 @@ query Post ($path: String!) {
     title
     content
     date (format: "D MMMM, YYYY")
-    tags{name, path}
+    tags{name, id, path}
 		category{id, name}
   }
 }

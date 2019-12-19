@@ -29,11 +29,23 @@ query ($id: ID!) {
             title
             path
 						date (format: "D MMMM, YYYY")
-						tags{name, path}
+						tags{name, id, path}
           }
         }
       }
     }
   }
+	allPost(filter: { tags: { contains : ["css", "animation"]}}) {
+		totalCount
+		edges {
+			node {
+				id
+				title
+				date (format: "D MMMM, YYYY")
+				path
+				tags{name, id, path}
+			}
+		}
+	}
 }
 </page-query>

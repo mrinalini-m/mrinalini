@@ -84,11 +84,34 @@
 			title: 'Mrinalini'
 		},
 		methods: {
-			filterPosts: function(searchTerm) {
+			filterByTerm: function(searchTerm) {
 				let filteredPosts = this.posts.filter(post =>
 					post.node.title.toLowerCase().includes(searchTerm.toLowerCase())
 				)
-				this.filteredPosts = filteredPosts
+				return filteredPosts
+			},
+			filterByTags: function(tags, firstPass) {
+				const filtered = []
+				firstPass.forEach(post => {
+					const postTags = post.node.tags
+					const arr1 = []
+					for (const tag of postTags) {
+						arr1.push(tag.id.toLowerCase())
+					}
+					const another = tags
+					var filteredArray = arr1.filter(callback)
+					function callback(el) {
+						return another.indexOf(el) >= 0
+					}
+					if (filteredArray.length === tags.length) {
+						filtered.push(post)
+					}
+				})
+				return filtered
+			},
+			filterPosts: function(term, tags) {
+				const firstPass = term.length ? this.filterByTerm(term) : this.posts
+				this.filteredPosts = this.filterByTags(tags, firstPass)
 			}
 		},
 		watch: {
@@ -136,7 +159,7 @@
           title
           date (format: "D MMMM, YYYY")
           path
-          tags{name, path}
+          tags{name, id, path}
         }
       }
     }

@@ -18,13 +18,28 @@ async function getTags(boundFetch) {
 	return parsedTags
 }
 
+async function getPosts(boundFetch) {
+	let allPosts
+	try {
+		allPosts = await boundFetch('/posts')
+	} catch (error) {
+		console.error(error)
+	}
+	return allPosts
+}
+
 function parsePosts(posts) {
 	const parsedPosts = []
 	for (const post of posts) {
+		const tags = []
+		for (const tag of post.node.tags) {
+			tags.push(tag.id.toLowerCase())
+		}
 		const parsedPost = {
 			id: post.node.id,
 			path: post.node.path,
-			title: post.node.title
+			title: post.node.title,
+			tags: tags
 		}
 		parsedPosts.push(parsedPost)
 	}
@@ -32,14 +47,9 @@ function parsePosts(posts) {
 	return parsedPosts
 }
 
-async function getCatsAndPosts(boundFetch) {
-	let results
-	try {
-		results = await boundFetch('/posts')
-	} catch (error) {
-		console.error(error)
-	}
-	const categories = results.data.allCategory.edges
+async function getPostsByCategory(boundFetch) {
+	const allPosts = await getPosts(boundFetch)
+	const categories = allPosts.data.allCategory.edges
 	const parsedCategories = {},
 		parsedPosts = {}
 	for (const category of categories) {
@@ -59,4 +69,9 @@ async function getCatsAndPosts(boundFetch) {
 	return { parsedCategories, parsedPosts }
 }
 
-export { getTags, getCatsAndPosts }
+async function getAllPosts(boundFetch) {
+	const posts = await getPosts(boundFetch),
+		allPosts = parsePosts(posts.data.allPost.edges)
+	return allPosts
+}
+export { getTags, getPostsByCategory, getAllPosts }

@@ -77,7 +77,7 @@
 </template>
 
 <script>
-	import { getTags, getCatsAndPosts } from '@/utils'
+	import { getTags, getPostsByCategory } from '@/utils'
 	export default {
 		name: 'sidebar',
 		props: {
@@ -148,7 +148,7 @@
 			this.$root.$on('toggle-sidebar', data => {
 				this.show = data && !this.show
 			})
-			const { parsedCategories, parsedPosts } = await getCatsAndPosts(
+			const { parsedCategories, parsedPosts } = await getPostsByCategory(
 				boundFetch
 			)
 			this.categories = parsedCategories

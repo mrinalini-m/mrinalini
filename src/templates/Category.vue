@@ -31,7 +31,7 @@ query ($id: ID!) {
             title
 						date (format: "D MMMM, YYYY")
             path
-						tags{name, path}
+						tags{name, path, id}
           }
         }
       }

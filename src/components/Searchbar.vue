@@ -1,32 +1,54 @@
 <template>
-	<div
-		class="input-form-control"
-		:class="[{ focused: isFocused }, { 'not-empty': !empty }]"
-	>
-		<label ref="label" class="outlined-label" for="search">Search Posts</label>
-		<div class="outlined-input-wrapper">
-			<input
-				type="text"
-				class="outlined-input"
-				autocomplete="off"
+	<div>
+		<div class="input-form-control">
+			<multiselect
+				v-model="value"
+				:options="tags"
+				:multiple="true"
+				:close-on-select="true"
+				:clear-on-select="false"
+				:preserve-search="true"
+				placeholder="Search Tags"
+				:hide-selected="true"
+				:preselect-first="true"
 				@input="onInput"
-				@focus="onFocus"
-				@blur="onBlur"
-				v-model="searchTerm"
-				name="searchTerm"
-				id="search"
-				placeholder=""
-			/>
-			<fieldset aria-hidden="true" class="outlined-input-fieldset">
-				<legend class="input-legend" :style="[focusedLabelWidth]">
-					<span>​</span>
-				</legend>
-			</fieldset>
+			>
+			</multiselect>
+		</div>
+		<div
+			class="input-form-control"
+			:class="[{ focused: isFocused }, { 'not-empty': !empty }]"
+		>
+			<label ref="label" class="outlined-label" for="search"
+				>Search Posts</label
+			>
+			<div class="outlined-input-wrapper">
+				<input
+					type="text"
+					class="outlined-input"
+					autocomplete="off"
+					@input="onInput"
+					@focus="onFocus"
+					@blur="onBlur"
+					v-model="searchTerm"
+					name="searchTerm"
+					id="search"
+					placeholder=""
+				/>
+				<fieldset aria-hidden="true" class="outlined-input-fieldset">
+					<legend class="input-legend" :style="[focusedLabelWidth]">
+						<span>​</span>
+					</legend>
+				</fieldset>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
+	import Multiselect from 'vue-multiselect'
+	import { getTags } from '@/utils'
+
 	export default {
 		name: 'searchbar',
 		data() {
@@ -35,13 +57,18 @@
 				focusedLabelWidth: { width: '0.1px' },
 				calculatedWidth: { width: '0.1px' },
 				isFocused: false,
-				empty: true
+				empty: true,
+				value: [],
+				tags: []
 			}
 		},
 
+		components: {
+			Multiselect
+		},
 		methods: {
 			onInput(event) {
-				this.$emit('filter', this.searchTerm)
+				this.$emit('filter', this.searchTerm, this.value)
 				this.empty = this.searchTerm.length === 0 ? true : false
 			},
 			onFocus(event) {
@@ -54,10 +81,18 @@
 				this.isFocused = false
 				this.empty = this.searchTerm.length === 0 ? true : false
 				if (!this.empty) this.focusedLabelWidth = this.calculatedWidth
+			},
+			customLabel(option) {
+				return `${option.library} - ${option.language}`
 			}
 		},
-		mounted() {
-			const width = this.$refs.label.getBoundingClientRect().width * 0.75 + 8
+
+		async mounted() {
+			const boundFetch = this.$fetch.bind(this),
+				tags = await getTags(boundFetch),
+				width = this.$refs.label.getBoundingClientRect().width * 0.75 + 8
+
+			this.tags = Object.keys(tags)
 			this.calculatedWidth = { width: width + 'px' }
 		}
 	}

@@ -6,8 +6,8 @@ slug: '0020-valid-parentheses'
 tags:
   - leetcode
   - algorithms
-	- stack
-	- string
+  - stack
+  - string
 category: problems
 ---
 

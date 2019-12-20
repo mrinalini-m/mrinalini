@@ -6,8 +6,9 @@ slug: '0700-search-in-a-binary-search-tree'
 tags:
   - leetcode
   - algorithms
-	- stack
-	- tree
+  - stack
+  - tree
+  - recursion
 category: problems
 ---
 

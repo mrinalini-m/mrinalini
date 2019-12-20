@@ -6,8 +6,8 @@ slug: '0098-validate-binary-search-tree'
 tags:
   - leetcode
   - algorithms
-	- stack
-	- tree
+  - stack
+  - tree
 category: problems
 ---
 

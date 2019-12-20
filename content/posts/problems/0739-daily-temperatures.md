@@ -7,7 +7,7 @@ tags:
   - leetcode
   - algorithms
   - stack
-category: problems
+category:  problems
 ---
 
 ```js

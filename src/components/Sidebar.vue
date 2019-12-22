@@ -1,21 +1,12 @@
 <template>
 	<div class="sidebar">
 		<transition name="slide">
-			<nav
-				v-show="show"
-				class="menu"
-				:class="{ index: isIndex }"
-				:style="[menuWidth]"
-			>
+			<nav v-show="show" class="menu" :class="{ index: isIndex }" :style="[menuWidth]">
 				<div v-if="isIndex" class="nav-links">
 					<ul>
 						<li class="nav-link">
 							<h3>
-								<g-link
-									:style="paddingLeft"
-									class="style-as-link-header"
-									to="/posts/"
-								>
+								<g-link :style="paddingLeft" class="style-as-link-header" to="/posts/">
 									Posts
 								</g-link>
 							</h3>
@@ -26,11 +17,7 @@
 					<ul>
 						<li v-for="tag in tags" :key="tag.id" class="tag">
 							<h3>
-								<g-link
-									:style="paddingLeft"
-									class="style-as-link-header"
-									:to="tag.path"
-								>
+								<g-link :style="paddingLeft" class="style-as-link-header" :to="tag.path">
 									{{ tag.name }}
 								</g-link>
 							</h3>
@@ -43,26 +30,14 @@
 					:class="paddingLeft['padding-left'] === '2rem' ? 'accent' : ''"
 				>
 					<ul>
-						<li
-							v-for="category in categories"
-							:key="category.id"
-							class="category"
-						>
+						<li v-for="category in categories" :key="category.id" class="category">
 							<h3>
-								<g-link
-									:style="paddingLeft"
-									class="style-as-link-header"
-									:to="category.path"
-								>
+								<g-link :style="paddingLeft" class="style-as-link-header" :to="category.path">
 									{{ category.name }}
 								</g-link>
 							</h3>
 							<ul v-if="category.id === postCategory">
-								<li
-									v-for="post in posts[category.id]"
-									:key="post.id"
-									class="post"
-								>
+								<li v-for="post in posts[category.id]" :key="post.id" class="post">
 									<g-link class="style-as-link-header" :to="post.path">
 										{{ post.title }}
 									</g-link>
@@ -77,7 +52,7 @@
 </template>
 
 <script>
-	import { getTags, getPostsByCategory } from '@/utils'
+	import { mapActions } from 'vuex'
 	export default {
 		name: 'sidebar',
 		props: {
@@ -96,7 +71,9 @@
 			showCategories: { type: Boolean, required: false, default: false },
 			isIndex: { type: Boolean, required: false, default: false }
 		},
-
+		methods: {
+			...mapActions(['getCategories', 'getPosts', 'getTags'])
+		},
 		data() {
 			return {
 				menuWidth: {
@@ -104,31 +81,28 @@
 				},
 				marginLeft: this.width + 'px',
 				paddingLeft: { 'padding-left': '1rem' },
-				categories: {
-					type: Object,
-					required: false,
-					default: () => ({})
-				},
-				posts: {
-					type: Object,
-					required: false,
-					default: () => ({})
-				},
-				tags: {
-					type: Object,
-					required: false,
-					default: () => ({})
-				},
 
 				show: false
 			}
 		},
 
 		computed: {
+			tags() {
+				const tags = this.$store.state.tags
+			},
+			categories() {
+				const allCategory = this.$store.state.categories
+				return allCategory
+			},
+			posts() {
+				const allPost = this.$store.state.posts
+				return allPost
+			},
 			mainContent() {
 				return document.getElementById('main-content')
 			}
 		},
+
 		async mounted() {
 			if ((this.showCategories && this.showPosts) || this.showPosts) {
 				this.menuWidth = {
@@ -136,24 +110,30 @@
 				}
 				this.marginLeft = '300px'
 			}
-			if (
-				!this.showPosts &&
-				(this.showCategories || this.showTags || this.isIndex)
-			) {
+
+			if (!this.showPosts && (this.showCategories || this.showTags || this.isIndex)) {
 				this.paddingLeft = { 'padding-left': '2rem' }
 			}
-			if (!this.isIndex) this.mainContent.style['margin-left'] = this.marginLeft
-			const boundFetch = this.$fetch.bind(this)
 
+			if (!this.isIndex) this.mainContent.style['margin-left'] = this.marginLeft
+			const fetch = this.$fetch
+
+			if (this.showCategories || this.showPosts) {
+				const res = await this.$fetch('/posts'),
+					categories = res.data.allCategory.edges
+				this.getCategories({ categories, fetch })
+			}
+
+			try {
+				const res = await fetch('/tags'),
+					tags = res.data.allTag.edges
+				this.getTags({ tags })
+			} catch (error) {
+				console.error(error)
+			}
 			this.$root.$on('toggle-sidebar', data => {
 				this.show = data && !this.show
 			})
-			const { parsedCategories, parsedPosts } = await getPostsByCategory(
-				boundFetch
-			)
-			this.categories = parsedCategories
-			this.posts = parsedPosts
-			this.tags = await getTags(boundFetch)
 		}
 	}
 </script>
@@ -271,10 +251,7 @@
 						&.tag {
 							font-weight: 500;
 						}
-						@include style-as-link-header(
-							'padding-left 0.3s ease,
-							color $transition'
-						);
+						@include style-as-link-header('padding-left 0.3s ease, color $transition');
 					}
 				}
 				.posts {
@@ -283,10 +260,7 @@
 							a.style-as-link-header {
 								font-size: 1rem;
 							}
-							@include style-as-link-header(
-								'padding-left 0.3s ease,
-								color $transition'
-							);
+							@include style-as-link-header('padding-left 0.3s ease, color $transition');
 						}
 					}
 				}
@@ -357,3 +331,19 @@
 		}
 	}
 </style>
+
+<static-query>
+query {
+	allCategory {
+		totalCount
+		edges {
+			node {
+				id
+				path
+				name
+				description
+			}
+		}
+	}
+}
+</static-query>

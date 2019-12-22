@@ -7,12 +7,7 @@
 				{{ $page.post.date }}
 			</div>
 			<ul class="tag-container">
-				<g-link
-					v-for="tag in $page.post.tags"
-					:key="tag.id"
-					:to="tag.path"
-					class="link"
-				>
+				<g-link v-for="tag in $page.post.tags" :key="tag.id" :to="tag.path" class="link">
 					{{ tag.name.toLowerCase() }}
 				</g-link>
 			</ul>

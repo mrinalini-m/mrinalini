@@ -10,18 +10,13 @@
 				:preserve-search="true"
 				placeholder="Search Tags"
 				:hide-selected="true"
-				:preselect-first="true"
+				:preselect-first="false"
 				@input="onInput"
 			>
 			</multiselect>
 		</div>
-		<div
-			class="input-form-control"
-			:class="[{ focused: isFocused }, { 'not-empty': !empty }]"
-		>
-			<label ref="label" class="outlined-label" for="search"
-				>Search Posts</label
-			>
+		<div class="input-form-control" :class="[{ focused: isFocused }, { 'not-empty': !empty }]">
+			<label ref="label" class="outlined-label" for="search">Search Posts</label>
 			<div class="outlined-input-wrapper">
 				<input
 					type="text"
@@ -47,7 +42,6 @@
 
 <script>
 	import Multiselect from 'vue-multiselect'
-	import { getTags } from '@/utils'
 
 	export default {
 		name: 'searchbar',
@@ -58,13 +52,17 @@
 				calculatedWidth: { width: '0.1px' },
 				isFocused: false,
 				empty: true,
-				value: [],
-				tags: []
+				value: []
 			}
 		},
 
 		components: {
 			Multiselect
+		},
+		computed: {
+			tags() {
+				return Object.keys(this.$store.state.tags)
+			}
 		},
 		methods: {
 			onInput(event) {
@@ -88,11 +86,8 @@
 		},
 
 		async mounted() {
-			const boundFetch = this.$fetch.bind(this),
-				tags = await getTags(boundFetch),
+			const fetch = this.$fetch,
 				width = this.$refs.label.getBoundingClientRect().width * 0.75 + 8
-
-			this.tags = Object.keys(tags)
 			this.calculatedWidth = { width: width + 'px' }
 		}
 	}
@@ -198,8 +193,7 @@
 				margin: 0;
 				padding: 0;
 				position: absolute;
-				transition: padding-left $transition, border-color $transition,
-					border-width $transition;
+				transition: padding-left $transition, border-color $transition, border-width $transition;
 				border-style: solid;
 				border-width: 1px;
 				border-radius: inherit;

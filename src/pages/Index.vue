@@ -1,27 +1,48 @@
 <template>
 	<Layout :isIndex="true">
-		<h1>I'm Mrinalini</h1>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-			tempor incididunt ut labore et dolore magna aliqua. Arcu felis bibendum ut
-			tristique et egestas. Ac feugiat sed lectus vestibulum mattis ullamcorper
-			velit sed ullamcorper. Egestas tellus rutrum tellus pellentesque eu. Non
-			arcu risus quis varius. In est ante in nibh mauris. Est pellentesque elit
-			ullamcorper dignissim cras tincidunt lobortis feugiat vivamus. Adipiscing
-			elit duis tristique sollicitudin nibh sit. Quis blandit turpis cursus in
-			hac habitasse platea dictumst quisque. Feugiat vivamus at augue eget arcu.
-			Vitae nunc sed velit dignissim sodales ut. Sit amet consectetur adipiscing
-			elit ut aliquam purus sit.
-		</p>
+		<div ref="maps" id="maps">Google maps</div>
 	</Layout>
 </template>
 
 <script>
+	import gmapsInit, { locations } from '@/helpers/gmaps'
+	import MarkerClusterer from '@google/markerclusterer'
 	export default {
 		metaInfo: {
 			title: 'Mrinalini'
+		},
+		async mounted() {
+			try {
+				const google = await gmapsInit(),
+					geocoder = new google.maps.Geocoder(),
+					map = new google.maps.Map(this.$refs.maps, {
+						zoom: 2,
+						center: { lat: 0, lng: 0 }
+					}),
+					markerClickHandler = marker => {
+						map.setZoom(13)
+						map.setCenter(marker.getPosition())
+					},
+					markers = locations.map(location => {
+						const marker = new google.maps.Marker({ ...location, map })
+						marker.addListener('click', () => markerClickHandler(marker))
+
+						return marker
+					})
+
+				new MarkerClusterer(map, markers, {
+					imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+				})
+			} catch (error) {
+				console.error(error)
+			}
 		}
 	}
 </script>
 
-<style></style>
+<style>
+	#maps {
+		width: 750px;
+		height: 750px;
+	}
+</style>

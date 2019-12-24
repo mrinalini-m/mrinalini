@@ -19,7 +19,7 @@ $post-meta: scale-color($secondary-light, $lightness: 25%);
 $inline-code-color: #d63200;
 
 //Miscellaneous
-$max-width: 800px;
+$max-width: 850px;
 $nav-height: 4rem;
 $footer-height: 4rem;
 $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
@@ -27,8 +27,8 @@ $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 //Borders and box-shadows
 $border-radius: 2px;
 $border: 1px solid $border-color;
-$box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-	0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+$box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+	0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
 //Headings
 $heading-font-weight: 600;
@@ -83,12 +83,7 @@ $large: 1200px;
 
 @mixin style-as-link-header($transition) {
 	a.style-as-link-header {
-		@include style-as-link(
-			$secondary-dark,
-			$link-hover-color,
-			$secondary-dark,
-			$transition
-		);
+		@include style-as-link($secondary-dark, $link-hover-color, $secondary-dark, $transition);
 		&.active {
 			color: $link-hover-color;
 			&:hover {

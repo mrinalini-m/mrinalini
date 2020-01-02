@@ -1,26 +1,28 @@
 <template>
 	<div>
 		<div ref="maps" id="maps">Google maps</div>
-		<div class="gallery">
-			<g-image v-for="image in images" :src="image" :key="image" />
-		</div>
+		<Gallery :filteredImages="images" />
 	</div>
 </template>
 
 <script>
-	import gmapsInit, { locations } from '@/helpers/gmaps'
-	import geoJson from '@/../content/images/geoJson.json'
+	import gmapsInit from '@/helpers/gmaps'
+	import test from '@/../content/images/test.json'
 	import MarkerClusterer from '@google/markerclusterer'
+	import Gallery from '@/components/Gallery'
+	import { mapActions } from 'vuex'
 
 	export default {
-		methods: {
-			getImgUrl(image) {
-				return require('@/../content/images/gallery/' + image)
-			}
+		components: {
+			Gallery
 		},
+
+		methods: {
+			...mapActions(['getGalleryImages'])
+		},
+
 		data() {
 			return {
-				Images: [],
 				currentMarkers: [],
 				markers: [],
 				map: null,
@@ -33,7 +35,8 @@
 				const mapNames = this.currentMarkers.map(item => {
 					return item.title
 				})
-				return this.Images.filter(image => {
+
+				return this.$store.state.galleryImages.filter(image => {
 					const imageName = image.split('/').pop()
 					return mapNames.includes(imageName)
 				})
@@ -41,20 +44,29 @@
 		},
 
 		async mounted() {
-			const markers = []
+			const galleryImages = [],
+				markers = []
+
+			for (const img of test.features) {
+				galleryImages.push(img.properties.name)
+			}
+
+			this.getGalleryImages({ galleryImages })
+
 			try {
 				const google = await gmapsInit(),
 					map = new google.maps.Map(this.$refs.maps, {
 						zoom: 2,
 						center: { lat: 0, lng: 0 }
-					})
-				const markerClusterer = new MarkerClusterer(map, markers, {
-					imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-				})
-				const markerClickHandler = marker => {
-					map.setZoom(13)
-					map.setCenter(marker.getPosition())
-				}
+					}),
+					markerClusterer = new MarkerClusterer(map, markers, {
+						imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+					}),
+					markerClickHandler = marker => {
+						map.setZoom(13)
+						map.setCenter(marker.getPosition())
+					}
+
 				google.maps.event.addListener(map.data, 'addfeature', e => {
 					if (e.feature.getGeometry().getType() === 'Point') {
 						var marker = new google.maps.Marker({
@@ -71,7 +83,6 @@
 								}
 							})(marker, e)
 						)
-
 						markers.push(marker)
 						markerClusterer.addMarker(marker)
 						map.setCenter(e.feature.getGeometry().get())
@@ -88,12 +99,7 @@
 					this.currentMarkers = filtered
 				})
 
-				const Images = []
-				for (const img of geoJson.features) {
-					Images.push(this.getImgUrl(img.properties.name))
-				}
-				this.Images = Images
-				map.data.addGeoJson(geoJson)
+				map.data.addGeoJson(test)
 				map.data.setMap(null)
 				this.map = map
 			} catch (error) {
@@ -107,8 +113,5 @@
 	#maps {
 		width: 750px;
 		height: 750px;
-	}
-	img {
-		width: 500px;
 	}
 </style>

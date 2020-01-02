@@ -52,7 +52,7 @@
 				default: () => []
 			},
 			title: {
-				ype: String,
+				type: String,
 				required: false,
 				default: 'All Posts'
 			},

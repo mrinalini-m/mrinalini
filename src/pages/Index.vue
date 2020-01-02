@@ -10,16 +10,20 @@
 <script>
 	import gmapsInit, { locations } from '@/helpers/gmaps'
 	import geoJson from '@/../content/images/geoJson.json'
-	import Images from '@/../content/images/gallery'
 	import MarkerClusterer from '@google/markerclusterer'
 
 	export default {
 		metaInfo: {
 			title: 'Mrinalini'
 		},
-
+		methods: {
+			getImgUrl(image) {
+				return require('@/../content/images/gallery/' + image)
+			}
+		},
 		data() {
 			return {
+				Images: [],
 				show: false,
 				currentMarkers: [],
 				markers: [],
@@ -33,8 +37,7 @@
 				const mapNames = this.currentMarkers.map(item => {
 					return item.title
 				})
-
-				return Images.filter(image => {
+				return this.Images.filter(image => {
 					const imageName = image.split('/').pop()
 					return mapNames.includes(imageName)
 				})
@@ -89,6 +92,11 @@
 					this.currentMarkers = filtered
 				})
 
+				const Images = []
+				for (const img of geoJson.features) {
+					Images.push(this.getImgUrl(img.properties.name))
+				}
+				this.Images = Images
 				map.data.addGeoJson(geoJson)
 				map.data.setMap(null)
 				this.map = map

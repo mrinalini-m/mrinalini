@@ -2,6 +2,7 @@
 	<div>
 		<div ref="maps" id="maps">Google maps</div>
 		<Gallery :filteredImages="images" />
+		<Gallery :filteredImages="thumbnails" />
 	</div>
 </template>
 
@@ -18,7 +19,7 @@
 		},
 
 		methods: {
-			...mapActions(['getGalleryImages'])
+			...mapActions(['getGalleryImages', 'getGalleryThumbnails'])
 		},
 
 		data() {
@@ -35,23 +36,28 @@
 				const mapNames = this.currentMarkers.map(item => {
 					return item.title
 				})
-
 				return this.$store.state.galleryImages.filter(image => {
 					const imageName = image.split('/').pop()
 					return mapNames.includes(imageName)
 				})
+			},
+			thumbnails() {
+				return this.$store.state.galleryThumbnails
 			}
 		},
 
 		async mounted() {
 			const galleryImages = [],
+				galleryThumbnails = [],
 				markers = []
 
 			for (const img of test.features) {
 				galleryImages.push(img.properties.name)
+				galleryThumbnails.push('th_' + img.properties.name)
 			}
 
 			this.getGalleryImages({ galleryImages })
+			this.getGalleryThumbnails({ galleryThumbnails })
 
 			try {
 				const google = await gmapsInit(),

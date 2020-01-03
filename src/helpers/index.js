@@ -27,8 +27,20 @@ function flattenPosts(posts) {
 		}
 		parsedPosts.push(parsedPost)
 	}
-
 	return parsedPosts
 }
 
-export { flattenTags, flattenPosts }
+function getImgUrl(image, folder) {
+	return require(`@/../content/images/${folder}/` + image)
+}
+
+function getImages(images, type) {
+	const imgSources = [],
+		folder = type === 'SET_GALLERY_IMAGES' ? 'gallery' : 'gallery-thumbnails'
+	for (const img of images) {
+		imgSources.push(getImgUrl(img, folder))
+	}
+	return imgSources
+}
+
+export { flattenTags, flattenPosts, getImages }

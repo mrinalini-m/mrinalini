@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import geoJson from '@/../content/images/geoJson.json'
-import { flattenTags, flattenPosts } from '@/helpers'
+import { flattenTags, flattenPosts, getImages } from '@/helpers'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -10,7 +10,8 @@ export default new Vuex.Store({
 		categories: [],
 		posts: [],
 		currentCategory: [],
-		galleryImages: []
+		galleryImages: [],
+		galleryThumbnails: []
 	},
 
 	mutations: {
@@ -25,6 +26,9 @@ export default new Vuex.Store({
 		},
 		SET_GALLERY_IMAGES(state, images) {
 			state.galleryImages = images
+		},
+		SET_GALLERY_THUMBNAILS(state, images) {
+			state.galleryThumbnails = images
 		}
 	},
 
@@ -55,15 +59,15 @@ export default new Vuex.Store({
 			commit('SET_CATEGORIES', parsedCategories)
 			commit('SET_POSTS', parsedPosts) //posts will change based on which category you're in right now
 		},
+
 		getGalleryImages({ commit }, { galleryImages }) {
-			function getImgUrl(image) {
-				return require('@/../content/images/gallery/' + image)
-			}
-			const images = []
-			for (const img of galleryImages) {
-				images.push(getImgUrl(img))
-			}
+			const images = getImages(galleryImages, 'SET_GALLERY_IMAGES')
 			commit('SET_GALLERY_IMAGES', images)
+		},
+
+		getGalleryThumbnails({ commit }, { galleryThumbnails }) {
+			const images = getImages(galleryThumbnails, 'SET_GALLERY_THUMBNAILS')
+			commit('SET_GALLERY_THUMBNAILS', images)
 		}
 	}
 })

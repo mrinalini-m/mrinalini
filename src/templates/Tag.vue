@@ -8,7 +8,7 @@
 	/>
 </template>
 <script>
-	import Posts from '@/pages/Posts'
+	import Posts from '~/pages/Posts'
 	export default {
 		components: {
 			Posts

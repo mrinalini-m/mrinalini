@@ -674,6 +674,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@google/markerclusterer@^2.0.6":
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/@google/markerclusterer/-/markerclusterer-2.0.6.tgz#fa6ef83acc883e07630ee7c2177a553fac0efe85"
+  integrity sha512-2YugxFx20VP2KZpwhys5+aI8qCi8J3hu+2TIXJYsx5bdkHnF/Yb2T1WWeQafkvrMeMp/iXex/VveXLgK7jU9sA==
+
 "@gridsome/cli@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.1.tgz#8bdf97facddb3ab5338eb57521bc0bf5808561d2"

@@ -1,25 +1,29 @@
 <template>
 	<div>
-		<div ref="maps" id="maps">Google maps</div>
+		<div ref="maps" id="maps">
+			<google-map-marker v-bind:places="places"></google-map-marker>
+		</div>
 		<Gallery :filteredImages="images" />
 		<Gallery :filteredImages="thumbnails" />
 	</div>
 </template>
 
 <script>
-	import gmapsInit from '@/helpers/gmaps'
-	import test from '@/../content/images/test.json'
-	import MarkerClusterer from '@google/markerclusterer'
-	import Gallery from '@/components/Gallery'
+	import gmapsInit from '~/helpers/gmaps'
+	import test from '~/../content/images/test.json'
+	import Gallery from '~/components/Gallery'
+	import googleMapMarker from '~/components/MapMarker.vue'
 	import { mapActions } from 'vuex'
 
 	export default {
 		components: {
-			Gallery
+			Gallery,
+			googleMapMarker
 		},
-
-		methods: {
-			...mapActions(['getGalleryImages', 'getGalleryThumbnails'])
+		provide: function() {
+			return {
+				getMap: this.getMap
+			}
 		},
 
 		data() {
@@ -27,7 +31,22 @@
 				currentMarkers: [],
 				markers: [],
 				map: null,
-				markerClusterer: null
+				places: []
+			}
+		},
+
+		methods: {
+			...mapActions(['getGalleryImages', 'getGalleryThumbnails']),
+			getMap: function(found) {
+				var vm = this
+				function checkForMap() {
+					if (vm.map) {
+						found(vm.map)
+					} else {
+						setTimeout(checkForMap, 50)
+					}
+				}
+				checkForMap()
 			}
 		},
 
@@ -42,20 +61,26 @@
 				})
 			},
 			thumbnails() {
-				return this.$store.state.galleryThumbnails
+				const mapNames = this.currentMarkers.map(item => {
+					return item.title
+				})
+				return this.$store.state.galleryThumbnails.filter(image => {
+					const imageName = image.split('/').pop()
+					return mapNames.includes(`th-${imageName}`)
+				})
 			}
 		},
 
 		async mounted() {
 			const galleryImages = [],
 				galleryThumbnails = [],
-				markers = []
+				markers = [],
+				places = []
 
 			for (const img of test.features) {
 				galleryImages.push(img.properties.name)
 				galleryThumbnails.push('th_' + img.properties.name)
 			}
-
 			this.getGalleryImages({ galleryImages })
 			this.getGalleryThumbnails({ galleryThumbnails })
 
@@ -64,38 +89,20 @@
 					map = new google.maps.Map(this.$refs.maps, {
 						zoom: 2,
 						center: { lat: 0, lng: 0 }
-					}),
-					markerClusterer = new MarkerClusterer(map, markers, {
-						imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-					}),
-					markerClickHandler = marker => {
-						map.setZoom(13)
-						map.setCenter(marker.getPosition())
-					}
+					})
 
 				google.maps.event.addListener(map.data, 'addfeature', e => {
 					if (e.feature.getGeometry().getType() === 'Point') {
-						var marker = new google.maps.Marker({
+						places.push({
 							position: e.feature.getGeometry().get(),
-							title: e.feature.getProperty('name'),
-							map: map
+							title: e.feature.getProperty('name')
 						})
-						google.maps.event.addListener(
-							marker,
-							'click',
-							(function(marker, e) {
-								return function() {
-									console.log('clicked', e.feature.h.name)
-								}
-							})(marker, e)
-						)
-						markers.push(marker)
-						markerClusterer.addMarker(marker)
 						map.setCenter(e.feature.getGeometry().get())
 					}
 				})
 
-				google.maps.event.addListener(map, 'zoom_changed', cluster => {
+				this.places = places
+				google.maps.event.addListener(map, 'zoom_changed', () => {
 					const filtered = []
 					for (var i = 0; i < markers.length; i++) {
 						if (map.getBounds().contains(markers[i].getPosition())) {

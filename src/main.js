@@ -1,5 +1,5 @@
 import DefaultLayout from '~/layouts/Default.vue'
-import '@/assets/styles/_index.scss'
+import '~/assets/styles/_index.scss'
 import 'vue-multiselect/dist/vue-multiselect.min.css'
 
 import store from './store/index.js'

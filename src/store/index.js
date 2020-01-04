@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import geoJson from '@/../content/images/geoJson.json'
-import { flattenTags, flattenPosts, getImages } from '@/helpers'
+import { flattenTags, flattenPosts, getImageUrls } from '~/helpers'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -61,12 +60,12 @@ export default new Vuex.Store({
 		},
 
 		getGalleryImages({ commit }, { galleryImages }) {
-			const images = getImages(galleryImages, 'SET_GALLERY_IMAGES')
+			const images = getImageUrls(galleryImages, 'SET_GALLERY_IMAGES')
 			commit('SET_GALLERY_IMAGES', images)
 		},
 
 		getGalleryThumbnails({ commit }, { galleryThumbnails }) {
-			const images = getImages(galleryThumbnails, 'SET_GALLERY_THUMBNAILS')
+			const images = getImageUrls(galleryThumbnails, 'SET_GALLERY_THUMBNAILS')
 			commit('SET_GALLERY_THUMBNAILS', images)
 		}
 	}

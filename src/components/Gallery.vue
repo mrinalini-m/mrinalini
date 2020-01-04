@@ -1,6 +1,6 @@
 <template>
 	<div class="gallery">
-		<g-image v-for="image in filteredImages" :src="image" :key="image" />
+		<g-image v-for="image in filteredImages" :src="image" alt="gallery-img.jpeg" :key="image" />
 	</div>
 </template>
 

@@ -34,7 +34,7 @@ function getImgUrl(image, folder) {
 	return require(`@/../content/images/${folder}/` + image)
 }
 
-function getImages(images, type) {
+function getImageUrls(images, type) {
 	const imgSources = [],
 		folder = type === 'SET_GALLERY_IMAGES' ? 'gallery' : 'gallery-thumbnails'
 	for (const img of images) {
@@ -43,4 +43,4 @@ function getImages(images, type) {
 	return imgSources
 }
 
-export { flattenTags, flattenPosts, getImages }
+export { flattenTags, flattenPosts, getImageUrls }

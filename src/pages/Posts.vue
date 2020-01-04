@@ -17,8 +17,8 @@
 
 <script>
 	import { mapActions } from 'vuex'
-	import PostList from '@/components/PostList'
-	import Searchbar from '@/components/Searchbar'
+	import PostList from '~/components/PostList'
+	import Searchbar from '~/components/Searchbar'
 	export default {
 		props: {
 			postCategory: {

@@ -10,7 +10,8 @@ export default new Vuex.Store({
 		posts: [],
 		currentCategory: [],
 		galleryImages: [],
-		galleryThumbnails: []
+		galleryThumbnails: [],
+		currentMarkers: []
 	},
 
 	mutations: {
@@ -28,6 +29,9 @@ export default new Vuex.Store({
 		},
 		SET_GALLERY_THUMBNAILS(state, images) {
 			state.galleryThumbnails = images
+		},
+		SET_CURRENT_MARKERS(state, currentMarkers) {
+			state.currentMarkers = currentMarkers
 		}
 	},
 
@@ -67,6 +71,9 @@ export default new Vuex.Store({
 		getGalleryThumbnails({ commit }, { galleryThumbnails }) {
 			const images = getImageUrls(galleryThumbnails, 'SET_GALLERY_THUMBNAILS')
 			commit('SET_GALLERY_THUMBNAILS', images)
+		},
+		getCurrentMarkers({ commit }, { currentMarkers }) {
+			commit('SET_CURRENT_MARKERS', currentMarkers)
 		}
 	}
 })

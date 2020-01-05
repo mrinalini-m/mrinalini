@@ -3,12 +3,13 @@
 		<div ref="maps" id="maps">
 			<google-map-marker v-bind:places="places"></google-map-marker>
 		</div>
-		<Gallery :filteredImages="images" />
+		<ClientOnly>
+			<Gallery :filteredImages="images" />
+		</ClientOnly>
 	</div>
 </template>
 
 <script>
-	import gmapsInit from '~/helpers/gmaps'
 	import test from '~/../content/images/test.json'
 	import Gallery from '~/components/Gallery'
 	import GoogleMapMarker from '~/components/MapMarker.vue'
@@ -59,39 +60,41 @@
 			}
 		},
 
-		async mounted() {
-			const galleryImages = [],
-				places = []
+		mounted() {
+			import('~/helpers/gmaps').then(async gmapsInit => {
+				const galleryImages = [],
+					places = []
 
-			for (const img of test.features) {
-				galleryImages.push(img.properties.name)
-			}
-			this.getGalleryImages({ galleryImages })
+				for (const img of test.features) {
+					galleryImages.push(img.properties.name)
+				}
+				this.getGalleryImages({ galleryImages })
 
-			try {
-				const google = await gmapsInit(),
-					map = new google.maps.Map(this.$refs.maps, {
-						zoom: 2,
-						center: { lat: 0, lng: 0 }
+				try {
+					const google = await gmapsInit.default(),
+						map = new google.maps.Map(this.$refs.maps, {
+							zoom: 2,
+							center: { lat: 0, lng: 0 }
+						})
+
+					google.maps.event.addListener(map.data, 'addfeature', e => {
+						if (e.feature.getGeometry().getType() === 'Point') {
+							places.push({
+								position: e.feature.getGeometry().get(),
+								title: e.feature.getProperty('name')
+							})
+							map.setCenter(e.feature.getGeometry().get())
+						}
 					})
 
-				google.maps.event.addListener(map.data, 'addfeature', e => {
-					if (e.feature.getGeometry().getType() === 'Point') {
-						places.push({
-							position: e.feature.getGeometry().get(),
-							title: e.feature.getProperty('name')
-						})
-						map.setCenter(e.feature.getGeometry().get())
-					}
-				})
-
-				this.places = places
-				map.data.addGeoJson(test)
-				map.data.setMap(null)
-				this.map = map
-			} catch (error) {
-				console.error(error)
-			}
+					this.places = places
+					map.data.addGeoJson(test)
+					map.data.setMap(null)
+					this.map = map
+				} catch (error) {
+					console.error(error)
+				}
+			})
 		}
 	}
 </script>

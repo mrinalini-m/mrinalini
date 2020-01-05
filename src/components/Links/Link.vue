@@ -1,6 +1,7 @@
 <template>
 	<li
 		v-if="link"
+		:style="{ gridArea: link.type }"
 		@click="handleClick($event)"
 		@mouseenter="showHideElement($refs.copy, true)"
 		@mouseleave="showHideElement($refs.copy, false)"
@@ -111,6 +112,7 @@
 
 	li {
 		display: flex;
+		text-align: center;
 		flex-direction: column;
 	}
 

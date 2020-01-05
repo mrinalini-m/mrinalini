@@ -37,9 +37,14 @@
 
 	.links {
 		ul {
+			text-align: center;
 			justify-items: center;
 			display: inline-block;
 			justify-content: center;
+			display: grid;
+			justify-content: center;
+			grid-template-columns: repeat(3, minmax(60px, 100px));
+			grid-template-areas: 'email linkedin github';
 		}
 		background-color: peachpuff;
 		flex: 50%;

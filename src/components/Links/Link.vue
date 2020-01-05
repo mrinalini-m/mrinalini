@@ -1,20 +1,20 @@
 <template>
 	<li
-		v-if="links.email"
+		v-if="link"
 		@click="handleClick($event)"
 		@mouseenter="showHideElement($refs.copy, true)"
 		@mouseleave="showHideElement($refs.copy, false)"
 	>
-		<a class="nav-link" :href="`mailto:${links.email.url}`">
-			<span ref="tooltip" class="tool-tip-text">
+		<a class="nav-link" :href="link.url">
+			<span v-if="link.type === 'email'" ref="tooltip" class="tool-tip-text">
 				{{ tooltipText }}
 			</span>
-			<img alt="email" class="link-svg" src="/images/email.svg" />
+			<img :alt="link.type" class="link-svg" :src="`/images/${link.type}.svg`" />
 		</a>
-		<a ref="copy" class="hidden" :href="`mailto:${links.email.url}`">
-			{{ links.email.name }}
+		<a ref="copy" class="hidden" :href="`mailto:${link.url}`">
+			{{ link.name }}
 		</a>
-		<input type="text" :value="links.email.name" ref="copyFail" />
+		<input type="text" :value="link.name" ref="copyFail" />
 	</li>
 </template>
 
@@ -31,7 +31,7 @@
 		},
 
 		props: {
-			links: {
+			link: {
 				type: Object,
 				required: false,
 				default: () => {}
@@ -55,16 +55,18 @@
 			},
 
 			handleClick(e) {
-				e.preventDefault()
-				if (!this.isFirefox && !this.isChrome) {
-					this.$refs.copyFail.select()
-					document.execCommand('copy')
-					this.tooltipText = 'Copied!'
-					return
+				if (this.link.type === 'email') {
+					e.preventDefault()
+					if (!this.isFirefox && !this.isChrome) {
+						this.$refs.copyFail.select()
+						document.execCommand('copy')
+						this.tooltipText = 'Copied!'
+						return
+					}
+					const data = new DataTransfer()
+					data.items.add('text/plain', this.$refs.copy.innerText)
+					this.setClipboard(this.$refs.copy.innerText)
 				}
-				const data = new DataTransfer()
-				data.items.add('text/plain', this.$refs.copy.innerText)
-				this.setClipboard(this.$refs.copy.innerText)
 			},
 
 			showHideElement(element, open) {

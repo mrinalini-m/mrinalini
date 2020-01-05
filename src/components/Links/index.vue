@@ -2,22 +2,23 @@
 	<div class="links">
 		<nav>
 			<ul>
-				<Mail :links="links" />
+				<Link v-for="link in links" :key="link.type" :link="link" />
 			</ul>
 		</nav>
 	</div>
 </template>
 
 <script>
-	import Mail from './Mail'
+	import Link from './Link'
+
 	export default {
 		name: 'links',
 		components: {
-			Mail
+			Link
 		},
 		data() {
 			return {
-				links: {}
+				links: []
 			}
 		},
 		mounted() {
@@ -34,19 +35,15 @@
 		text-align: 'center';
 	}
 
-	ul {
-		justify-items: center;
-		display: inline-block;
-
-		justify-content: center;
-	}
 	.links {
+		ul {
+			justify-items: center;
+			display: inline-block;
+			justify-content: center;
+		}
 		background-color: peachpuff;
 		flex: 50%;
 		max-width: 500px;
-		.link-wrapper {
-			margin: 0.5rem 1rem;
-		}
 	}
 </style>
 
@@ -54,16 +51,11 @@
 query {
   metadata {
     links {
-      email {
-        name, url
-      },
-      linkedin {
-        name, url
-      },
-      github {
-        name, url
-      }
-    }
+			type,
+			name,
+			url
+		}
+    
   }
 }
 </static-query>

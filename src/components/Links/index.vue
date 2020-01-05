@@ -1,11 +1,9 @@
 <template>
-	<div class="links">
-		<nav>
-			<ul>
-				<Link v-for="link in links" :key="link.type" :link="link" />
-			</ul>
-		</nav>
-	</div>
+	<nav class="links">
+		<ul>
+			<Link v-for="link in links" :key="link.type" :link="link" />
+		</ul>
+	</nav>
 </template>
 
 <script>
@@ -28,15 +26,14 @@
 </script>
 
 <style lang="scss" scoped>
-	nav {
+	nav.links {
+		margin: 0.5rem;
 		white-space: nowrap;
 		align-items: center;
 		padding: 0.3rem 0;
 		text-align: 'center';
-	}
-
-	.links {
 		ul {
+			margin: 0;
 			text-align: center;
 			justify-items: center;
 			display: inline-block;

@@ -39,8 +39,11 @@
 
 <style lang="scss" scoped>
 	.index {
-		/* display: flex; */
-		max-width: 1440px;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		max-width: 1400px;
+		justify-content: space-evenly;
 		background-color: palevioletred;
 	}
 	#main-content {

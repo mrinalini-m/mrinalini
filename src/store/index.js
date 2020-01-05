@@ -73,6 +73,7 @@ export default new Vuex.Store({
 			commit('SET_GALLERY_THUMBNAILS', images)
 		},
 		getCurrentMarkers({ commit }, { currentMarkers }) {
+			console.log(currentMarkers)
 			commit('SET_CURRENT_MARKERS', currentMarkers)
 		}
 	}

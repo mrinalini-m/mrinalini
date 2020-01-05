@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="map-wrapper">
 		<div ref="maps" id="maps">
 			<google-map-marker v-bind:places="places"></google-map-marker>
 		</div>
@@ -100,6 +100,9 @@
 </script>
 
 <style scoped>
+	.map-wrapper {
+		display: flex;
+	}
 	#maps {
 		width: 750px;
 		height: 750px;

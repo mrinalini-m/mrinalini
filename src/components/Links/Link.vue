@@ -10,7 +10,7 @@
 			<span v-if="link.type === 'email'" ref="tooltip" class="tool-tip-text">
 				{{ tooltipText }}
 			</span>
-			<img :alt="link.type" class="link-svg" :src="`/images/${link.type}.svg`" />
+			<component :is="link.type"></component>
 		</a>
 		<a ref="copy" class="hidden" :href="`mailto:${link.url}`">
 			{{ link.name }}
@@ -20,9 +20,20 @@
 </template>
 
 <script>
+	import email from '~/assets/images/email.vue'
+	import linkedin from '~/assets/images/linkedin'
+	import github from '~/assets/images/github.vue'
 	export default {
+		components: {
+			email,
+			github,
+			linkedin
+		},
 		data() {
 			return {
+				email: email,
+				linkedin,
+				github,
 				isClicked: false,
 				tooltipText: 'Click to copy',
 				clipBoard: '',
@@ -38,7 +49,7 @@
 				default: () => {}
 			}
 		},
-
+		mounted() {},
 		methods: {
 			setClipboard(text) {
 				let data = new DataTransfer()
@@ -156,10 +167,6 @@
 		position: relative;
 		display: inline-block;
 		vertical-align: middle;
-		img {
-			height: 2rem;
-			width: 2rem;
-		}
 	}
 
 	input {

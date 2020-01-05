@@ -1,7 +1,7 @@
 <template>
 	<Layout :isIndex="true">
 		<div class="wrapper">
-			<g-image class="profile-pic" src="~/assets/images/profile.jpeg"></g-image>
+			<g-image class="profile-pic" src="/images/profile.jpeg"></g-image>
 			<Links />
 		</div>
 		<Map />
@@ -22,11 +22,13 @@
 	}
 </script>
 
-<style>
+<style scoped>
 	.wrapper {
 		display: flex;
+		justify-content: space-between;
 	}
 	.profile-pic {
+		border-radius: 50%;
 		width: 350px;
 	}
 </style>

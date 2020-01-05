@@ -9,7 +9,7 @@
 				:showTags="this.showTags"
 				:showCategories="this.showCategories"
 			/>
-			<section class="container">
+			<section class="container" :class="isIndex ? 'index' : ''">
 				<slot />
 			</section>
 		</main>
@@ -38,6 +38,11 @@
 </script>
 
 <style lang="scss" scoped>
+	.index {
+		/* display: flex; */
+		max-width: 1440px;
+		background-color: palevioletred;
+	}
 	#main-content {
 		margin-top: calc(#{$nav-height});
 		min-height: calc(100vh - #{$nav-height} - #{$footer-height});

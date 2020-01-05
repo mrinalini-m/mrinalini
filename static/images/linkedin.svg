@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="linkedin" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 128 128" style="enable-background:new 0 0 128 128;" xml:space="preserve">
+<style type="text/css">
+	.linkedin{fill:none;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:#0073B0;transition:  0.25s ease-out;}
+	svg:hover .st1{
+		fill-rule:evenodd;clip-rule:evenodd;fill:#004569;
+	}
+</style>
+
+<g>
+	<path class="linkedin" d="M117,2.1H11.4c-5,0-9.3,4-9.3,8.9v106c0,4.9,2.8,8.9,7.9,8.9h105.5c5.1,0,10.4-4,10.4-8.9V11
+		C125.9,6.1,122,2.1,117,2.1"/>
+	<path class="st1" d="M117,2.1H11.4c-5,0-9.3,4-9.3,8.9v106c0,4.9,2.8,8.9,7.9,8.9h105.5c5.1,0,10.4-4,10.4-8.9V11
+		C125.9,6.1,122,2.1,117,2.1z M49.3,49.3h16.7v8.5h0.2c2.5-4.6,10-9.2,19.3-9.2c17.8,0,22.8,9.5,22.8,27v32.7H90.5V78.7
+		c0-7.8-3.1-14.7-10.5-14.7c-8.9,0-13.1,6-13.1,15.9v28.3H49.3V49.3z M19.8,108.2h17.7v-59H19.8V108.2z M39.7,28.6
+		c0,6.1-4.9,11.1-11.1,11.1s-11.1-4.9-11.1-11.1s4.9-11.1,11.1-11.1S39.7,22.5,39.7,28.6z"/>
+</g>
+</svg>

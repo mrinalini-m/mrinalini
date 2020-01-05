@@ -39,14 +39,20 @@
 </script>
 
 <style scoped>
+	.gallery {
+		display: flex;
+		flex-direction: column;
+		height: 750px;
+		overflow: scroll;
+	}
 	.gallery-image {
 		width: 300px;
-		height: 300px;
+		/* height: 300px; */
 		background-size: cover;
 		cursor: pointer;
 		margin: 5px;
-		border-radius: 3px;
-		border: 1px solid lightgray;
-		object-fit: contain;
+		/* border-radius: 3px; */
+		/* border: 1px solid lightgray; */
+		/* object-fit: contain; */
 	}
 </style>

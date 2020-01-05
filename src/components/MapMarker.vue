@@ -33,7 +33,7 @@
 					markers.push(marker)
 					markerClusterer.addMarker(marker)
 				})
-				google.maps.event.addListener(map, 'zoom_changed', () => {
+				google.maps.event.addListener(map, 'bounds_changed', () => {
 					const currentMarkers = []
 					for (var i = 0; i < markers.length; i++) {
 						if (map.getBounds().contains(markers[i].getPosition())) {

@@ -1,11 +1,11 @@
 <template>
 	<div class="gallery">
 		<g-image
-			v-for="(image, i) in filteredImages"
+			v-for="(imgObj, i) in filteredImages"
 			class="gallery-image"
-			:src="image"
+			:src="imgObj.src"
 			alt="gallery-img.jpeg"
-			:key="image"
+			:key="imgObj.name"
 			@click="onClick(i)"
 		/>
 		<vue-gallery-slideshow :images="filteredImages" :index="index" @close="index = null"></vue-gallery-slideshow>

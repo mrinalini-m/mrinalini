@@ -54,7 +54,7 @@
 					return item.title
 				})
 				return this.$store.state.galleryImages.filter(image => {
-					const imageName = image.split('/').pop()
+					const imageName = image.name
 					return mapNames.includes(imageName)
 				})
 			}

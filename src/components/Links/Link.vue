@@ -20,9 +20,9 @@
 </template>
 
 <script>
-	import email from '~/assets/images/email.vue'
-	import linkedin from '~/assets/images/linkedin'
-	import github from '~/assets/images/github.vue'
+	import email from './icons/email.vue'
+	import linkedin from './icons/linkedin'
+	import github from './icons/github.vue'
 	export default {
 		components: {
 			email,

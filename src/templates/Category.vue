@@ -9,7 +9,7 @@
 </template>
 
 <script>
-	import Posts from '~/pages/Posts'
+	import Posts from '~/pages/Index'
 	export default {
 		components: {
 			Posts

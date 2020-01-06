@@ -30,13 +30,4 @@ function flattenPosts(posts) {
 	return parsedPosts
 }
 
-function getImageUrls(images, type) {
-	const imgSources = [],
-		folder = type === 'SET_GALLERY_IMAGES' ? 'gallery' : 'gallery-thumbnails'
-	for (const img of images) {
-		imgSources.push(`/images/${img}`)
-	}
-	return imgSources
-}
-
-export { flattenTags, flattenPosts, getImageUrls }
+export { flattenTags, flattenPosts }

@@ -674,11 +674,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@google/markerclusterer@^2.0.6":
-  version "2.0.6"
-  resolved "https://registry.yarnpkg.com/@google/markerclusterer/-/markerclusterer-2.0.6.tgz#fa6ef83acc883e07630ee7c2177a553fac0efe85"
-  integrity sha512-2YugxFx20VP2KZpwhys5+aI8qCi8J3hu+2TIXJYsx5bdkHnF/Yb2T1WWeQafkvrMeMp/iXex/VveXLgK7jU9sA==
-
 "@gridsome/cli@^0.3.1":
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/@gridsome/cli/-/cli-0.3.1.tgz#8bdf97facddb3ab5338eb57521bc0bf5808561d2"
@@ -8933,11 +8928,6 @@ vm-browserify@^1.0.1:
   version "4.0.1"
   resolved "https://github.com/octref/vscode-textmate#e65aabe2227febda7beaad31dd0fca1228c5ddf3"
 
-vue-gallery-slideshow@^1.5.0:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/vue-gallery-slideshow/-/vue-gallery-slideshow-1.5.0.tgz#4a2cc43f4aa8d41553f3afedb172a5f6c6a672b1"
-  integrity sha512-LMl9rRRG7X9OVoOhBH4uBL2/+ABTJvoZzh/qQtwk56dtkQ9ahkrP/LXKSMCh4ZdmUIgHM1abmQ0JYv/IW1UtYA==
-
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"
@@ -8970,11 +8960,6 @@ vue-router@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.3.tgz#e6b14fabc0c0ee9fda0e2cbbda74b350e28e412b"
   integrity sha512-8iSa4mGNXBjyuSZFCCO4fiKfvzqk+mhL0lnKuGcQtO1eoj8nq3CmbEG8FwK5QqoqwDgsjsf1GDuisDX4cdb/aQ==
-
-vue-runtime-helpers@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/vue-runtime-helpers/-/vue-runtime-helpers-1.1.2.tgz#446b7b820888ab0c5264d2c3a32468e72e4100f3"
-  integrity sha512-pZfGp+PW/IXEOyETE09xQHR1CKkR9HfHZdnMD/FVLUNI+HxYTa82evx5WrF6Kz4s82qtqHvMZ8MZpbk2zT2E1Q==
 
 vue-server-renderer@^2.6.10:
   version "2.6.11"

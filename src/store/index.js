@@ -1,17 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { flattenTags, flattenPosts, getImageUrls } from '~/helpers'
+import { flattenTags, flattenPosts } from '~/helpers'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
 		tags: [],
 		categories: [],
-		posts: [],
-		currentCategory: [],
-		galleryImages: [],
-		galleryThumbnails: [],
-		currentMarkers: []
+		posts: []
 	},
 
 	mutations: {
@@ -23,15 +19,6 @@ export default new Vuex.Store({
 		},
 		SET_TAGS(state, tags) {
 			state.tags = tags
-		},
-		SET_GALLERY_IMAGES(state, images) {
-			state.galleryImages = images
-		},
-		SET_GALLERY_THUMBNAILS(state, images) {
-			state.galleryThumbnails = images
-		},
-		SET_CURRENT_MARKERS(state, currentMarkers) {
-			state.currentMarkers = currentMarkers
 		}
 	},
 
@@ -61,19 +48,6 @@ export default new Vuex.Store({
 			}
 			commit('SET_CATEGORIES', parsedCategories)
 			commit('SET_POSTS', parsedPosts) //posts will change based on which category you're in right now
-		},
-
-		getGalleryImages({ commit }, { galleryImages }) {
-			const images = getImageUrls(galleryImages, 'SET_GALLERY_IMAGES')
-			commit('SET_GALLERY_IMAGES', images)
-		},
-
-		getGalleryThumbnails({ commit }, { galleryThumbnails }) {
-			const images = getImageUrls(galleryThumbnails, 'SET_GALLERY_THUMBNAILS')
-			commit('SET_GALLERY_THUMBNAILS', images)
-		},
-		getCurrentMarkers({ commit }, { currentMarkers }) {
-			commit('SET_CURRENT_MARKERS', currentMarkers)
 		}
 	}
 })

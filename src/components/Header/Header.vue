@@ -1,6 +1,6 @@
 <template>
 	<div class="links">
-		<g-link class="style-as-link-header" to="/posts/">Posts</g-link>
+		<g-link class="style-as-link-header" to="/">Posts</g-link>
 	</div>
 </template>
 

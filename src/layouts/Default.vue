@@ -3,13 +3,12 @@
 		<Header class="header" />
 		<main id="main-content">
 			<Sidebar
-				:isIndex="isIndex"
 				:postCategory="this.postCategory"
 				:showPosts="this.showPosts"
 				:showTags="this.showTags"
 				:showCategories="this.showCategories"
 			/>
-			<section class="container" :class="isIndex ? 'index' : ''">
+			<section class="container">
 				<slot />
 			</section>
 		</main>
@@ -31,21 +30,12 @@
 			postCategory: { type: String, required: false },
 			showTags: { type: Boolean, required: false },
 			showPosts: { type: Boolean, required: false },
-			showCategories: { type: Boolean, required: false },
-			isIndex: { type: Boolean, required: false }
+			showCategories: { type: Boolean, required: false }
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.index {
-		display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		max-width: 1400px;
-		justify-content: space-evenly;
-		background-color: palevioletred;
-	}
 	#main-content {
 		margin-top: calc(#{$nav-height});
 		min-height: calc(100vh - #{$nav-height} - #{$footer-height});

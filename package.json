@@ -1,6 +1,8 @@
 {
-	"name": "mrinalini",
-	"private": true,
+	"name": "blog.mrinalini.dev",
+	"version": "1.0.0",
+	"author": "Mrinalini Manandhar <sam@mrinalini.dev>",
+	"description": "Personal blog and where I stash my notes. Built with vue, gridsome, grapql, vuex.",
 	"scripts": {
 		"build": "gridsome build",
 		"develop": "gridsome develop",
@@ -18,5 +20,12 @@
 	"devDependencies": {
 		"node-sass": "^4.13.0",
 		"sass-loader": "^8.0.0"
-	}
+	},
+	"keywords": [
+		"mrinalini manandhar",
+		"mrinalini sam",
+		"development",
+		"dev",
+		"portfolio"
+	]
 }

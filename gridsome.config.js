@@ -1,12 +1,9 @@
-// This is where project configuration and plugin options are located.
-// Learn more: https://gridsome.org/docs/config
+const shiki = require('shiki'),
+	mtc = shiki.loadTheme('./src/assets/styles/material-theme-darker-high-contrast-custom.json')
 
-// Changes here require a server restart.
-// To restart press CTRL + C in terminal and run `gridsome develop`
-const shiki = require('shiki')
-const mtc = shiki.loadTheme('./src/assets/styles/material-theme-darker-high-contrast-custom.json')
 module.exports = {
-	siteName: 'Mrinalini',
+	siteName: 'Sam Mrinalini',
+
 	plugins: [
 		{
 			use: 'gridsome-plugin-sass-resources-loader',
@@ -14,6 +11,7 @@ module.exports = {
 				resources: '@/assets/styles/_variables.scss'
 			}
 		},
+
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
@@ -25,6 +23,7 @@ module.exports = {
 				}
 			}
 		},
+
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
@@ -32,6 +31,7 @@ module.exports = {
 				typeName: 'Tag'
 			}
 		},
+
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
@@ -40,11 +40,13 @@ module.exports = {
 			}
 		}
 	],
+
 	templates: {
 		Post: '/:category/:slug',
 		Tag: '/tags/:id',
 		Category: '/posts/:id'
 	},
+
 	transformers: {
 		remark: {
 			externalLinksTarget: '_blank',

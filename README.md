@@ -1,14 +1,23 @@
-# Default starter for Gridsome
+# blog.mrinalini.dev
 
-This is the project you get when you run `gridsome create new-project`.
+Personal blog and where I stash my notes. Built with vue, gridsome, grapql, vuex.
 
-### 1. Install Gridsome CLI tool if you don't have
+## Project setup
 
-`npm install --global @gridsome/cli`
+```
+git clone https://github.com/mrinalini-m/blog.mrinalini.dev.git
+```
 
-### 2. Create a Gridsome project
+```
+cd blog.mrinalini.dev
+```
 
-1. `gridsome create my-gridsome-site` to install default starter
-2. `cd my-gridsome-site` to open the folder
-3. `gridsome develop` to start a local dev server at `http://localhost:8080`
-4. Happy coding 🎉🙌
+```
+yarn
+```
+
+or run `npm install`
+
+```
+gridsome develop
+```

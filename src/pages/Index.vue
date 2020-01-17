@@ -74,7 +74,7 @@
 			Searchbar
 		},
 		metaInfo: {
-			title: 'Mrinalini'
+			title: 'Blog'
 		},
 		computed: {
 			allPosts() {

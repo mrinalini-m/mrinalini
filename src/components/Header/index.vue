@@ -3,9 +3,9 @@
 		<nav class="nav">
 			<Mobile />
 			<div class="brand">
-				<g-link to="/">
-					<span class="text">{{ $static.metadata.siteName }}</span></g-link
-				>
+				<a href="https://mrinalini.dev/">
+					<g-image class="logo" src="~/logo.svg" /><span class="text">rinalini</span>
+				</a>
 			</div>
 			<Header />
 		</nav>
@@ -46,7 +46,7 @@
 	}
 
 	.custom-header {
-		background-color: white;
+		background-color: $background;
 		align-items: center;
 		justify-content: center;
 		position: fixed;
@@ -60,9 +60,8 @@
 		z-index: 3;
 		box-shadow: 0 0 1px rgba(0, 0, 0, 0.25);
 		&.scroll {
-			box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03),
-				0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
-				0 16px 16px rgba(0, 0, 0, 0.03);
+			box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.03), 0 2px 2px rgba(0, 0, 0, 0.03), 0 4px 4px rgba(0, 0, 0, 0.03),
+				0 8px 8px rgba(0, 0, 0, 0.03), 0 16px 16px rgba(0, 0, 0, 0.03);
 			.nav {
 				height: calc(#{$nav-height} - 1rem);
 				.navbar-toggle {
@@ -101,8 +100,14 @@
 					align-items: center;
 					color: $heading-font-color;
 					font-size: 1.5rem;
+					padding: 0.5rem;
+					border-radius: 50%;
 					&:hover {
 						color: $heading-font-color;
+					}
+					.logo {
+						height: 2rem;
+						width: 2rem;
 					}
 				}
 				span.text {

@@ -1,31 +1,36 @@
 {
-	"name": "blog.mrinalini.dev",
-	"version": "1.0.0",
-	"author": "Mrinalini Manandhar <sam@mrinalini.dev>",
-	"description": "Personal blog and where I stash my notes. Built with vue, gridsome, grapql, vuex.",
-	"scripts": {
-		"build": "gridsome build",
-		"develop": "gridsome develop",
-		"explore": "gridsome explore"
-	},
-	"dependencies": {
-		"@gridsome/source-filesystem": "^0.6.2",
-		"@gridsome/transformer-remark": "^0.4.0",
-		"gridsome": "^0.7.12",
-		"gridsome-plugin-remark-shiki": "^0.3.1",
-		"gridsome-plugin-sass-resources-loader": "^0.0.3",
-		"vue-multiselect": "^2.1.6",
-		"vuex": "^3.1.2"
-	},
-	"devDependencies": {
-		"node-sass": "^4.13.1",
-		"sass-loader": "^8.0.2"
-	},
-	"keywords": [
-		"mrinalini manandhar",
-		"mrinalini sam",
-		"development",
-		"dev",
-		"portfolio"
-	]
+  "name": "blog.mrinalini.dev",
+  "version": "1.0.0",
+  "author": "Mrinalini 'Sam' Manandhar <sam@mrinalini.dev>",
+  "description": "Personal blog and where I stash my notes. Built with vue, gridsome, grapql, vuex.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrinalini-m/blog.mrinalini.dev.git"
+  },
+  "keywords": [
+    "mrinalini manandhar",
+    "mrinalini sam",
+    "development",
+    "dev",
+    "portfolio"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gridsome build",
+    "develop": "gridsome develop",
+    "explore": "gridsome explore"
+  },
+  "dependencies": {
+    "@gridsome/source-filesystem": "^0.6.2",
+    "@gridsome/transformer-remark": "^0.5.0",
+    "gridsome": "^0.7.13",
+    "gridsome-plugin-remark-shiki": "^0.3.1",
+    "gridsome-plugin-sass-resources-loader": "^0.0.3",
+    "vue-multiselect": "^2.1.6",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "node-sass": "^4.13.1",
+    "sass-loader": "^8.0.2"
+  }
 }

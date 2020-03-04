@@ -1,7 +1,11 @@
 <template>
 	<Layout>
 		<section class="tags">
-			<TagList v-for="edge in $page.allTag.edges" :key="edge.node.id" :tag="edge.node" />
+			<TagList
+				v-for="edge in $page.allTag.edges"
+				:key="edge.node.id"
+				:tag="edge.node"
+			/>
 		</section>
 	</Layout>
 </template>

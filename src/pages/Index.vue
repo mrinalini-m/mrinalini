@@ -1,5 +1,10 @@
 <template>
-	<Layout :showCategories="showCategories" :postCategory="postCategory" :showPosts="showPosts" :showTags="showTags">
+	<Layout
+		:showCategories="showCategories"
+		:postCategory="postCategory"
+		:showPosts="showPosts"
+		:showTags="showTags"
+	>
 		<article class="posts">
 			<header class="title-wrapper">
 				<h2 class="title">{{ title }}</h2>
@@ -9,7 +14,11 @@
 			</header>
 			<Searchbar v-on:filter="filterPosts" />
 			<div>
-				<PostList v-for="edge in filteredPosts" :key="edge.node.id" :post="edge.node" />
+				<PostList
+					v-for="edge in filteredPosts"
+					:key="edge.node.id"
+					:post="edge.node"
+				/>
 			</div>
 		</article>
 	</Layout>
@@ -85,7 +94,9 @@
 		methods: {
 			...mapActions(['getPosts', 'getCategories']),
 			filterByTerm: function(searchTerm) {
-				let filteredPosts = this.posts.filter(post => post.node.title.toLowerCase().includes(searchTerm.toLowerCase()))
+				let filteredPosts = this.posts.filter(post =>
+					post.node.title.toLowerCase().includes(searchTerm.toLowerCase())
+				)
 				return filteredPosts
 			},
 			filterByTags: function(tags, firstPass) {
@@ -119,7 +130,9 @@
 			},
 			postCategory: function(newCategory, oldCategory) {
 				if (newCategory !== oldCategory) {
-					this.posts = !this.edges.length ? this.$page.allPost.edges : this.edges
+					this.posts = !this.edges.length
+						? this.$page.allPost.edges
+						: this.edges
 				}
 			},
 			postTag: function(oldTag, newTag) {
@@ -128,7 +141,9 @@
 		},
 
 		async mounted() {
-			this.posts = !this.edges.length ? await this.$page.allPost.edges : this.edges
+			this.posts = !this.edges.length
+				? await this.$page.allPost.edges
+				: this.edges
 
 			this.getPosts(this.posts)
 			this.filteredPosts = this.posts

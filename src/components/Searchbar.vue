@@ -15,8 +15,13 @@
 			>
 			</multiselect>
 		</div>
-		<div class="input-form-control" :class="[{ focused: isFocused }, { 'not-empty': !empty }]">
-			<label ref="label" class="outlined-label" for="search">Search Posts</label>
+		<div
+			class="input-form-control"
+			:class="[{ focused: isFocused }, { 'not-empty': !empty }]"
+		>
+			<label ref="label" class="outlined-label" for="search"
+				>Search Posts</label
+			>
 			<div class="outlined-input-wrapper">
 				<input
 					type="text"
@@ -193,7 +198,8 @@
 				margin: 0;
 				padding: 0;
 				position: absolute;
-				transition: padding-left $transition, border-color $transition, border-width $transition;
+				transition: padding-left $transition, border-color $transition,
+					border-width $transition;
 				border-style: solid;
 				border-width: 1px;
 				border-radius: inherit;

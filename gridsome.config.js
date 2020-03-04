@@ -1,5 +1,7 @@
 const shiki = require('shiki'),
-	mtc = shiki.loadTheme('./src/assets/styles/material-theme-darker-high-contrast-custom.json')
+	mtc = shiki.loadTheme(
+		'./src/assets/styles/material-theme-darker-high-contrast-custom.json'
+	)
 
 module.exports = {
 	siteName: 'Sam Mrinalini',
@@ -51,7 +53,9 @@ module.exports = {
 		remark: {
 			externalLinksTarget: '_blank',
 			externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-			plugins: [['gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true }]]
+			plugins: [
+				['gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true }]
+			]
 		}
 	}
 }

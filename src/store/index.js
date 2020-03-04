@@ -41,7 +41,9 @@ export default new Vuex.Store({
 				parsedCategories[category.node.id] = catObj
 				try {
 					const posts = await fetch(`/posts/${catObj.id}`)
-					parsedPosts[catObj.id] = flattenPosts(posts.data.category.belongsTo.edges)
+					parsedPosts[catObj.id] = flattenPosts(
+						posts.data.category.belongsTo.edges
+					)
 				} catch (error) {
 					console.error(error)
 				}

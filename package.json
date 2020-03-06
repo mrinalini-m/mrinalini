@@ -26,6 +26,7 @@
     "gridsome": "^0.7.13",
     "gridsome-plugin-remark-shiki": "^0.3.1",
     "gridsome-plugin-sass-resources-loader": "^0.0.3",
+    "gridsome-remark-embed-snippet": "^1.0.1",
     "vue-gtag": "^1.6.2",
     "vue-multiselect": "^2.1.6",
     "vuex": "^3.1.2"

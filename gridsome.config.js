@@ -54,6 +54,12 @@ module.exports = {
 			externalLinksTarget: '_blank',
 			externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
 			plugins: [
+				[
+					'gridsome-remark-embed-snippet',
+					{
+						directory: `${__dirname}/content/posts/snippets/`
+					}
+				],
 				['gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true }]
 			]
 		}

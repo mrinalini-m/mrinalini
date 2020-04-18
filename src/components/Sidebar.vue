@@ -64,29 +64,29 @@
 			width: {
 				type: Number,
 				required: false,
-				default: 200
+				default: 200,
 			},
 			postCategory: {
 				type: String,
 				required: false,
-				default: ''
+				default: '',
 			},
 			showPosts: { type: Boolean, required: false, default: false },
 			showTags: { type: Boolean, required: false, default: false },
-			showCategories: { type: Boolean, required: false, default: false }
+			showCategories: { type: Boolean, required: false, default: false },
 		},
 		methods: {
-			...mapActions(['getCategories', 'getPosts', 'getTags'])
+			...mapActions(['getCategories', 'getPosts', 'getTags']),
 		},
 		data() {
 			return {
 				menuWidth: {
-					width: this.width + 'px'
+					width: this.width + 'px',
 				},
 				marginLeft: this.width + 'px',
 				paddingLeft: { 'padding-left': '1rem' },
 
-				show: false
+				show: false,
 			}
 		},
 
@@ -94,13 +94,13 @@
 			...mapState(['tags', 'categories', 'posts']),
 			mainContent() {
 				return document.getElementById('main-content')
-			}
+			},
 		},
 
 		async mounted() {
 			if ((this.showCategories && this.showPosts) || this.showPosts) {
 				this.menuWidth = {
-					width: '300px'
+					width: '300px',
 				}
 				this.marginLeft = '300px'
 			}
@@ -125,10 +125,10 @@
 			} catch (error) {
 				console.error(error)
 			}
-			this.$root.$on('toggle-sidebar', data => {
+			this.$root.$on('toggle-sidebar', (data) => {
 				this.show = data && !this.show
 			})
-		}
+		},
 	}
 </script>
 
@@ -171,6 +171,7 @@
 				ul {
 					margin: 0;
 					li {
+						margin: 0;
 						h3 {
 							a {
 								&:after {

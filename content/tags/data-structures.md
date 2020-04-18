@@ -1,4 +1,4 @@
 ---
-name: 'data-structures'
+name: 'Data Structures'
 id: 'data-structures'
 ---

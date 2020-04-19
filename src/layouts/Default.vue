@@ -10,28 +10,28 @@
 			/>
 			<section class="container">
 				<slot />
+				<Footer />
 			</section>
 		</main>
-		<!-- <Footer /> -->
 	</div>
 </template>
 
 <script>
 	import Sidebar from '../components/Sidebar'
 	import Header from '../components/Header'
-	// import Footer from '../components/Footer'
+	import Footer from '../components/Footer'
 	export default {
 		components: {
 			Header,
-			Sidebar
-			// Footer
+			Sidebar,
+			Footer,
 		},
 		props: {
 			postCategory: { type: String, required: false },
 			showTags: { type: Boolean, required: false },
 			showPosts: { type: Boolean, required: false },
-			showCategories: { type: Boolean, required: false }
-		}
+			showCategories: { type: Boolean, required: false },
+		},
 	}
 </script>
 

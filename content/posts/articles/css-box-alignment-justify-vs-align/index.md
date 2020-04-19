@@ -12,7 +12,7 @@ category: articles
 
 [w3 Overview of Alignment Properties](https://www.w3.org/TR/css-align-3/#overview)
 
-![Alternative text](../images/css-box-alignment-justify-vs-align-0.png)
+![Alternative text](./css-box-alignment-justify-vs-align-0.png)
 
 ### Justification
 

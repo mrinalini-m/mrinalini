@@ -10,8 +10,8 @@ module.exports = {
 		{
 			use: 'gridsome-plugin-sass-resources-loader',
 			options: {
-				resources: '@/assets/styles/_variables.scss'
-			}
+				resources: '@/assets/styles/_variables.scss',
+			},
 		},
 
 		{
@@ -22,53 +22,35 @@ module.exports = {
 				template: './src/templates/Post.vue',
 				refs: {
 					tags: 'Tag',
-					category: 'Category'
+					category: 'Category',
 				},
 
 				plugins: [
-					[
-						'gridsome-remark-embed-snippet',
-						{
-							directory: `${__dirname}/content/posts/snippets/`
-						}
-					],
-					['gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true }]
-				]
-			}
+					['gridsome-remark-embed-snippet'],
+					['gridsome-plugin-remark-shiki', { theme: mtc, skipInline: true }],
+				],
+			},
 		},
-
-		// {
-		// 	use: '@gridsome/source-filesystem',
-		// 	options: {
-		// 		typeName: 'Post',
-		// 		path: 'content/posts/**/*.md',
-		// 		refs: {
-		// 			tags: 'Tag',
-		// 			category: 'Category'
-		// 		}
-		// 	}
-		// },
 
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
 				path: 'content/tags/**/*.md',
-				typeName: 'Tag'
-			}
+				typeName: 'Tag',
+			},
 		},
 
 		{
 			use: '@gridsome/source-filesystem',
 			options: {
 				path: 'content/categories/**/*.md',
-				typeName: 'Category'
-			}
-		}
+				typeName: 'Category',
+			},
+		},
 	],
 
 	templates: {
-		// Post: '/:category/:slug',
 		Tag: '/tags/:id',
-		Category: '/posts/:id'
-	}
+		Category: '/posts/:id',
+	},
 }

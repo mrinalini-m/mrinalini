@@ -18,7 +18,8 @@
 			</ul>
 		</div>
 
-		<div class="post-content" v-html="$page.post.content" />
+		<VueRemarkContent />
+		<!-- <div class="post-content" v-html="$page.post.content" /> -->
 	</Layout>
 </template>
 
@@ -46,7 +47,7 @@
 
 <page-query>
 query Post ($path: String!) {
-   post: post (path: $path) {
+  post (path: $path) {
     id
     title
     content

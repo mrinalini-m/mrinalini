@@ -9,4 +9,4 @@ tags:
 category: problems
 ---
 
-`embed:0001-two-sum.js`
+<!-- embed:0001-two-sum.js -->

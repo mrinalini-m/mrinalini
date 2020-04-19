@@ -18,7 +18,7 @@
 			</ul>
 		</div>
 
-		<VueRemarkContent />
+		<VueRemarkContent class="post-content" />
 		<!-- <div class="post-content" v-html="$page.post.content" /> -->
 	</Layout>
 </template>

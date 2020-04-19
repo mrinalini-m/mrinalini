@@ -9,4 +9,4 @@ tags:
 category: problems
 ---
 
-`embed:hash-tables.js`
+<!-- embed:hash-tables.js -->

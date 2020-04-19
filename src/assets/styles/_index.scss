@@ -80,26 +80,13 @@ ul {
 ol {
 	list-style: none;
 	counter-reset: ordered-li;
-	li {
-		counter-increment: ordered-li;
-		&::before {
-			content: counter(ordered-li) '. ';
-			font-family: -apple-system, BlinkMacSystemFont, Segoe UI, 'Roboto',
-				Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-			-webkit-font-smoothing: antialiased;
-			-moz-osx-font-smoothing: grayscale;
-			text-align: center;
-			color: $font-color;
-			font-size: inherit;
-		}
-	}
 }
 
-// ol {
-// 	li {
-// 		list-style-type: decimal;
-// 	}
-// }
+ol {
+	li {
+		list-style-type: decimal;
+	}
+}
 
 //headings
 h1,
@@ -132,12 +119,6 @@ h5 {
 }
 h6 {
 	font-size: $h6;
-}
-
-@include medium-breakpoint {
-	.container {
-		padding: 0.5rem;
-	}
 }
 
 //tags/chips

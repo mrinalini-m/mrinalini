@@ -10,7 +10,7 @@ $white: #fff;
 // $info: #1c90f3;
 
 $background: white;
-$font-color: $secondary-medium;
+$font-color: $secondary-dark;
 $link-color: $primary;
 $link-hover-color: scale-color($link-color, $lightness: -15%);
 $border-color: #dddddd;
@@ -27,8 +27,8 @@ $code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
 //Borders and box-shadows
 $border-radius: 2px;
 $border: 1px solid $border-color;
-$box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-	0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+$box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+	0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 
 //Headings
 $heading-font-weight: 600;
@@ -83,7 +83,12 @@ $large: 1200px;
 
 @mixin style-as-link-header($transition) {
 	a.style-as-link-header {
-		@include style-as-link($secondary-dark, $link-hover-color, $secondary-dark, $transition);
+		@include style-as-link(
+			$secondary-dark,
+			$link-hover-color,
+			$secondary-dark,
+			$transition
+		);
 		&.active {
 			color: $link-hover-color;
 			&:hover {

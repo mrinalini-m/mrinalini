@@ -27,8 +27,8 @@ for (const word of name) {
 	lowerCase.push(word.toLowerCase())
 }
 const title = `${ch}-${no} - ${name.join(' ')} [Cracking the Coding Interview]`,
-	date = '2020-04-19',
-	tags = JSON.stringify(['"string"']),
+	date = '2020-04-20',
+	tags = JSON.stringify(['"linked-list"']),
 	slug = `ctci-ch0${ch}-${no}-${lowerCase.join('-')}`,
 	fileName = convertToMd(process.argv[2])
 

@@ -9,7 +9,8 @@
 			<header class="title-wrapper">
 				<h2 class="title">{{ title }}</h2>
 				<p v-if="description" class="description">
-					{{ description }}
+					<span>{{ description }} </span>
+					<span><a v-if="link" :href="link">Github repo.</a></span>
 				</p>
 			</header>
 			<Searchbar v-on:filter="filterPosts" />
@@ -69,6 +70,11 @@
 				type: String,
 				required: false,
 				default: ''
+			},
+			link: {
+				type: String,
+				required: false,
+				default: ''
 			}
 		},
 
@@ -93,15 +99,15 @@
 
 		methods: {
 			...mapActions(['getPosts', 'getCategories']),
-			filterByTerm: function(searchTerm) {
-				let filteredPosts = this.posts.filter(post =>
+			filterByTerm: function (searchTerm) {
+				let filteredPosts = this.posts.filter((post) =>
 					post.node.title.toLowerCase().includes(searchTerm.toLowerCase())
 				)
 				return filteredPosts
 			},
-			filterByTags: function(tags, firstPass) {
+			filterByTags: function (tags, firstPass) {
 				const filtered = []
-				firstPass.forEach(post => {
+				firstPass.forEach((post) => {
 					const postTags = post.node.tags
 					const arr1 = []
 					for (const tag of postTags) {
@@ -118,24 +124,24 @@
 				})
 				return filtered
 			},
-			filterPosts: function(term, tags) {
+			filterPosts: function (term, tags) {
 				const firstPass = term.length ? this.filterByTerm(term) : this.posts
 				this.filteredPosts = this.filterByTags(tags, firstPass)
 			}
 		},
 
 		watch: {
-			posts: function(newPosts, oldPosts) {
+			posts: function (newPosts, oldPosts) {
 				this.filteredPosts = newPosts
 			},
-			postCategory: function(newCategory, oldCategory) {
+			postCategory: function (newCategory, oldCategory) {
 				if (newCategory !== oldCategory) {
 					this.posts = !this.edges.length
 						? this.$page.allPost.edges
 						: this.edges
 				}
 			},
-			postTag: function(oldTag, newTag) {
+			postTag: function (oldTag, newTag) {
 				this.posts = !this.edges.length ? this.$page.allPost.edges : this.edges
 			}
 		},
@@ -166,7 +172,7 @@
 
 <page-query>
   query {
-    allPost(sort: [{ by: "date" , order: DESC}, { by: "title", order: ASC }]) {
+    allPost(sort: [{ by: "date" , order: DESC}, { by: "title", order: DESC }]) {
       totalCount
       edges {
         node {

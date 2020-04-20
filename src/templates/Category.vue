@@ -5,6 +5,7 @@
 		:edges="$page.category.belongsTo.edges"
 		:title="$page.category.name"
 		:description="$page.category.description"
+		:link="$page.category.link"
 	/>
 </template>
 
@@ -23,6 +24,7 @@ query ($id: ID!) {
 		id
     name
     description
+    link
     belongsTo(sort: [{ by: "date" , order: DESC}, { by: "title", order: ASC }]) {
       edges {
         node {

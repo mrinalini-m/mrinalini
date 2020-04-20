@@ -5,6 +5,7 @@
 		:edges="$page.tag.belongsTo.edges"
 		:title="$page.tag.name"
 		:postTag="$page.tag.id"
+		:description="$page.tag.description"
 	/>
 </template>
 <script>
@@ -21,6 +22,7 @@ query ($id: ID!) {
   tag(id: $id) {
     name
 		id
+    description
     belongsTo {
       edges {
         node {

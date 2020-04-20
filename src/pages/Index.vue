@@ -9,7 +9,7 @@
 			<header class="title-wrapper">
 				<h2 class="title">{{ title }}</h2>
 				<p v-if="description" class="description">
-					{{ $page.category.description }}
+					{{ description }}
 				</p>
 			</header>
 			<Searchbar v-on:filter="filterPosts" />

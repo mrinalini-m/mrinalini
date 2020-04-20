@@ -1,6 +1,6 @@
 ---
 title: 'ArrayList and Resizable Arrays'
-date: 2020-04-15
+date: 2020-04-20
 slug: 'arraylist-and-resizable-arrays'
 tags:
   - array

@@ -1,6 +1,6 @@
 ---
 title: 'Hash Tables'
-date: 2020-04-15
+date: 2020-04-20
 slug: 'hash-tables'
 tags:
   - data-structures

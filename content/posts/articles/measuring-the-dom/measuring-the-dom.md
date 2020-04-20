@@ -1,6 +1,6 @@
 ---
 title: 'Measuring a changing DOM element'
-date: 2020-04-18
+date: 2020-04-20
 slug: 'measuring-a-changing-dom-element'
 tags:
   - html

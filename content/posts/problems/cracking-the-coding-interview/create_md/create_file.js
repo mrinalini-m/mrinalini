@@ -20,7 +20,6 @@ const convertToMd = (js) => {
 const name = getName(process.argv[2]),
 	ch = `Ch0${name.shift()}`,
 	no = name.shift(),
-	end = '[Cracking the Coding Interview]',
 	lowerCase = []
 
 for (const word of name) {
@@ -28,7 +27,7 @@ for (const word of name) {
 }
 const title = `${ch}-${no} - ${name.join(' ')} [Cracking the Coding Interview]`,
 	date = '2020-04-20',
-	tags = JSON.stringify(['"linked-list"']),
+	tags = JSON.stringify(['"tree"']),
 	slug = `ctci-ch0${ch}-${no}-${lowerCase.join('-')}`,
 	fileName = convertToMd(process.argv[2])
 

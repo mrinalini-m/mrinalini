@@ -20,6 +20,7 @@ module.exports = {
 				typeName: 'Post',
 				baseDir: './content/posts/',
 				template: './src/templates/Post.vue',
+				route: '/posts/:slug',
 				refs: {
 					tags: 'Tag',
 					category: 'Category',

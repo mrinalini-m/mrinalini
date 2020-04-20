@@ -44,28 +44,23 @@ class HashTable {
 	}
 
 	set(key, value) {
-		let index = this.hash(key)
-		if (!this.buckets[index]) {
-			this.buckets[index] = []
-		}
-		this.buckets[index].push([key, value])
-		return index
+		const i = this.hash(key)
+		// if no collision, set the bucket at position i to array
+		if (!this.buckets[i]) this.buckets[i] = []
+		// push [key, val] into the array
+		this.buckets[i].push([key, value])
+		return i
 	}
 
 	get(key) {
-		let index = this.hash(key)
-		if (!this.buckets[index]) return null
-		for (const bucket of this.buckets[index]) {
-			if (bucket[0] === key) {
-				return bucket[1]
-			}
+		const i = this.hash(key)
+
+		if (!this.buckets[i]) return null
+		// check each pair inside the bucket at position i
+		// if key matches key at pair[0] return the val at pair[1]
+		for (const pair of this.buckets[i]) {
+			if (pair[0] === key) return pair[1]
 		}
 	}
 }
-
-const hash = new HashTable(10)
-hash.set('test', 'This is a test.')
-
-console.log(hash)
-console.log(hash.get('test'))
 ```

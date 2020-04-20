@@ -5,6 +5,7 @@ slug: 'arraylist-and-resizable-arrays'
 tags:
   - array
   - java
+  - data-structures
 category: articles
 ---
 
@@ -18,14 +19,17 @@ Use ArrayList if you need an array that dynamically resizes. Usually, the way it
 
 So, a new array that's twice the length is created and the items are copied over to it.
 
-The time complexity for access is still O(1) because the doubling is amortized (the doubling happens so rarely that even though the time complexity of copying over the array is O(n), it's written off).
+The time complexity for access is still `O(1)` because the doubling is amortized (the doubling happens so rarely that even though the time complexity of copying over the array is `O(n)`, it's written off).
 
-If you work backwards (final size is at n), then the array's previous size was n/2. So only n/2 items needed to be copied. Similarly, for the previous doubling, n/4 items needed to be copied and so on until 2 items and 1 item needed to be copied.
+If you work backwards (final size is at `n`), then the array's previous size was `n/2`. So only `n/2` items needed to be copied. Similarly, for the previous doubling, `n/4` items needed to be copied and so on until `2` items and `1` item needed to be copied.
 
-If we write this in series, it's: `n/2 + n/4 + n/8 + .. + 2 + 1 = 1`
+If we write this in series, it's: `n/2 + n/4 + n/8 + .. + 2 + 1 ~= n`
 
-Therefore, inserting N elements takes O(N) work total. Each insertion is O(1) on average, even though
-some insertions take O(N) time in the worst case.
+![The geometric series on the real line.](https://upload.wikimedia.org/wikipedia/commons/a/ab/Geometric_Segment.svg)
+<span style="display:block; text-align: center;">Wiki pic - The geometric series on the real line.</span>
+
+Therefore, inserting `n` elements takes `O(n)` work total. Each insertion is `O(1)` on average, even though
+some insertions take `O(n)` time in the worst case.
 
 ```java
 ArrayList<String> merge(String[] words, String[] more) {
@@ -40,7 +44,7 @@ ArrayList<String> merge(String[] words, String[] more) {
 
 String builder basically creates a resizable array of all the strings, copying them back to a string only when necessary. Use this when you have to mutate a string a lot. Don't loop and do `sentence = sentence + word`.
 
-The time complexity for this would be O(n<sup>2</sup>). Example - if you're concatenating words(each of length x) to a sentence: `x + 2x + 3x + ... + nx = n(n+1)/2 ~= n^2`
+The time complexity for this would be `O(n^2)`. Example - if you're concatenating words(each of length `x`) to a sentence: `x + 2x + 3x + ... + nx = n(n+1)/2 ~= n^2`
 
 So instead of doing this:
 

@@ -1,16 +1,17 @@
 <template>
 	<footer>
-		<p>© Mrinalini Manandhar {{ currYear }}</p>
+		<p>
+			<a href="https://github.com/mrinalini-m/blog.mrinalini.dev"><Github /></a>
+		</p>
 	</footer>
 </template>
 <script>
+	import Github from './github'
 	export default {
 		name: 'custom-footer',
-		data() {
-			return {
-				currYear: new Date().getFullYear(),
-			}
-		},
+		components: {
+			Github
+		}
 	}
 </script>
 <style lang="scss" scoped>

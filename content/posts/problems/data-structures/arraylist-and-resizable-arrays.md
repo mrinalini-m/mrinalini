@@ -6,7 +6,7 @@ tags:
   - array
   - java
   - data-structures
-category: articles
+category: problems
 ---
 
 Arrays in javascript are automatically resizable but in other languages like java, arrays are fixed length. You define the size when you create the array.

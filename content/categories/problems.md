@@ -1,6 +1,6 @@
 ---
-name: 'Toy Problems'
+name: 'Data Structures And Algorithms'
 id: 'problems'
-description: 'My solutions to toy problems in javascript.'
+description: 'Everything related to data structures and algorithms'
 link: 'https://github.com/mrinalini-m/data_structures_and_algorithms'
 ---

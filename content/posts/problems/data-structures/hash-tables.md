@@ -5,7 +5,7 @@ slug: 'hash-tables'
 tags:
   - data-structures
   - hash-table
-category: articles
+category: problems
 ---
 
 > In computing, a hash table is a data structure that implements an associative array abstract data type, a structure that can map keys to values. A hash table uses a hash function to compute an index, also called a hash code, into an array of buckets or slots, from which the desired value can be found.
@@ -63,4 +63,16 @@ class HashTable {
 		}
 	}
 }
+```
+
+Tests (jest):
+
+```js
+const { HashTable } = require('../src')
+
+test('gets correct value from table', () => {
+	const hash = new HashTable(10)
+	hash.set('test', 'This is a test.')
+	expect(hash.get('test')).toBe('This is a test.')
+})
 ```

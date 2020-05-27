@@ -1,13 +1,15 @@
 ---
-title: 'ArrayList and Resizable Arrays'
+title: 'Dynamic/Resizable Arrays and ArrayList'
 date: 2020-04-20
-slug: 'arraylist-and-resizable-arrays'
+slug: 'dynamic-arrays'
 tags:
   - array
   - java
   - data-structures
 category: problems
 ---
+
+[Wiki on Dynamic Arrays](https://en.wikipedia.org/wiki/Dynamic_array).
 
 Arrays in javascript are automatically resizable but in other languages like java, arrays are fixed length. You define the size when you create the array.
 
@@ -31,14 +33,13 @@ If we write this in series, it's: `n/2 + n/4 + n/8 + .. + 2 + 1 ~= n`
 Therefore, inserting `n` elements takes `O(n)` work total. Each insertion is `O(1)` on average, even though
 some insertions take `O(n)` time in the worst case.
 
-```java
-ArrayList<String> merge(String[] words, String[] more) {
-  ArrayList<String> sentence = new ArrayList<String>();
-  for (String w : words) sentence.add(w);
-  for (String w : more) sentence.add(w);
-  return sentence;
-}
-```
+Implementation of Dynamic Arrays in javascript:
+
+<!-- embed:DynamicArray.js -->
+
+Tests (jest):
+
+<!-- embed:DynamicArray.test.js -->
 
 ## String Builder
 

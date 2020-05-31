@@ -3,9 +3,8 @@ title: 'Queue'
 date: 2020-04-20
 slug: 'queue'
 tags:
-  - data-structures
   - queue
-category: problems
+category: data-structures
 ---
 
 <!-- embed:Queue.js -->

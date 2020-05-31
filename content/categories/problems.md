@@ -1,6 +1,7 @@
 ---
-name: 'Data Structures And Algorithms'
+name: 'Algorithms'
 id: 'problems'
-description: 'Everything related to data structures and algorithms'
-link: 'https://github.com/mrinalini-m/data_structures_and_algorithms'
+description: 'Everything related to algorithms and toy problems.'
+link: 'https://github.com/mrinalini-m/algorithms'
+index: 2
 ---

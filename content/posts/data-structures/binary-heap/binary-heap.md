@@ -3,9 +3,8 @@ title: 'Binary Heap'
 date: 2020-04-20
 slug: 'binary-heap'
 tags:
-  - data-structures
   - binary-heap
-category: problems
+category: data-structures
 ---
 
 Max Binary Heap:

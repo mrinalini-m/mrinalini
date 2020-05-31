@@ -3,9 +3,8 @@ title: 'Stack'
 date: 2020-04-20
 slug: 'stack'
 tags:
-  - data-structures
   - stack
-category: problems
+category: data-structures
 ---
 
 <!-- embed:Stack.js -->

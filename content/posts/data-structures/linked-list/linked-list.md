@@ -3,9 +3,8 @@ title: 'Linked List'
 date: 2020-04-20
 slug: 'linked-list'
 tags:
-  - data-structures
   - linked-list
-category: problems
+category: data-structures
 ---
 
 <!-- embed:LinkedList.js -->

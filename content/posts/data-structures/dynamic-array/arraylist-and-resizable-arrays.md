@@ -5,8 +5,7 @@ slug: 'dynamic-arrays'
 tags:
   - array
   - java
-  - data-structures
-category: problems
+category: data-structures
 ---
 
 [Wiki on Dynamic Arrays](https://en.wikipedia.org/wiki/Dynamic_array).

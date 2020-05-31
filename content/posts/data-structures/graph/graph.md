@@ -3,9 +3,8 @@ title: 'Graph'
 date: 2020-04-20
 slug: 'graph'
 tags:
-  - data-structures
   - graph
-category: problems
+category: data-structures
 ---
 
 Graph:

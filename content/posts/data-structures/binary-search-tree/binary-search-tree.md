@@ -3,10 +3,9 @@ title: 'Binary Search Tree'
 date: 2020-04-20
 slug: 'binary-search-tree'
 tags:
-  - data-structures
   - binary-search-tree
   - bst
-category: problems
+category: data-structures
 ---
 
 Binary Search Tree:

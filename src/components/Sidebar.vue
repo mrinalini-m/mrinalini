@@ -333,7 +333,7 @@
 
 <static-query>
 query {
-	allCategory {
+	allCategory(sort: [{ by: "index" , order: DESC}, { by: "name", order: DESC }]) {
 		totalCount
 		edges {
 			node {
@@ -341,6 +341,7 @@ query {
 				path
 				name
 				description
+        index
 			}
 		}
 	}

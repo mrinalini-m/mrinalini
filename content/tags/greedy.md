@@ -1,0 +1,4 @@
+---
+name: 'Greedy'
+id: 'greedy'
+---

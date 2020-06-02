@@ -217,3 +217,8 @@ blockquote {
 	border-radius: 4px;
 	background: $background-secondary;
 }
+
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}

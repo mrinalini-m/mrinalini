@@ -13,3 +13,7 @@ category: problems
 <span style="display:block; text-align: center;">Wiki pic - Graphical example of merge sort. [Source.](https://en.wikipedia.org/wiki/Merge_sort)</span>
 
 <!-- embed:merge_sort.js -->
+
+### Calculating the Time Complexity of Recursive Merge Sort
+
+![Time Complexity of Merge Sort](./merge_sort_runtime.png)

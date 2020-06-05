@@ -14,7 +14,7 @@ function getRandomIntInclusive(min, max) {
 // Quick Sort - With Lomuto partition
 function quickSort(arr) {
 	function recurse(start, end) {
-		if (start >= end || start > 15 || end > 15) return
+		if (start >= end) return
 
 		const randomIndex = getRandomIntInclusive(start, end)
 

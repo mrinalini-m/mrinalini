@@ -46,7 +46,11 @@
 		height: 1.5rem;
 		width: 1.5rem;
 		margin-bottom: 0;
-	}
+  }
+  
+  img.logo {
+    margin-bottom: 0;
+  }
 
 	.custom-header {
 		background-color: $background;

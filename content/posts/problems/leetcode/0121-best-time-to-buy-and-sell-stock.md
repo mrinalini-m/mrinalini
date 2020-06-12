@@ -5,8 +5,7 @@ date: 2019-11-22
 slug: '0121-best-time-to-buy-and-sell-stock'
 tags:
   - leetcode
-  - algorithms
-category:  problems
+category: problems
 ---
 
 ```js
@@ -35,39 +34,39 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0. */
 
 //Time - O(n), Space = O(1)
 var maxProfit = function(prices) {
-  const len = prices.length
-  let buyingPrice = 0,
-    sellingPrice = 0,
-    maxProfit = 0
+	const len = prices.length
+	let buyingPrice = 0,
+		sellingPrice = 0,
+		maxProfit = 0
 
-  for (let i = 0; i < len; i++) {
-    const stockPrice = prices[i]
-    if (i === 0 || buyingPrice > stockPrice) {
-      buyingPrice = stockPrice
-      sellingPrice = 0
-      continue
-    }
-    if (stockPrice > sellingPrice) sellingPrice = stockPrice
+	for (let i = 0; i < len; i++) {
+		const stockPrice = prices[i]
+		if (i === 0 || buyingPrice > stockPrice) {
+			buyingPrice = stockPrice
+			sellingPrice = 0
+			continue
+		}
+		if (stockPrice > sellingPrice) sellingPrice = stockPrice
 
-    maxProfit = Math.max(maxProfit, sellingPrice - buyingPrice)
-  }
-  return maxProfit
+		maxProfit = Math.max(maxProfit, sellingPrice - buyingPrice)
+	}
+	return maxProfit
 }
 
 //Time - O(n2), Space = O(1) (from solutions)
 //In formal terms, we need to find max(prices[j] - prices[i]) for every i and j such that j > i
 var maxProfit = function(prices) {
-  const len = prices.length
-  let maxProfit = 0
-  for (let i = 0; i < len; i++) {
-    const buyingPrice = prices[i]
-    for (let j = i + 1; j < len; j++) {
-      const sellingPrice = prices[j]
-      const profit = sellingPrice - buyingPrice
-      maxProfit = Math.max(profit, maxProfit)
-    }
-  }
-  return maxProfit
+	const len = prices.length
+	let maxProfit = 0
+	for (let i = 0; i < len; i++) {
+		const buyingPrice = prices[i]
+		for (let j = i + 1; j < len; j++) {
+			const sellingPrice = prices[j]
+			const profit = sellingPrice - buyingPrice
+			maxProfit = Math.max(profit, maxProfit)
+		}
+	}
+	return maxProfit
 }
 
 //Test cases
@@ -75,5 +74,4 @@ console.log(maxProfit([7, 1, 5, 3, 6, 4])) //5
 console.log(maxProfit([7, 6, 4, 3, 1])) //0
 console.log(maxProfit([2, 4, 1])) //2
 console.log(maxProfit([3, 2, 6, 5, 0, 3])) //4
-
 ```

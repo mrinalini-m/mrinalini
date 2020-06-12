@@ -5,8 +5,7 @@ date: 2019-11-22
 slug: '0179-largest-number'
 tags:
   - leetcode
-  - algorithms
-category:  problems
+category: problems
 ---
 
 ```js
@@ -20,10 +19,10 @@ category:  problems
 
 // Logic - [3, 31, 34, 300, 30]. Compare 'ab' and 'ba' and sort in descending order
 var largestNumber = function(nums) {
-  nums.sort((a, b) => {
-    return `${b}${a}` - `${a}${b}`
-  })
-  return nums[0] === 0 ? '0' : nums.join('')
+	nums.sort((a, b) => {
+		return `${b}${a}` - `${a}${b}`
+	})
+	return nums[0] === 0 ? '0' : nums.join('')
 }
 
 //Test cases
@@ -32,5 +31,4 @@ console.log(largestNumber([0]))
 console.log(largestNumber([]))
 console.log(largestNumber([10, 2]))
 console.log(largestNumber([3, 31, 34, 300, 30]))
-
 ```

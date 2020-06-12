@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0701-insert-into-a-binary-search-tree'
 tags:
   - leetcode
-  - algorithms
   - tree
   - recursion
 category: problems

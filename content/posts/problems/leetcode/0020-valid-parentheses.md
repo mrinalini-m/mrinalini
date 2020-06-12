@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0020-valid-parentheses'
 tags:
   - leetcode
-  - algorithms
   - stack
   - string
 category: problems

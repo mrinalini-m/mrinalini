@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '1110-delete-nodes-and-return-forest'
 tags:
   - leetcode
-  - algorithms
   - tree
 category: problems
 ---

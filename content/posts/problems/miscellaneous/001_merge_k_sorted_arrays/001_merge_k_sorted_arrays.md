@@ -5,7 +5,6 @@ date: 2020-06-10
 slug: 'merge-k-sorted-arrays'
 tags:
   - sorting
-  - algorithms
 category: problems
 ---
 

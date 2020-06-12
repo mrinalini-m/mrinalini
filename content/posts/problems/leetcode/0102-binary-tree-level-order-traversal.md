@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0102-binary-tree-level-order-traversal'
 tags:
   - leetcode
-  - algorithms
   - tree
   - recursion
   - queue

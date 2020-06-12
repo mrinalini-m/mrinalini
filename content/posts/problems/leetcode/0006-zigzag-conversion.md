@@ -5,8 +5,7 @@ date: 2019-11-22
 slug: '0006-zigzag-conversion'
 tags:
   - leetcode
-  - algorithms
-category:  problems
+category: problems
 ---
 
 ```js
@@ -17,41 +16,41 @@ category:  problems
  */
 
 var convert = function(s, numRows) {
-  if (numRows <= 1) return s
-  let i = 0,
-    col = 0,
-    row = 0,
-    res = ''
-  const len = s.length,
-    zigzag = []
+	if (numRows <= 1) return s
+	let i = 0,
+		col = 0,
+		row = 0,
+		res = ''
+	const len = s.length,
+		zigzag = []
 
-  for (let j = 0; j < numRows; j++) {
-    zigzag.push([])
-  }
+	for (let j = 0; j < numRows; j++) {
+		zigzag.push([])
+	}
 
-  while (i < len) {
-    while (row < numRows && i < len) {
-      zigzag[row][col] = s[i]
-      i++
-      row++
-    }
-    row--
-    while (row > 0 && i < len) {
-      col++
-      row--
-      zigzag[row][col] = s[i]
-      i++
-    }
-    row++
-  }
+	while (i < len) {
+		while (row < numRows && i < len) {
+			zigzag[row][col] = s[i]
+			i++
+			row++
+		}
+		row--
+		while (row > 0 && i < len) {
+			col++
+			row--
+			zigzag[row][col] = s[i]
+			i++
+		}
+		row++
+	}
 
-  zigzag.forEach(row => {
-    row.forEach(letter => {
-      if (letter) res += letter
-    })
-  })
+	zigzag.forEach(row => {
+		row.forEach(letter => {
+			if (letter) res += letter
+		})
+	})
 
-  return res
+	return res
 }
 
 //Test cases
@@ -63,5 +62,4 @@ console.log(convert('hellonooby', 3))
 h - number of rows
 N/h
 */
-
 ```

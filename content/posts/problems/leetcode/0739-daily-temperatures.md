@@ -5,9 +5,8 @@ date: 2019-11-22
 slug: '0739-daily-temperatures'
 tags:
   - leetcode
-  - algorithms
   - stack
-category:  problems
+category: problems
 ---
 
 ```js

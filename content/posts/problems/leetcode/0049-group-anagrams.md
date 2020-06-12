@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0049-group-anagrams'
 tags:
   - leetcode
-  - algorithms
   - string
 category: problems
 ---

@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0394-decode-string'
 tags:
   - leetcode
-  - algorithms
   - stack
 category: problems
 ---

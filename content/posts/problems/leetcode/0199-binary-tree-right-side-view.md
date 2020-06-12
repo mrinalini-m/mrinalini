@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0199-binary-tree-right-side-view'
 tags:
   - leetcode
-  - algorithms
   - tree
   - recursion
 category: problems

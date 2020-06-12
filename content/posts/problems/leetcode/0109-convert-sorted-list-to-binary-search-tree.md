@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0109-convert-sorted-list-to-binary-search-tree'
 tags:
   - leetcode
-  - algorithms
   - tree
   - sort
 category: problems

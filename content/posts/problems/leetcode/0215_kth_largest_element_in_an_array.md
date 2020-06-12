@@ -5,7 +5,6 @@ date: 2020-06-07
 slug: '0215-kth-largest-element-in-an-array'
 tags:
   - leetcode
-  - algorithms
   - sorting
   - quicksort
 category: problems

@@ -4,7 +4,6 @@ date: 2020-06-04
 slug: quick-sort
 tags:
   - sorting
-  - algorithms
 category: problems
 ---
 

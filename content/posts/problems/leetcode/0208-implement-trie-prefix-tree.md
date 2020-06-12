@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0208-implement-trie-prefix-tree'
 tags:
   - leetcode
-  - algorithms
   - tree
 category: problems
 ---

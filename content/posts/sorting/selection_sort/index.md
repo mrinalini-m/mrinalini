@@ -4,7 +4,6 @@ date: 2020-06-02
 slug: selection-sort
 tags:
   - sorting
-  - algorithms
 category: problems
 ---
 

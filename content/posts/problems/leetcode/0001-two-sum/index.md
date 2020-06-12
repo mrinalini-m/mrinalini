@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0001-two-sum'
 tags:
   - leetcode
-  - algorithms
 category: problems
 ---
 

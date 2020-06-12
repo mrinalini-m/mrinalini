@@ -4,7 +4,6 @@ date: 2020-06-07
 slug: heap-sort
 tags:
   - sorting
-  - algorithms
 category: problems
 ---
 

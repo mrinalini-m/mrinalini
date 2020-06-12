@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0865-smallest-subtree-with-all-the-deepest-nodes'
 tags:
   - leetcode
-  - algorithms
   - tree
 category: problems
 ---

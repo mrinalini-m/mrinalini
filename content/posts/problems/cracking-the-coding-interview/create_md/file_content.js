@@ -1,4 +1,4 @@
-const createTags = (tags) => {
+const createTags = tags => {
 	const arr = JSON.parse(tags)
 	let res = ``
 	for (const tag of arr) {
@@ -16,7 +16,6 @@ date: ${date}
 slug: ${slug}
 tags:
   - ctci
-  - algorithms
   ${tagsStr}
 category:  problems
 ---

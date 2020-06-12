@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0695-max-area-of-island'
 tags:
   - leetcode
-  - algorithms
   - array
 category: problems
 ---
@@ -16,12 +15,7 @@ category: problems
  * @return {number}
  */
 
-const directions = [
-	[-1, 0],
-	[0, 1],
-	[1, 0],
-	[0, -1]
-]
+const directions = [[-1, 0], [0, 1], [1, 0], [0, -1]]
 const dfs = (i, j, count) => {
 	if (!grid[i] || !grid[i][j]) return 0
 	if (grid[i][j] === 1) {

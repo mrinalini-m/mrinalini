@@ -6,7 +6,6 @@ date: ${date}
 slug: ${slug}
 tags:
   - interview-cake
-  - algorithms
   ${tags}
 category: problems
 ---

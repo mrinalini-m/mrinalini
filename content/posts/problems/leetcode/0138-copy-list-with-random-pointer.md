@@ -5,8 +5,7 @@ date: 2019-11-22
 slug: '0138-copy-list-with-random-pointer'
 tags:
   - leetcode
-  - algorithms
-category:  problems
+category: problems
 ---
 
 ```js
@@ -24,11 +23,11 @@ category:  problems
  */
 
 class Node {
-  constructor(val, next = null, random = null) {
-    this.val = val
-    this.next = next
-    this.random = random
-  }
+	constructor(val, next = null, random = null) {
+		this.val = val
+		this.next = next
+		this.random = random
+	}
 }
 
 //Iterative
@@ -36,63 +35,63 @@ class Node {
 //Space - O(n)
 
 var copyRandomList = function(head) {
-  if (!head) return null
-  let node = head,
-    i = 0,
-    copiedHead = null,
-    copiedNode = null,
-    map = {}
-  while (node) {
-    const n = new Node(node.val)
-    if (!copiedNode) {
-      copiedHead = n
-      copiedNode = n
-    } else {
-      copiedNode.next = n
-      copiedNode = n
-    }
-    map[node.val] = n
-    node = node.next
-  }
-  node = head
-  copiedNode = copiedHead
-  while (node && copiedNode) {
-    if (node.random) copiedNode.random = map[node.random.val]
-    node = node.next
-    copiedNode = copiedNode.next
-  }
-  return copiedHead
+	if (!head) return null
+	let node = head,
+		i = 0,
+		copiedHead = null,
+		copiedNode = null,
+		map = {}
+	while (node) {
+		const n = new Node(node.val)
+		if (!copiedNode) {
+			copiedHead = n
+			copiedNode = n
+		} else {
+			copiedNode.next = n
+			copiedNode = n
+		}
+		map[node.val] = n
+		node = node.next
+	}
+	node = head
+	copiedNode = copiedHead
+	while (node && copiedNode) {
+		if (node.random) copiedNode.random = map[node.random.val]
+		node = node.next
+		copiedNode = copiedNode.next
+	}
+	return copiedHead
 }
 
 //Recursive Using Map so node objects can be used as object keys
 var copyRandomList = function(root) {
-  const visited = new Map()
-  const recurse = head => {
-    if (!head) return null
-    if (visited.get(head)) return visited.get(head)
-    const node = new Node(head.val)
-    visited.set(head, node)
-    node.next = recurse(head.next)
-    node.random = recurse(head.random)
-    return node
-  }
+	const visited = new Map()
+	const recurse = head => {
+		if (!head) return null
+		if (visited.get(head)) return visited.get(head)
+		const node = new Node(head.val)
+		visited.set(head, node)
+		node.next = recurse(head.next)
+		node.random = recurse(head.random)
+		return node
+	}
 
-  return recurse(root)
+	return recurse(root)
 }
 
 //Mapping the head vals to nodes assuming vals are unique
 var copyRandomList = function(root) {
-  const visited = {}
-  const recurse = head => {
-    if (!head) return null
-    if (visited[head.val]) return visited[head.val]
-    const node = new Node(head.val)
-    visited[head.val] = node
-    node.next = recurse(head.next)
-    node.random = recurse(head.random)
-    return node
-  }
-  return recurse(root)
+	const visited = {}
+	const recurse = head => {
+		if (!head) return null
+		if (visited[head.val]) return visited[head.val]
+		const node = new Node(head.val)
+		visited[head.val] = node
+		node.next = recurse(head.next)
+		node.random = recurse(head.random)
+		return node
+	}
+	return recurse(root)
 }
 
 node1 = new Node(1)
@@ -110,5 +109,4 @@ node1.random = node5
 node2.random = node1
 node4.random = node2
 node3.random = node5
-
 ```

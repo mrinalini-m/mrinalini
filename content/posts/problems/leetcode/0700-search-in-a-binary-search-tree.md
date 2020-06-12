@@ -5,7 +5,6 @@ date: 2019-11-22
 slug: '0700-search-in-a-binary-search-tree'
 tags:
   - leetcode
-  - algorithms
   - stack
   - tree
   - recursion

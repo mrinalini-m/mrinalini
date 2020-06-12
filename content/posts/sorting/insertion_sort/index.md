@@ -4,7 +4,6 @@ date: 2020-06-02
 slug: insertion-sort
 tags:
   - sorting
-  - algorithms
 category: problems
 ---
 

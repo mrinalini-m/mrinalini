@@ -5,8 +5,7 @@ date: 2019-11-22
 slug: '0826-most-profit-assigning-work'
 tags:
   - leetcode
-  - algorithms
-category:  problems
+category: problems
 ---
 
 ```js
@@ -17,33 +16,33 @@ category:  problems
  * @return {number}
  */
 var maxProfitAssignment = function(difficulty, profit, workers) {
-  const diffProf = []
-  let total = 0,
-    maxP = 0,
-    i = 0
+	const diffProf = []
+	let total = 0,
+		maxP = 0,
+		i = 0
 
-  difficulty.forEach((diff, j) => {
-    diffProf[j] = [diff, profit[j]]
-  })
+	difficulty.forEach((diff, j) => {
+		diffProf[j] = [diff, profit[j]]
+	})
 
-  diffProf.sort((a, b) => a[0] - b[0] || (a[0] == b[0] && a[1] - b[1]))
-  workers.sort((a, b) => a - b)
+	diffProf.sort((a, b) => a[0] - b[0] || (a[0] == b[0] && a[1] - b[1]))
+	workers.sort((a, b) => a - b)
 
-  const diffProfLen = diffProf.length
+	const diffProfLen = diffProf.length
 
-  for (let work of workers) {
-    while (i < diffProfLen && work >= diffProf[i][0]) {
-      maxP = Math.max(diffProf[i++][1], maxP)
-    }
-    total += maxP
-  }
+	for (let work of workers) {
+		while (i < diffProfLen && work >= diffProf[i][0]) {
+			maxP = Math.max(diffProf[i++][1], maxP)
+		}
+		total += maxP
+	}
 
-  return total
+	return total
 }
 
 let diffculty = [8, 4, 6, 10, 2],
-  profit = [40, 20, 30, 50, 10],
-  worker = [4, 5, 6, 7]
+	profit = [40, 20, 30, 50, 10],
+	worker = [4, 5, 6, 7]
 
 diffculty = [85, 47, 57]
 profit = [24, 66, 99]
@@ -57,5 +56,4 @@ profit = [4, 90, 96]
 worker = [34, 73, 45]
 //Test cases
 console.log(maxProfitAssignment(diffculty, profit, worker))
-
 ```

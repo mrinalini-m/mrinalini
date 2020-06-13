@@ -4,6 +4,7 @@ date: 2020-06-03
 slug: merge-sort
 tags:
   - sorting
+  - recursion
 category: problems
 ---
 

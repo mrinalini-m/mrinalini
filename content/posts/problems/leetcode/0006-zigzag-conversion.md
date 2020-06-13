@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0006-zigzag-conversion'
 tags:
   - leetcode
+  - string
 category: problems
 ---
 

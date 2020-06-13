@@ -5,6 +5,7 @@ slug: quick-sort
 tags:
   - sorting
   - recursion
+  - divide-and-conquer
 category: problems
 ---
 

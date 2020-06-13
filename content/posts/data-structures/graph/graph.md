@@ -4,6 +4,8 @@ date: 2020-04-20
 slug: 'graph'
 tags:
   - graph
+  - recursion
+  - set
 category: data-structures
 ---
 

@@ -1,4 +1,0 @@
----
-name: 'Hashes'
-id: 'hashes'
----

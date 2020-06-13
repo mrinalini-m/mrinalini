@@ -5,6 +5,8 @@ date: 2019-11-22
 slug: '0053-maximum-subarray'
 tags:
   - leetcode
+  - array
+  - divide-and-conquer
 category: problems
 ---
 

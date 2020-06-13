@@ -5,6 +5,7 @@ slug: merge-sort
 tags:
   - sorting
   - recursion
+  - divide-and-conquer
 category: problems
 ---
 

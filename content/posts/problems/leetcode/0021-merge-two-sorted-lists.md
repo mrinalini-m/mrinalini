@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0021-merge-two-sorted-lists'
 tags:
   - leetcode
+  - linked-list
 category: problems
 ---
 

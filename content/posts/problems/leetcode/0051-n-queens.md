@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0051-n-queens'
 tags:
   - leetcode
+  - backtracking
 category: problems
 ---
 

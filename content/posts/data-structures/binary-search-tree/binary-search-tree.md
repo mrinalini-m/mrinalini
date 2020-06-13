@@ -5,6 +5,7 @@ slug: 'binary-search-tree'
 tags:
   - binary-search-tree
   - bst
+  - recursion
 category: data-structures
 ---
 

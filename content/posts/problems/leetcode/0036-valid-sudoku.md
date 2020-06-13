@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0036-valid-sudoku'
 tags:
   - leetcode
+  - hash-table
 category: problems
 ---
 

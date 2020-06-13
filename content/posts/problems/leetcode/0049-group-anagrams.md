@@ -6,6 +6,7 @@ slug: '0049-group-anagrams'
 tags:
   - leetcode
   - string
+  - hash-table
 category: problems
 ---
 

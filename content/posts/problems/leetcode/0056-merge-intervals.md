@@ -5,6 +5,8 @@ date: 2019-11-22
 slug: '0056-merge-intervals'
 tags:
   - leetcode
+  - array
+  - sorting
 category: problems
 ---
 

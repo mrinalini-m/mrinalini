@@ -6,7 +6,7 @@ slug: '0109-convert-sorted-list-to-binary-search-tree'
 tags:
   - leetcode
   - tree
-  - sort
+  - sorting
 category: problems
 ---
 

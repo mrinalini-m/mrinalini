@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0002-add-two-numbers'
 tags:
   - leetcode
+  - linked-list
 category: problems
 ---
 

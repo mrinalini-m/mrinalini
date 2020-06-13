@@ -6,6 +6,7 @@ slug: 'merge-k-sorted-arrays'
 tags:
   - sorting
   - recursion
+  - divide-and-conquer
 category: problems
 ---
 

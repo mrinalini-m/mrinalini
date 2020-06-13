@@ -5,6 +5,7 @@ date: 2019-11-22
 slug: '0024-swap-nodes-in-pairs'
 tags:
   - leetcode
+  - linked-list
 category: problems
 ---
 

@@ -6,6 +6,7 @@ link: 'https://leetcode.com/problems/sort-colors/'
 tags:
   - sorting
   - pointers
+  - array
 category: problems
 ---
 

@@ -5,6 +5,8 @@ date: 2019-11-22
 slug: '0003-longest-substring-without-repeating-characters'
 tags:
   - leetcode
+  - pointers
+  - string
 category: problems
 ---
 

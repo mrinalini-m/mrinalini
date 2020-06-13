@@ -1,4 +1,0 @@
----
-name: 'Maps'
-id: 'maps'
----

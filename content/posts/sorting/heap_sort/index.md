@@ -4,6 +4,7 @@ date: 2020-06-07
 slug: heap-sort
 tags:
   - sorting
+  - binary-heap
 category: problems
 ---
 

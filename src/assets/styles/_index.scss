@@ -58,6 +58,7 @@ button::-moz-focus-inner {
 	transition: background-color $transition;
 }
 a {
+	font-weight: 500;
 	@include style-as-link(
 		$link-color,
 		$link-hover-color,

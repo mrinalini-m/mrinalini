@@ -17,7 +17,9 @@
 				</g-link>
 			</ul>
 		</div>
-
+    <p class="link-wrapper" v-if="$page.post.link">
+			<a :href="$page.post.link">Problem Link</a>
+		</p>
 		<VueRemarkContent class="post-content" />
 		<!-- <div class="post-content" v-html="$page.post.content" /> -->
 	</Layout>
@@ -30,7 +32,11 @@
 	.post-title {
 		font-size: 1.9rem;
 	}
-
+  .link-wrapper {
+    text-align: start;
+    font-size: 1.125rem;
+    margin-top: 1.5rem;
+  }
 	.post-meta {
 		text-align: start;
 		.date {
@@ -50,6 +56,7 @@ query Post ($path: String!) {
   post (path: $path) {
     id
     title
+    link
     content
     date (format: "D MMMM, YYYY")
     tags{name, id, path}

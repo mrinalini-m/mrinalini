@@ -156,7 +156,10 @@
 			background: $background-secondary;
 			overflow-x: hidden;
 			padding: 2rem 0;
-			padding-bottom: 6rem;
+      padding-bottom: 6rem;
+      a {
+        font-weight: 400;
+      }
 			.categories,
 			.tags,
 			.nav-links {

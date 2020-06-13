@@ -1,7 +1,7 @@
 ---
 name: 'Articles'
 id: 'articles'
-description: 'My notes, TILs, some code with text paragraphs.'
+description: 'My notes, TILs and some code with explanation.'
 link: ''
 index: 0
 ---

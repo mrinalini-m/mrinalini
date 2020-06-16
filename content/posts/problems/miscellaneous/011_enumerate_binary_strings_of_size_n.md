@@ -68,7 +68,7 @@ Time Complexity - O(n * 2^n)
 Space Complexity - O(n). Height of tree or length of prefix of partial slate which increases with depth. 
 */
 function binaryStrings(n) {
-	if (n < 0) return []
+	if (n < 1) return []
 
 	const result = []
 	bsHelper('', n)

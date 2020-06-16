@@ -9,9 +9,10 @@ category: problems
 
 Given two integers, n and k, calcuate n^k. n > 0, k >= 0
 
+### Recursive
+
 ```js
 /* 
-Recursive
 Time Complexity - O(k)
 Space Complexity - O(k). From call stack
 */
@@ -20,10 +21,12 @@ function rRaiseIntToPower(n, k) {
 	if (k === 0) return 1
 	else return n * rRaiseIntToPower(n, k - 1)
 }
+```
 
-// ----------------------------------------------
+### Iterative
+
+```js
 /*
-Iterative
 Time Complexity - O(k)
 Space Complexity - O(1)
 */
@@ -34,7 +37,11 @@ function iRaiseIntToPower(n, k) {
 	}
 	return result
 }
+```
 
+Tests:
+
+```js
 // Tests ------------------------------------------
 const tests = [[2, 4, 16], [2, 0, 1], [12, 5, 248832]]
 console.log('Recursive tests')

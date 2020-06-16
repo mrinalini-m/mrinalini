@@ -9,9 +9,10 @@ category: problems
 
 Enumerate all possible decimal strings of length n.
 
+### DFS Recursive divide-and-conquer
+
 ```js
 /*
-DFS Recursive divide-and-conquer
 Time Complexity - O(n * 10^n)
 Space Complexity - O(n). Height of tree or length of prefix of partial slate which increases with depth.
 */

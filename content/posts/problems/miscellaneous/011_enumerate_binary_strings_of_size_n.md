@@ -1,5 +1,5 @@
 ---
-title: 'Enumerate all possible binary strings of length n'
+title: 'Enumerate All Possible Binary Strings of Length n'
 date: 2020-06-16
 slug: 'enumerate-binary-strings-of-size-n'
 tags:

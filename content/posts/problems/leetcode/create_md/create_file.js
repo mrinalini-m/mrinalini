@@ -59,7 +59,7 @@ const convertToMd = js => {
 
 const getSlug = js => {
 	const slug = js.replace('.js', '')
-	return slug.replace('_', '-')
+	return slug.replace(/_/g, '-')
 }
 
 const name = getName(process.argv[2]),

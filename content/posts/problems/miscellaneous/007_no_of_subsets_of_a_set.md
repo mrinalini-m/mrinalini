@@ -1,13 +1,15 @@
 ---
-title: No of Subsets of a Set
+title: Number of Subsets of a Set
 date: 2020-06-15
-slug: no-of-subsets-of-a-set
+slug: number-of-subsets-of-a-set
 tags:
   - recursion
 category: problems
 ---
 
-Given a set of size n, count total number of distinct possible subsets? Assume n >= 0 and all elements of the set are unique.
+Given a set of size n, count total number of distinct possible subsets. Assume n >= 0 and all elements of the set are unique.
+
+> Note: The total number of possible subsets of a subset of size n is `2^n`.
 
 ### Iterative Decrease-and-conquer strategy
 

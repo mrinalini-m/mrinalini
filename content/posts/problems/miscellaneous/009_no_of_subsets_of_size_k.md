@@ -1,7 +1,7 @@
 ---
-title: No of Subsets of Size K
+title: Number of Subsets of Size K
 date: 2020-06-15
-slug: no-of-subsets-of-size-k
+slug: number-of-subsets-of-size-k
 tags:
   - recursion
 category: problems

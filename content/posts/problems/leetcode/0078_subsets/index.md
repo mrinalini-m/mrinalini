@@ -59,6 +59,21 @@ function subsets(array) {
 <span style="display:block; text-align: center;">Tree Diagram - Time Complexity and Recursive path</span>
 ![Subsets diagram](./0078-subsets.jpg)
 
+### Iterative version
+
+```js
+function subsetsIterative(array) {
+	const result = [[]]
+	for (let i = 0; i < array.length; i++) {
+		const len = result.length //will loop infinitely without this
+		for (let x = 0; x < len; x++) {
+			result.push(result[x].concat(array[i]))
+		}
+	}
+	return result
+}
+```
+
 Tests:
 
 ```js

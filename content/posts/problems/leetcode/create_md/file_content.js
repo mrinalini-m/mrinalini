@@ -5,7 +5,7 @@ title: ${title}
 date: ${date}
 slug: ${slug}
 tags:
-  - sorting
+  - recursion
 category: problems
 ---
 

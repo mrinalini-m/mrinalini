@@ -41,6 +41,7 @@ const others = ['to', 'a', 'an', 'the'],
 const lowercase = new Set([...others, ...prepositions, ...conjunctions])
 
 const getName = str => {
+	str = str.replace('.js', '')
 	const arr = str.split('_'),
 		num = Number(arr.shift()),
 		split = [num]
@@ -66,7 +67,7 @@ const name = getName(process.argv[2]),
 	num = name.shift()
 
 const title = `${num}. ${name.join(' ')}`,
-	date = '2020-06-12',
+	date = '2020-06-18',
 	slug = getSlug(process.argv[2]),
 	fileName = convertToMd(process.argv[2])
 

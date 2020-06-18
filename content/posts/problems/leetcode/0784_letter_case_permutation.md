@@ -1,5 +1,5 @@
 ---
-title: 784. Letter Case Permutation.js
+title: 784. Letter Case Permutation
 date: 2020-06-17
 slug: 0784-letter-case-permutation
 link: 'https://leetcode.com/problems/letter-case-permutation/'

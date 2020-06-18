@@ -1,6 +1,6 @@
 ---
-title: 46. Permutations.js
-date: 2020-06-12
+title: 46. Permutations
+date: 2020-06-17
 slug: 0046-permutations
 link: 'https://leetcode.com/problems/permutations'
 tags:
@@ -48,6 +48,33 @@ function permute(nums) {
 
 // Tests
 console.log(permute([1, 2, 3]))
+```
+
+<span style="display:block; text-align: center;">Tree Diagram</span>
+![Permutations diagram](./0046_permutations.png)
+
+### Optimized backtracking - With mutable params, no separate slate
+
+```js
+function permuteNoSlate(nums) {
+	const result = [],
+		len = nums.length
+	function pHelper(i, arr) {
+		if (len === i) {
+			result.push(arr.slice(0))
+			return
+		}
+
+		for (let pick = i; pick < len; pick++) {
+			swap(arr, pick, i)
+			pHelper(i + 1, arr)
+			swap(nums, pick, i)
+		}
+	}
+
+	pHelper(0, nums)
+	return result
+}
 ```
 
 ```js

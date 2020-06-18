@@ -1,5 +1,5 @@
 ---
-title: 75. Sort Colors.js
+title: 75. Sort Colors
 date: 2020-06-12
 slug: 0075-sort-colors
 link: 'https://leetcode.com/problems/sort-colors/'

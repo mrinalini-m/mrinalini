@@ -1,5 +1,5 @@
 ---
-title: 1213. Intersection of Three Sorted Arrays.js
+title: 1213. Intersection of Three Sorted Arrays
 date: 2020-06-12
 link: 'https://leetcode.com/problems/intersection-of-three-sorted-arrays/'
 slug: 1213-intersection-of-three-sorted-arrays

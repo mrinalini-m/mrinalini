@@ -1,7 +1,7 @@
 ---
 title: 'N-Queens - Solving a leetcode "hard" problem'
 link: 'https://leetcode.com/problems/n-queens'
-date: 2020-06-18
+date: 2020-06-19
 slug: '0051-n-queens'
 tags:
   - leetcode

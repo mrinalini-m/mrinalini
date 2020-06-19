@@ -5,6 +5,7 @@ title: ${title}
 date: ${date}
 slug: ${slug}
 tags:
+  - leetcode
   - recursion
 category: problems
 ---

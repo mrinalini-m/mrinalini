@@ -8,7 +8,7 @@ tags:
 category: problems
 ---
 
-### Optimized backtracking
+### Recursive DFS
 
 ```js
 /* 
@@ -53,7 +53,7 @@ console.log(permute([1, 2, 3]))
 <span style="display:block; text-align: center;">Tree Diagram</span>
 ![Permutations diagram](./0046_permutations.png)
 
-### Optimized backtracking - With mutable params, no separate slate
+### Recursive DFS - With mutable params, no separate slate
 
 ```js
 function permuteNoSlate(nums) {

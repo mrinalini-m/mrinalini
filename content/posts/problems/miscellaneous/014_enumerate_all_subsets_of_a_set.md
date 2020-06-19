@@ -11,8 +11,6 @@ Given a set S of n distinct numbers, print(enumerate) all of its subsets.
 
 Related: [Number of Subsets of a Set](/posts/number-of-subsets-of-a-set) and [Number of Subsets of Size K](/posts/number-of-subsets-of-size-k).
 
-### Recursive BFS
-
 ```js
 /* 
 Time Complexity - O(n * 2^n)

@@ -8,7 +8,7 @@ tags:
 category: problems
 ---
 
-### Recursive BFS
+### Recursive DFS
 
 ```js
 /* 

@@ -10,7 +10,7 @@ tags:
 category: problems
 ---
 
-### Complete solution — brute force, recursive DFS and O(n^n) time
+### Complete solution — Recursive DFS and O(n!) time
 
 ```js
 // Main function
@@ -102,7 +102,7 @@ My code was getting hard to read(it was more console.logs than actual code at th
 
 ### Helper functions
 
-`isValidCell` checks if a queen placement is valid. From the tree diagram that I drew, I knew I just had to check the top half of the board. This approach is brute force and there is a more optimal way that I still need to implement.
+`isValidCell` checks if a queen placement is valid. You only need to check the top half the board for valid queen placement. This functions checks every cell, even the ones that are empty. Checking against empty cells is redundant and there is a more optimal way to do this.
 
 ![n-queens valid placement](./n-qeeuns_valid.png)
 

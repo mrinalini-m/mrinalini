@@ -90,8 +90,8 @@ function deepCopyBoard(board) {
 console.log(solveNQueens(4))
 ```
 
-<a href="/assets/img/n-queens-tree.png" target="_blank">
-  <img src="./n-queens-tree.png"/>
+<a href="/img/n-queens-tree.png" target="_blank">
+  <img src="../../../../../static/img/n-queens-tree.png"/>
 </a>
 
 ## First Intuition and Strategy

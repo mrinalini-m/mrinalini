@@ -4,8 +4,6 @@
 body {
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, 'Roboto', Helvetica,
 		Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
 	text-align: center;
 	color: $font-color;
 	font-weight: 400;
@@ -13,8 +11,14 @@ body {
 
 .container {
 	max-width: $max-width;
-	padding: 1.5rem;
 	margin: 0 auto;
+	padding: 1.5rem;
+	@include medium-breakpoint {
+		padding: 1.25rem;
+	}
+	@include small-breakpoint {
+		padding: 0.75rem;
+	}
 }
 
 p,
@@ -23,8 +27,11 @@ ul,
 dl,
 table {
 	margin: 0 0 1.5rem 0;
-	font-size: 1rem;
-	line-height: 1.5rem;
+	font-size: 1.05rem;
+	line-height: 1.7rem;
+	@include small-breakpoint {
+		font-size: 1rem;
+	}
 }
 
 //buttons
@@ -163,12 +170,13 @@ pre {
 		background: rgba(150, 150, 150, 0.3) !important;
 	}
 	border-radius: $border-radius;
+
 	code {
 		font-family: $code-font-family;
-		font-size: 13px;
+		font-size: 14px;
 		direction: ltr;
 		text-align: left;
-		white-space: pre-wrap;
+		white-space: pre;
 		word-spacing: normal;
 		word-break: normal;
 		line-height: 1.7;
@@ -182,6 +190,20 @@ pre {
 		overflow: auto;
 		border: 0;
 		box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
+	}
+	@include medium-breakpoint {
+		code {
+			padding: 1.25rem;
+		}
+	}
+	@include small-breakpoint {
+		margin-left: -0.75rem;
+		width: 100vw;
+		border-radius: 0;
+		code {
+			font-size: 13px;
+			padding: 0.75rem;
+		}
 	}
 }
 

@@ -4,10 +4,10 @@
 			<Mobile />
 			<div class="brand">
 				<a href="https://mrinalini.dev/">
-					<g-image class="logo" src="~/assets/images/logo.svg" /><span
-						class="text"
-						>rinalini</span
-					>
+					<span class="text" style="color: rgb(246, 213, 92);">S</span>
+					<!-- <span class="text">am&nbsp;</span> -->
+					<span class="text" style="color: rgb(63, 187, 131);">M</span>
+					<!-- <span>.</span> -->
 				</a>
 			</div>
 			<Header />
@@ -97,6 +97,7 @@
 			padding: 0 1.5rem;
 			transition: height 0.3s ease, box-shadow 0.3s ease;
 			.brand {
+        font-family: 'Open Sans' !important;
 				display: flex;
 				flex-direction: row;
 				justify-content: flex-start;

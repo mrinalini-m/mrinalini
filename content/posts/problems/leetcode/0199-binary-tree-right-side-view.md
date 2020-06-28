@@ -1,7 +1,7 @@
 ---
 title: '199. Binary Tree Right Side View'
 link: 'https://leetcode.com/problems/binary-tree-right-side-view'
-date: 2019-11-22
+date: 2020-06-23
 slug: '0199-binary-tree-right-side-view'
 tags:
   - leetcode
@@ -9,6 +9,32 @@ tags:
   - recursion
 category: problems
 ---
+
+```js
+var rightSideView = function(root) {
+	const res = []
+	if (!root) return res
+	let q = [root]
+
+	while (q.length) {
+		const numNodes = q.length
+		let temp
+
+		for (let i = 0; i < numNodes; i++) {
+			const node = q.shift()
+			temp = node.val
+			if (node.left) q.push(node.left)
+			if (node.right) q.push(node.right)
+		}
+
+		res.push(temp)
+	}
+
+	return res
+}
+```
+
+Old: 2019-11-22
 
 ```js
 /**

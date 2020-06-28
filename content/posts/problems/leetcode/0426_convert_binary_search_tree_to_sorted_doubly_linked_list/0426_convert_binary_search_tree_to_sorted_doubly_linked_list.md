@@ -42,7 +42,12 @@ function TreeNode(val, left, right) {
 	this.left = left === undefined ? null : left
 	this.right = right === undefined ? null : right
 }
+```
 
+![binary-search-tree-to-sorted-doubly-linked-list](./binary-search-tree-to-sorted-doubly-linked-list.png)
+Tests:
+
+```js
 // tests
 const tree = {
 	val: 5,

@@ -1,6 +1,6 @@
 ---
 title: 'Binary Search Tree'
-date: 2020-04-20
+date: 2020-06-23
 slug: 'binary-search-tree'
 tags:
   - binary-search-tree
@@ -9,11 +9,16 @@ tags:
 category: data-structures
 ---
 
-Binary Search Tree:
+### Binary Search Tree:
 
 <!-- embed:BinarySearchTree.js -->
 
-Binary Search Tree Traversal
+### BST successor with diagrams
+
+![BST successor if right node exists](./00_bst_successor.png)
+![BST successor if right node does not exist](./01_bst_successor.png)
+
+### Binary Search Tree Traversal
 
 <!-- embed:BinaryTreeTraversal.js -->
 

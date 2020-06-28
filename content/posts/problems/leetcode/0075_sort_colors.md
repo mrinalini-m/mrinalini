@@ -4,6 +4,7 @@ date: 2020-06-12
 slug: 0075-sort-colors
 link: 'https://leetcode.com/problems/sort-colors/'
 tags:
+  - leetcode
   - sorting
   - pointers
   - array

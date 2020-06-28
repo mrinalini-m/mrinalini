@@ -4,6 +4,7 @@ date: 2020-06-17
 slug: 0046-permutations
 link: 'https://leetcode.com/problems/permutations'
 tags:
+  - leetcode
   - recursion
 category: problems
 ---

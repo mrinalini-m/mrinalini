@@ -1,8 +1,10 @@
 ---
-title: 'Merge an array of size n into another array of size 2n'
+title: '88. Merge Sorted Array'
 date: 2020-06-12
-slug: 'merge-first_array_into_second_array'
+slug: '0088-merge-sorted-array.md'
+link: 'https://leetcode.com/problems/merge-sorted-array/'
 tags:
+  - leetcode
   - sorting
   - pointers
 category: problems

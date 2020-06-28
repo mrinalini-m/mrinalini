@@ -4,6 +4,7 @@ date: 2020-06-17
 slug: 0047-permutations-ii
 link: 'https://leetcode.com/problems/permutations-ii'
 tags:
+  - leetcode
   - recursion
 category: problems
 ---

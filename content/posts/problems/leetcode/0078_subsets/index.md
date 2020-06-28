@@ -4,6 +4,7 @@ date: 2020-06-17
 slug: 0078-subsets
 link: 'https://leetcode.com/problems/subsets/'
 tags:
+  - leetcode
   - recursion
 category: problems
 ---

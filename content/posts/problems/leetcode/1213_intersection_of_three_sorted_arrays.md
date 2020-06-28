@@ -4,6 +4,7 @@ date: 2020-06-12
 link: 'https://leetcode.com/problems/intersection-of-three-sorted-arrays/'
 slug: 1213-intersection-of-three-sorted-arrays
 tags:
+  - leetcode
   - sorting
   - pointers
 category: problems

@@ -4,6 +4,7 @@ date: 2020-06-18
 slug: 0077-combinations
 link: 'https://leetcode.com/problems/combinations/'
 tags:
+  - leetcode
   - recursion
 category: problems
 ---

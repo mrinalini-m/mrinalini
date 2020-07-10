@@ -1,5 +1,5 @@
 ---
-title: 40. Combination Sum Ii
+title: 40. Combination Sum II
 date: 2020-06-18
 slug: 0040-combination-sum-ii
 tags:

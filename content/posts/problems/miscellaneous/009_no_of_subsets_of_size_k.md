@@ -17,9 +17,7 @@ There are C(n,k) ways to choose k elements from a set of n elements. Write a rec
 
 `C(n,n) = C(n,0) = 1` --> Base cases
 
-Note: The sum of the number of subsets for n and k = 0..n is same as the total number of all possible subsets of n:
-
-`C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2^n`
+> Note: The sum of the number of subsets for n and k = 0..n is same as the total number of all possible subsets of n: `C(n,0) + C(n,1) + C(n,2) + ... + C(n,n) = 2^n`
 
 ```js
 /*

@@ -9,6 +9,11 @@ category: problems
 
 Enumerate all possible binary strings of length n.
 
+<p>
+  <img style='display: block; margin: 0 auto; margin-bottom: 0.75rem;' src='./011_enumerate_binary_strings_of_size_n.jpg' alt='Iterative Merge Sort Time Complexity Explanation'/>
+  <span style="display:block; text-align: center;">Call stack for Recursive functions — BFS and DFS</span>
+</p>
+
 ### BFS Recursive decrease-and-conquer
 
 ```js

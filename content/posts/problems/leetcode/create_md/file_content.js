@@ -6,7 +6,7 @@ date: ${date}
 slug: ${slug}
 tags:
   - leetcode
-  - tree
+  - graph
 category: problems
 ---
 

@@ -26,5 +26,7 @@ gridsome develop
 ### Todos:
 
 1. [ ] Search tags, filter list to show category tags only.
-2. [ ] Match Search bar styles for both search tags and search posts.
-3. [ ] Add feat - comments
+2. [ ] Mobile header - Add link to blog home page.
+3. [ ] Sidebar scroll to current open post.
+4. [ ] Add feat - comments
+5. [ ] Match Search bar styles for both search tags and search posts.

@@ -67,7 +67,7 @@ const name = getName(process.argv[2]),
 	num = name.shift()
 
 const title = `${num}. ${name.join(' ')}`,
-	date = '2020-06-24',
+	date = '2020-07-01',
 	slug = getSlug(process.argv[2]),
 	fileName = convertToMd(process.argv[2])
 

@@ -61,11 +61,6 @@
 	export default {
 		name: 'sidebar',
 		props: {
-			width: {
-				type: Number,
-				required: false,
-				default: 200,
-			},
 			postCategory: {
 				type: String,
 				required: false,
@@ -76,25 +71,20 @@
 			showCategories: { type: Boolean, required: false, default: false },
 		},
 		methods: {
-			...mapActions(['getCategories', 'getPosts', 'getTags']),
+			...mapActions(['getCategories', 'getPosts', 'getTags', 'getSidebarWidth']),
 		},
 		data() {
 			return {
 				menuWidth: {
-					width: this.width + 'px',
+					width: 200 + 'px',
 				},
-				marginLeft: this.width + 'px',
 				paddingLeft: { 'padding-left': '1rem' },
-
 				show: false,
 			}
 		},
 
 		computed: {
 			...mapState(['tags', 'categories', 'posts']),
-			mainContent() {
-				return document.getElementById('main-content')
-			},
 		},
 
 		async mounted() {
@@ -102,14 +92,13 @@
 				this.menuWidth = {
 					width: '300px',
 				}
-				this.marginLeft = '300px'
+				this.getSidebarWidth(300)
 			}
 
 			if (!this.showPosts && (this.showCategories || this.showTagsisIndex)) {
 				this.paddingLeft = { 'padding-left': '2rem' }
 			}
 
-			this.mainContent.style['margin-left'] = this.marginLeft
 			const fetch = this.$fetch
 
 			if (this.showCategories || this.showPosts) {
@@ -156,10 +145,10 @@
 			background: $background-secondary;
 			overflow-x: hidden;
 			padding: 2rem 0;
-      padding-bottom: 6rem;
-      a {
-        font-weight: 400;
-      }
+			padding-bottom: 6rem;
+			a {
+				font-weight: 400;
+			}
 			.categories,
 			.tags,
 			.nav-links {
@@ -326,12 +315,6 @@
 			}
 		}
 	}
-
-	@include medium-breakpoint {
-		#main-content {
-			margin-left: 0px !important;
-		}
-	}
 </style>
 
 <static-query>
@@ -344,7 +327,7 @@ query {
 				path
 				name
 				description
-        index
+				index
 			}
 		}
 	}

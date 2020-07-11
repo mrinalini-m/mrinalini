@@ -1,13 +1,14 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { flattenTags, flattenPosts } from '~/helpers'
+import { flattenPosts, flattenTags } from '~/helpers'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
 	state: {
 		tags: [],
 		categories: [],
-		posts: []
+		posts: [],
+		sidebarWidth: '300'
 	},
 
 	mutations: {
@@ -19,10 +20,17 @@ export default new Vuex.Store({
 		},
 		SET_TAGS(state, tags) {
 			state.tags = tags
+		},
+		SET_SIDEBAR_WIDTH(state, width) {
+			state.sidebarWidth = width
 		}
 	},
 
 	actions: {
+		getSidebarWidth({ commit }, width) {
+			console.log(width)
+			commit('SET_SIDEBAR_WIDTH', width)
+		},
 		getPosts({ commit }, data) {
 			commit('SET_POSTS', data)
 		},

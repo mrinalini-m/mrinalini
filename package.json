@@ -24,18 +24,18 @@
 	},
 	"dependencies": {
 		"@gridsome/source-filesystem": "^0.6.2",
-		"@gridsome/transformer-remark": "^0.6.0",
-		"@gridsome/vue-remark": "^0.2.1",
-		"gridsome": "^0.7.15",
+		"@gridsome/transformer-remark": "^0.6.1",
+		"@gridsome/vue-remark": "^0.2.2",
+		"gridsome": "^0.7.19",
 		"gridsome-plugin-remark-shiki": "^0.3.1",
 		"gridsome-plugin-sass-resources-loader": "^0.0.3",
 		"gridsome-remark-embed-snippet": "^1.0.2",
-		"vue-gtag": "^1.6.2",
+		"vue-gtag": "^1.7.0",
 		"vue-multiselect": "^2.1.6",
-		"vuex": "^3.4.0"
+		"vuex": "^3.5.1"
 	},
 	"devDependencies": {
 		"node-sass": "^4.14.1",
-		"sass-loader": "^8.0.2"
+		"sass-loader": "^9.0.2"
 	}
 }

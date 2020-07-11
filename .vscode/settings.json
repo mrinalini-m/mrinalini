@@ -2,5 +2,7 @@
 	"workbench.colorCustomizations": {
 		"titleBar.activeBackground": "#57669b",
 		"titleBar.inactiveBackground": "#202c5b"
-	}
+	},
+	"vetur.validation.template": false,
+	"vetur.format.enable": false
 }

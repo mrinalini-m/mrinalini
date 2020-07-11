@@ -7,5 +7,5 @@ module.exports = {
 	vueIndentScriptAndStyle: true,
 	jsxSingleQuote: true,
 	printWidth: 80,
-	trailingComma: 'none'
+	trailingComma: 'es5',
 }

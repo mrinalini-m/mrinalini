@@ -20,7 +20,8 @@
 		"build": "gridsome build",
 		"dev": "gridsome develop",
 		"start": "gridsome develop",
-		"explore": "gridsome explore"
+		"explore": "gridsome explore",
+		"lint": "prettier --write ."
 	},
 	"dependencies": {
 		"@gridsome/source-filesystem": "^0.6.2",
@@ -36,6 +37,7 @@
 	},
 	"devDependencies": {
 		"node-sass": "^4.14.1",
+		"prettier": "2.0.5",
 		"sass-loader": "^9.0.2"
 	}
 }

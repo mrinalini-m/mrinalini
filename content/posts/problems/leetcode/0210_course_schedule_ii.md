@@ -21,7 +21,7 @@ Related Problem: [207. Course Schedule](/posts/0207-course-schedule/).
 DFS on Directed Graph:
 
 ```js
-var findOrder = function(numCourses, prerequisites) {
+var findOrder = function (numCourses, prerequisites) {
 	const n = numCourses,
 		adjList = buildGraph(n, prerequisites),
 		visited = new Array(n).fill(-1),
@@ -76,7 +76,14 @@ var findOrder = function(numCourses, prerequisites) {
 
 // tests
 
-console.log(findOrder(4, [[1, 0], [2, 0], [3, 1], [3, 2]]))
+console.log(
+	findOrder(4, [
+		[1, 0],
+		[2, 0],
+		[3, 1],
+		[3, 2],
+	])
+)
 console.log(
 	findOrder(6, [
 		[1, 0],
@@ -87,7 +94,7 @@ console.log(
 		// [0, 2],
 		[2, 4],
 		[3, 5],
-		[0, 5]
+		[0, 5],
 	])
 )
 ```

@@ -22,7 +22,7 @@ Time, Space - O(n) with a linked list queue
 - end of first loop, push temp arr to res arr
 */
 
-var levelOrder = function(root) {
+var levelOrder = function (root) {
 	const res = []
 	if (!root) return res
 	let q = new Queue()
@@ -91,13 +91,13 @@ const node1 = {
 	right: {
 		val: 15,
 		right: { val: 20, right: null, left: null },
-		left: { val: 6, right: null, left: null }
+		left: { val: 6, right: null, left: null },
 	},
 	left: {
 		val: 5,
 		right: { val: 7, right: null, left: null },
-		left: { val: 1, right: null, left: null }
-	}
+		left: { val: 1, right: null, left: null },
+	},
 }
 
 console.log(levelOrder(node1))

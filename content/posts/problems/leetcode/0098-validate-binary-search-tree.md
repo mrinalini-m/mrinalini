@@ -23,7 +23,7 @@ category: problems
  * @return {boolean}
  */
 
-var isValidBST = function(root) {
+var isValidBST = function (root) {
 	const recurse = (node, min, max) => {
 		if (!node) return true
 		if (min != null && node.val <= min) return false
@@ -40,7 +40,7 @@ var isValidBST = function(root) {
 }
 
 //iterative
-var isValidBSTIter = function(root) {
+var isValidBSTIter = function (root) {
 	let minStack = [null],
 		maxStack = [null],
 		nodeStack = [root]
@@ -71,16 +71,16 @@ var isValidBSTIter = function(root) {
 node1 = {
 	val: 2,
 	right: { val: 3, right: null, left: null },
-	left: { val: 1, right: null, left: null }
+	left: { val: 1, right: null, left: null },
 }
 node2 = {
 	val: 5,
 	right: {
 		val: 4,
 		right: { val: 6, right: null, left: null },
-		left: { val: 3, right: null, left: null }
+		left: { val: 3, right: null, left: null },
 	},
-	left: { val: 1, right: null, left: null }
+	left: { val: 1, right: null, left: null },
 }
 
 node3 = {
@@ -88,9 +88,9 @@ node3 = {
 	right: {
 		val: 8,
 		right: { val: 6, right: null, left: null },
-		left: { val: 4, right: null, left: null }
+		left: { val: 4, right: null, left: null },
 	},
-	left: { val: 1, right: null, left: null }
+	left: { val: 1, right: null, left: null },
 }
 
 node4 = {
@@ -98,9 +98,9 @@ node4 = {
 	right: {
 		val: 15,
 		right: { val: 20, right: null, left: null },
-		left: { val: 6, right: null, left: null }
+		left: { val: 6, right: null, left: null },
 	},
-	left: { val: 5, right: null, left: null }
+	left: { val: 5, right: null, left: null },
 }
 
 node5 = {
@@ -108,13 +108,13 @@ node5 = {
 	right: {
 		val: 15,
 		right: { val: 20, right: null, left: null },
-		left: { val: 6, right: null, left: null }
+		left: { val: 6, right: null, left: null },
 	},
 	left: {
 		val: 5,
 		right: { val: 7, right: null, left: null },
-		left: { val: 1, right: null, left: null }
-	}
+		left: { val: 1, right: null, left: null },
+	},
 }
 
 //Test cases

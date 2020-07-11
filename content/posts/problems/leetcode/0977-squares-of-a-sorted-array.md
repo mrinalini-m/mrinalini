@@ -21,7 +21,7 @@ category: problems
 //My solution
 // Time - O(n)
 //Space - O(n)
-var sortedSquares = function(arr) {
+var sortedSquares = function (arr) {
 	const len = arr.length,
 		negSquares = [],
 		squares = []
@@ -56,7 +56,7 @@ var sortedSquares = function(arr) {
 
 //https://leetcode.com/problems/squares-of-a-sorted-array/discuss/222079/Python-O(N)-10-lines-using-deque-beats-100
 //reversed the array instead of using unshift() because it's faster
-var sortedSquares = function(arr) {
+var sortedSquares = function (arr) {
 	const squared = []
 	let l = 0,
 		r = arr.length - 1

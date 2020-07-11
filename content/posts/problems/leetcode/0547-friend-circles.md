@@ -13,11 +13,11 @@ category: problems
  * @param {number[][]} M
  * @return {number}
  */
-var findCircleNum = function(M) {
+var findCircleNum = function (M) {
 	let count = 0
 	const len = M.length,
 		visited = new Array(len).fill(0)
-	const dfs = row => {
+	const dfs = (row) => {
 		for (let col = 0; col < len; col++) {
 			const person = M[row][col]
 			if (person === 1 && visited[col] === 0) {
@@ -37,7 +37,7 @@ var findCircleNum = function(M) {
 }
 
 //My attempt (doesn't work)
-var findCircleNumFail = function(M) {
+var findCircleNumFail = function (M) {
 	let count = 0
 	const len = M.length
 	const helper = (i, j) => {
@@ -74,16 +74,34 @@ var findCircleNumFail = function(M) {
 	}
 	return count
 }
-const arr1 = [[1, 1, 0], [1, 1, 0], [0, 0, 1]]
-const arr2 = [[1, 1, 0], [1, 1, 1], [0, 1, 1]]
-const arr3 = [[1, 0, 0, 1], [0, 1, 1, 0], [0, 1, 1, 1], [1, 0, 1, 1]]
-const arr4 = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+const arr1 = [
+	[1, 1, 0],
+	[1, 1, 0],
+	[0, 0, 1],
+]
+const arr2 = [
+	[1, 1, 0],
+	[1, 1, 1],
+	[0, 1, 1],
+]
+const arr3 = [
+	[1, 0, 0, 1],
+	[0, 1, 1, 0],
+	[0, 1, 1, 1],
+	[1, 0, 1, 1],
+]
+const arr4 = [
+	[1, 0, 0, 0],
+	[0, 1, 0, 0],
+	[0, 0, 1, 0],
+	[0, 0, 0, 1],
+]
 const arr5 = [
 	[1, 0, 0, 1, 0],
 	[0, 1, 1, 0, 1],
 	[0, 1, 1, 1, 0],
 	[1, 0, 1, 1, 0],
-	[0, 1, 0, 0, 1]
+	[0, 1, 0, 0, 1],
 ]
 const arr6 = [
 	[1, 1, 0, 0, 0, 0],
@@ -91,7 +109,7 @@ const arr6 = [
 	[0, 0, 1, 1, 1, 0],
 	[0, 0, 1, 1, 0, 0],
 	[0, 0, 1, 0, 1, 0],
-	[0, 0, 0, 0, 0, 1]
+	[0, 0, 0, 0, 0, 1],
 ]
 
 //Test cases

@@ -16,7 +16,7 @@ category: problems
  * @return {number}
  */
 
-var lengthOfLongestSubstring = function(s) {
+var lengthOfLongestSubstring = function (s) {
 	const len = s.length
 	let substringHash = {},
 		count = 0,

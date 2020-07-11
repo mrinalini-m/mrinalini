@@ -16,7 +16,7 @@ category: problems
  * @return {string}
  */
 
-var convert = function(s, numRows) {
+var convert = function (s, numRows) {
 	if (numRows <= 1) return s
 	let i = 0,
 		col = 0,
@@ -45,8 +45,8 @@ var convert = function(s, numRows) {
 		row++
 	}
 
-	zigzag.forEach(row => {
-		row.forEach(letter => {
+	zigzag.forEach((row) => {
+		row.forEach((letter) => {
 			if (letter) res += letter
 		})
 	})

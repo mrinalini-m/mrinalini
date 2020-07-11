@@ -29,9 +29,9 @@ const TreeNode = require('./utils.js')
 //Time Complexity - O(H) height of tree, so O(N) worst case and Olog(N) best case
 // Space Complexity - Same as time complexity
 
-var insertIntoBSTRecursive = function(root, val) {
+var insertIntoBSTRecursive = function (root, val) {
 	const nodeToReturn = root
-	const recurseAndFind = node => {
+	const recurseAndFind = (node) => {
 		if (val < node.val) {
 			if (!node.left) {
 				node.left = new TreeNode(val)
@@ -56,7 +56,7 @@ var insertIntoBSTRecursive = function(root, val) {
 //Time Complexity - O(H) height of tree, so O(N) worst case and Olog(N) best case
 // Space Complexity - O(1)
 
-var insertIntoBST = function(root, val) {
+var insertIntoBST = function (root, val) {
 	const nodeToReturn = root
 	while (root) {
 		if (val < root.val) {
@@ -82,8 +82,8 @@ const node1 = {
 	left: {
 		val: 2,
 		right: { val: 3, right: null, left: null },
-		left: { val: 1, right: null, left: null }
-	}
+		left: { val: 1, right: null, left: null },
+	},
 }
 
 const node2 = {
@@ -91,13 +91,13 @@ const node2 = {
 	right: {
 		val: 60,
 		right: { val: 70, right: null, left: null },
-		left: { val: 50, right: null, left: null }
+		left: { val: 50, right: null, left: null },
 	},
 	left: {
 		val: 20,
 		right: { val: 30, right: null, left: null },
-		left: { val: 10, right: null, left: null }
-	}
+		left: { val: 10, right: null, left: null },
+	},
 }
 
 const node3 = {
@@ -105,13 +105,13 @@ const node3 = {
 	right: {
 		val: 60,
 		right: { val: 70, right: null, left: null },
-		left: { val: 50, right: null, left: null }
+		left: { val: 50, right: null, left: null },
 	},
 	left: {
 		val: 20,
 		right: { val: 30, right: null, left: null },
-		left: { val: 10, right: null, left: null }
-	}
+		left: { val: 10, right: null, left: null },
+	},
 }
 //Test cases
 console.log(JSON.stringify(insertIntoBST(node1, 5)))

@@ -14,11 +14,11 @@
 	import TagList from '~/components/TagList'
 	export default {
 		components: {
-			TagList
+			TagList,
 		},
 		metaInfo: {
-			title: 'Mrinalini'
-		}
+			title: 'Mrinalini',
+		},
 	}
 </script>
 

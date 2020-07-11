@@ -71,7 +71,12 @@
 			showCategories: { type: Boolean, required: false, default: false },
 		},
 		methods: {
-			...mapActions(['getCategories', 'getPosts', 'getTags', 'getSidebarWidth']),
+			...mapActions([
+				'getCategories',
+				'getPosts',
+				'getTags',
+				'getSidebarWidth',
+			]),
 		},
 		data() {
 			return {

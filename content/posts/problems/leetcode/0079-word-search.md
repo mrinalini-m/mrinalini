@@ -18,7 +18,7 @@ category: problems
 //Without changing board. Extra memory
 // Time Complexity - O(mn * 4^q), q = word.length
 // Space Complexity- O(mn + 2^q)
-var exist = function(board, query) {
+var exist = function (board, query) {
 	const height = board.length,
 		width = board[0].length,
 		qLen = query.length
@@ -56,7 +56,7 @@ var exist = function(board, query) {
 // Time Complexity - O(mn * 4^q), q = word.length
 // Space Complexity - O(mn + q)
 
-var exist = function(board, query) {
+var exist = function (board, query) {
 	const height = board.length,
 		width = board[0].length,
 		qLen = query.length
@@ -85,16 +85,33 @@ var exist = function(board, query) {
 	return false
 }
 
-const board = [['A', 'B', 'C', 'E'], ['S', 'F', 'C', 'S'], ['A', 'D', 'E', 'E']]
+const board = [
+	['A', 'B', 'C', 'E'],
+	['S', 'F', 'C', 'S'],
+	['A', 'D', 'E', 'E'],
+]
 //Test cases
 console.log(exist(board, 'ABCCED'))
 console.log(exist(board, 'SEE'))
 console.log(exist(board, 'ABCB'))
-console.log(exist([['C', 'A', 'A'], ['A', 'A', 'A'], ['B', 'C', 'D']], 'AAB'))
+console.log(
+	exist(
+		[
+			['C', 'A', 'A'],
+			['A', 'A', 'A'],
+			['B', 'C', 'D'],
+		],
+		'AAB'
+	)
+)
 console.log(exist(board, 'ABCCED12'))
 console.log(
 	exist(
-		[['A', 'B', 'C', 'E'], ['S', 'F', 'E', 'S'], ['A', 'D', 'E', 'E']],
+		[
+			['A', 'B', 'C', 'E'],
+			['S', 'F', 'E', 'S'],
+			['A', 'D', 'E', 'E'],
+		],
 		'ABCESEEEFS'
 	)
 )

@@ -13,7 +13,7 @@ category: problems
  * @param {number[][]} grid
  * @return {number}
  */
-var maxIncreaseKeepingSkyline = function(grid) {
+var maxIncreaseKeepingSkyline = function (grid) {
 	const maxRow = [],
 		maxCol = []
 	let m = grid.length,
@@ -49,7 +49,12 @@ var maxIncreaseKeepingSkyline = function(grid) {
 	return blocksAdded
 }
 
-const grid = [[3, 0, 8, 4], [2, 4, 5, 7], [9, 2, 6, 3], [0, 3, 1, 0]]
+const grid = [
+	[3, 0, 8, 4],
+	[2, 4, 5, 7],
+	[9, 2, 6, 3],
+	[0, 3, 1, 0],
+]
 //Test cases
 console.log(maxIncreaseKeepingSkyline(grid))
 ```

@@ -11,7 +11,7 @@ category: problems
 ---
 
 ```js
-var validTree = function(n, edges) {
+var validTree = function (n, edges) {
 	const adjList = buildGraph(),
 		visited = new Array(n).fill(-1),
 		parent = new Array(n).fill(-1)
@@ -84,7 +84,7 @@ So we need to check two things:
 2. Check whether or not the graph is fully connected. Return true if it is, false if otherwise.
 
 ```js
-var validTree = function(n, edges) {
+var validTree = function (n, edges) {
 	if (edges.length !== n - 1) return false
 
 	const adjList = buildGraph(),
@@ -127,9 +127,33 @@ var validTree = function(n, edges) {
 }
 
 // Tests
-console.log(validTree(5, [[0, 1], [0, 2], [0, 3], [1, 4]]))
-console.log(validTree(7, [[0, 1], [0, 2], [0, 3], [2, 4], [4, 5], [4, 6]]))
 console.log(
-	validTree(8, [[0, 1], [1, 2], [2, 3], [2, 4], [4, 7], [4, 5], [5, 6]])
+	validTree(5, [
+		[0, 1],
+		[0, 2],
+		[0, 3],
+		[1, 4],
+	])
+)
+console.log(
+	validTree(7, [
+		[0, 1],
+		[0, 2],
+		[0, 3],
+		[2, 4],
+		[4, 5],
+		[4, 6],
+	])
+)
+console.log(
+	validTree(8, [
+		[0, 1],
+		[1, 2],
+		[2, 3],
+		[2, 4],
+		[4, 7],
+		[4, 5],
+		[5, 6],
+	])
 )
 ```

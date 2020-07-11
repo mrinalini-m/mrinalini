@@ -16,7 +16,7 @@ category: problems
 
 const { ListNode } = require('./utils.js')
 // https://leetcode.com/problems/remove-zero-sum-consecutive-nodes-from-linked-list/discuss/366350/C%2B%2B-O(n)-(explained-with-pictures)
-var removeZeroSumSublists = function(head) {
+var removeZeroSumSublists = function (head) {
 	const root = new ListNode(0),
 		map = { 0: root }
 	let accumulative = 0

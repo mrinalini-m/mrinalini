@@ -28,7 +28,7 @@ function getNeighbors(x, y, grid) {
 ### With DFS:
 
 ```js
-var floodFill = function(image, sr, sc, newColor) {
+var floodFill = function (image, sr, sc, newColor) {
 	const oldColor = image[sr][sc]
 
 	if (oldColor !== newColor) dfs(sr, sc)
@@ -52,7 +52,7 @@ var floodFill = function(image, sr, sc, newColor) {
 ### With BFS:
 
 ```js
-var floodFillBFS = function(image, sr, sc, newColor) {
+var floodFillBFS = function (image, sr, sc, newColor) {
 	const oldColor = image[sr][sc]
 	// Selected color is already new color
 	if (oldColor !== newColor) bfs(sr, sc)
@@ -82,9 +82,26 @@ var floodFillBFS = function(image, sr, sc, newColor) {
 
 // tests
 const tests = [
-	[[[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2],
-	[[[0, 0, 0], [0, 1, 1]], 1, 1, 1],
-	[[[0]], 0, 0, 2]
+	[
+		[
+			[1, 1, 1],
+			[1, 1, 0],
+			[1, 0, 1],
+		],
+		1,
+		1,
+		2,
+	],
+	[
+		[
+			[0, 0, 0],
+			[0, 1, 1],
+		],
+		1,
+		1,
+		1,
+	],
+	[[[0]], 0, 0, 2],
 ]
 
 for (const test of tests) {

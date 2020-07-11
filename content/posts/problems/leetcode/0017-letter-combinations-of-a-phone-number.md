@@ -14,7 +14,7 @@ category: problems
  * @param {string} digits
  * @return {string[]}
  */
-var letterCombinations = function(digits) {
+var letterCombinations = function (digits) {
 	let results = []
 	const phone = {
 			'2': ['a', 'b', 'c'],
@@ -24,14 +24,14 @@ var letterCombinations = function(digits) {
 			'6': ['m', 'n', 'o'],
 			'7': ['p', 'q', 'r', 's'],
 			'8': ['t', 'u', 'v'],
-			'9': ['w', 'x', 'y', 'z']
+			'9': ['w', 'x', 'y', 'z'],
 		},
 		recurse = (digits, comb) => {
 			if (!digits.length) results.push(comb)
 			else {
 				const digit = digits[0]
 				if (!phone[digit]) return //when digit is 1, 0 & other invalid etries, forEach will never be called which means recurse will never get called again and the combination so far will never reach the end or get pushed to the results array. So the returned results array is empty
-				phone[digit].forEach(letter => {
+				phone[digit].forEach((letter) => {
 					recurse(digits.slice(1), comb + letter)
 				})
 			}
@@ -41,7 +41,7 @@ var letterCombinations = function(digits) {
 }
 
 //Converted to javascript - iterative solution https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8064/My-java-solution-with-FIFO-queue
-var letterCombinations = function(digits) {
+var letterCombinations = function (digits) {
 	let results = ['']
 	if (!digits) return []
 	const phone = {
@@ -52,7 +52,7 @@ var letterCombinations = function(digits) {
 			'6': ['m', 'n', 'o'],
 			'7': ['p', 'q', 'r', 's'],
 			'8': ['t', 'u', 'v'],
-			'9': ['w', 'x', 'y', 'z']
+			'9': ['w', 'x', 'y', 'z'],
 		},
 		len = digits.length
 	for (let i = 0; i < len; i++) {
@@ -73,7 +73,7 @@ var letterCombinations = function(digits) {
 }
 
 //Second attempt with two loops - Converted to javascript - iterative solution https://leetcode.com/problems/letter-combinations-of-a-phone-number/discuss/8064/My-java-solution-with-FIFO-queue
-var letterCombinations = function(digits) {
+var letterCombinations = function (digits) {
 	let results = ['']
 	if (!digits) return []
 	const phone = {
@@ -84,7 +84,7 @@ var letterCombinations = function(digits) {
 			'6': ['m', 'n', 'o'],
 			'7': ['p', 'q', 'r', 's'],
 			'8': ['t', 'u', 'v'],
-			'9': ['w', 'x', 'y', 'z']
+			'9': ['w', 'x', 'y', 'z'],
 		},
 		len = digits.length
 
@@ -103,7 +103,7 @@ var letterCombinations = function(digits) {
 }
 const inputs = ['1', '12', '123', '3412', '0312', '', '203', '0', '23']
 
-inputs.forEach(input => {
+inputs.forEach((input) => {
 	//Test cases
 	console.log(input, '--', letterCombinations(input))
 })

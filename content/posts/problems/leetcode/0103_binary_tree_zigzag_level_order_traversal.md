@@ -12,7 +12,7 @@ category: problems
 ```js
 // Same as level order traversal (Leetcode 102) but reverse the temp array alternatively before pushing to res
 
-var zigzagLevelOrder = function(root) {
+var zigzagLevelOrder = function (root) {
 	const res = []
 	if (!root) return res
 	let q = [root],

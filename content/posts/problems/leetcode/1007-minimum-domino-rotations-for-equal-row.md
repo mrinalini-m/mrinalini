@@ -14,7 +14,7 @@ category: problems
  * @param {number[]} B
  * @return {number}
  */
-var minDominoRotations = function(A, B) {
+var minDominoRotations = function (A, B) {
 	const len = A.length,
 		check = (val, A, B) => {
 			let rotationsA = 0,

@@ -14,7 +14,7 @@ category: problems
 Dfs recursive with global flag
 Time, Space Complexity - O(n)
 */
-var hasPathSum = function(root, sum) {
+var hasPathSum = function (root, sum) {
 	if (!root) return false
 	let flag = false
 
@@ -39,7 +39,7 @@ var hasPathSum = function(root, sum) {
 // ----------------------------------------------------------------------
 
 // Dfs recursive without global flag
-var hasPathSum = function(root, sum) {
+var hasPathSum = function (root, sum) {
 	if (!root) return false
 
 	// recursive dfs

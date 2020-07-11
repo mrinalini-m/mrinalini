@@ -18,7 +18,7 @@ category: problems
 // Space Complexity - O(1)
 
 // Logic - [3, 31, 34, 300, 30]. Compare 'ab' and 'ba' and sort in descending order
-var largestNumber = function(nums) {
+var largestNumber = function (nums) {
 	nums.sort((a, b) => {
 		return `${b}${a}` - `${a}${b}`
 	})

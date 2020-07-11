@@ -34,67 +34,67 @@
 			postCategory: {
 				type: String,
 				required: false,
-				default: () => ''
+				default: () => '',
 			},
 			postTag: {
 				type: String,
 				required: false,
-				default: () => ''
+				default: () => '',
 			},
 			showPosts: {
 				type: Boolean,
 				required: false,
-				default: false
+				default: false,
 			},
 			showCategories: {
 				type: Boolean,
 				required: false,
-				default: true
+				default: true,
 			},
 			showTags: {
 				type: Boolean,
 				required: false,
-				default: false
+				default: false,
 			},
 			edges: {
 				type: Array,
 				required: false,
-				default: () => []
+				default: () => [],
 			},
 			title: {
 				type: String,
 				required: false,
-				default: 'All Posts'
+				default: 'All Posts',
 			},
 			description: {
 				type: String,
 				required: false,
-				default: ''
+				default: '',
 			},
 			link: {
 				type: String,
 				required: false,
-				default: ''
-			}
+				default: '',
+			},
 		},
 
 		data() {
 			return {
 				posts: [],
-				filteredPosts: []
+				filteredPosts: [],
 			}
 		},
 		components: {
 			PostList,
-			Searchbar
+			Searchbar,
 		},
 		metaInfo: {
-			title: 'Blog'
+			title: 'Blog',
 		},
 		computed: {
 			allPosts() {
 				return this.$store.state.posts
-			}
+			},
 		},
 
 		methods: {
@@ -127,7 +127,7 @@
 			filterPosts: function (term, tags) {
 				const firstPass = term.length ? this.filterByTerm(term) : this.posts
 				this.filteredPosts = this.filterByTags(tags, firstPass)
-			}
+			},
 		},
 
 		watch: {
@@ -143,7 +143,7 @@
 			},
 			postTag: function (oldTag, newTag) {
 				this.posts = !this.edges.length ? this.$page.allPost.edges : this.edges
-			}
+			},
 		},
 
 		async mounted() {
@@ -153,7 +153,7 @@
 
 			this.getPosts(this.posts)
 			this.filteredPosts = this.posts
-		}
+		},
 	}
 </script>
 

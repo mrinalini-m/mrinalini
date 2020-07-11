@@ -16,10 +16,10 @@ category: problems
 
 // Iterative
 //  Time Complexity => 2^n (2^0 + 2^1 + 2^2 + ...+ 2^m = 2^(m+1) -1 where m is n-1)
-var climbStairsIterative = function(n) {
+var climbStairsIterative = function (n) {
 	if (n == 0) return 0
 	let i = 0
-	const recurse = i => {
+	const recurse = (i) => {
 		if (i > n) return 0
 		if (i === n) return 1
 		return recurse(i + 1) + recurse(i + 2)
@@ -28,11 +28,11 @@ var climbStairsIterative = function(n) {
 }
 
 // memoize
-var climbStairsMemoize = function(n) {
+var climbStairsMemoize = function (n) {
 	if (n == 0) return 0
 	let i = 0
 	const memoize = {}
-	const recurse = i => {
+	const recurse = (i) => {
 		if (i > n) return 0
 		if (i === n) return 1
 		if (!memoize[i]) memoize[i] = recurse(i + 1) + recurse(i + 2)
@@ -42,7 +42,7 @@ var climbStairsMemoize = function(n) {
 }
 
 // DP
-var climbStairs = function(n) {
+var climbStairs = function (n) {
 	if (n == 0) return 0
 	const dp = [0, 1, 2]
 	for (let i = 3; i <= n; i++) {

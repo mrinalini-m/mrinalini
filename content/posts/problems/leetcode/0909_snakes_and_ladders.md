@@ -13,7 +13,7 @@ category: problems
 > Note: Most shortest path graph problems will use BFS Directed Graph Traversal.
 
 ```js
-var snakesAndLadders = function(board) {
+var snakesAndLadders = function (board) {
 	const size = board.length,
 		maxSquare = size * size
 
@@ -74,7 +74,7 @@ const board = [
 	[-1, -1, -1, -1, -1, -1],
 	[-1, 35, -1, -1, 13, -1],
 	[-1, -1, -1, -1, -1, -1],
-	[-1, 15, -1, -1, -1, -1]
+	[-1, 15, -1, -1, -1, -1],
 ]
 
 console.log(snakesAndLadders(board))
@@ -95,7 +95,7 @@ const getLocation = (sq, n) => {
 	return [row, col]
 }
 
-var snakesAndLadders = function(board) {
+var snakesAndLadders = function (board) {
 	const queue = [1],
 		n = board.length,
 		end = n ** 2,
@@ -123,13 +123,13 @@ const board = [
 	[-1, -1, -1, -1, -1, -1],
 	[-1, 35, -1, -1, 13, -1],
 	[-1, 12, -1, -1, -1, -1],
-	[-1, 15, -1, -1, -1, -1]
+	[-1, 15, -1, -1, -1, -1],
 ]
 const board1 = [
 	[-1, -1, -1, -1],
 	[-1, -1, -1, -1],
 	[-1, -1, -1, -1],
-	[-1, -1, -1, -1]
+	[-1, -1, -1, -1],
 ]
 
 const board2 = [
@@ -142,7 +142,7 @@ const board2 = [
 	[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
 	[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
 	[-1, -1, -1, -1, -1, -1, -1, -1, -1, -1],
-	[-1, -1, -1, 18, -1, -1, -1, -1, -1, -1]
+	[-1, -1, -1, 18, -1, -1, -1, -1, -1, -1],
 ]
 
 //Test cases

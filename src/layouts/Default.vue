@@ -25,17 +25,17 @@
 		components: {
 			Header,
 			Sidebar,
-			Footer
+			Footer,
 		},
 		props: {
 			postCategory: { type: String, required: false },
 			showTags: { type: Boolean, required: false },
 			showPosts: { type: Boolean, required: false },
-			showCategories: { type: Boolean, required: false }
+			showCategories: { type: Boolean, required: false },
 		},
 		computed: {
-			...mapState(['sidebarWidth'])
-		}
+			...mapState(['sidebarWidth']),
+		},
 	}
 </script>
 

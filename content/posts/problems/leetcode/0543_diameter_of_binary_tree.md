@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var diameterOfBinaryTree = function(root) {
+var diameterOfBinaryTree = function (root) {
 	if (!root) return 0
 
 	let treeDiameter = 0

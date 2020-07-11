@@ -15,7 +15,7 @@ category: problems
  * @param {number[][]} intervals
  * @return {number[][]}
  */
-var merge = function(intervals) {
+var merge = function (intervals) {
 	intervals.sort((a, b) => a[0] - b[0])
 	const results = [],
 		len = intervals.length

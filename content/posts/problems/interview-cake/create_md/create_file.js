@@ -9,7 +9,7 @@ const createFilename = (str, chap, number) => {
 	return `${filename}${arr.join('_')}`
 }
 
-const createTagsStr = tagsArr => {
+const createTagsStr = (tagsArr) => {
 	return !tagsArr ? '' : '- ' + tagsArr.join('\n  - ')
 }
 
@@ -24,9 +24,7 @@ for (const problem of problems) {
 		number = `0${problem.number}`,
 		chapName = 'Hashing and hash tables'
 
-	const title = `${chap}-${number} - ${
-			problem.title
-		} [Interview Cake] [${chapName}]`,
+	const title = `${chap}-${number} - ${problem.title} [Interview Cake] [${chapName}]`,
 		date = '2020-05-29',
 		tags = createTagsStr(problem.tags),
 		slug = `ic-${chap}-${number}-${problem.title

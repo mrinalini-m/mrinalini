@@ -11,7 +11,7 @@ category: problems
 
 ```js
 // Easiest dfs traversal to write iteratively
-var preorderTraversal = function(root) {
+var preorderTraversal = function (root) {
 	if (!root) return []
 
 	const res = [],

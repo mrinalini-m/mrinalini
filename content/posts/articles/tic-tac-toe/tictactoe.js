@@ -13,7 +13,7 @@ class TicTacToe {
 		this.board = null
 		this.players = {
 			x: { name: player1.toLowerCase(), token: 'x' },
-			o: { name: player2.toLowerCase(), token: 'o' }
+			o: { name: player2.toLowerCase(), token: 'o' },
 		}
 		this.score = { x: 0, o: 0 }
 		this.currPlayer = this.players.x
@@ -108,7 +108,7 @@ class TicTacToe {
 			for (let j = 0; j < row.length; j++) {
 				const boardCol = this.createElement('div', 'col', `c-${i}-${j}`, {
 					row: i,
-					col: j
+					col: j,
 				})
 				boardRow.append(boardCol)
 				boardCol.addEventListener('click', this.handleClickCell)

@@ -16,7 +16,7 @@ category: problems
  */
 
 //iterative O(n^2) time complexity
-var dailyTemperatures = function(T) {
+var dailyTemperatures = function (T) {
 	const res = [],
 		len = T.length
 
@@ -34,7 +34,7 @@ var dailyTemperatures = function(T) {
 	return res
 }
 
-var dailyTemperatures = function(T) {
+var dailyTemperatures = function (T) {
 	const res = [],
 		len = T.length,
 		stack = []

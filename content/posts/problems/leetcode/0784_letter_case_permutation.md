@@ -16,7 +16,7 @@ category: problems
 Time Complexity - O(n * 2^n). Work done by leaf nodes (O(n * 2^n)) + work done by internal nodes (O(2^n))
 Space Complexity - O(n * 2^n). Input (O(n)) + Auxiliary stack (O(n)) + Output (O(n * 2^n))
 */
-var letterCasePermutation = function(str) {
+var letterCasePermutation = function (str) {
 	const result = []
 
 	function recurse(str, i, slate) {
@@ -52,7 +52,7 @@ var letterCasePermutation = function(str) {
 const tests = [
 	['a1b2', ['a1b2', 'a1B2', 'A1b2', 'A1B2']],
 	['123', ['123']],
-	['abc', ['abc', 'abC', 'aBc', 'aBC', 'Abc', 'AbC', 'ABc', 'ABC']]
+	['abc', ['abc', 'abC', 'aBc', 'aBC', 'Abc', 'AbC', 'ABc', 'ABC']],
 ]
 
 for (const test of tests) {

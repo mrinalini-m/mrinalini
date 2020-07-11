@@ -15,7 +15,7 @@ category: problems
  * @return {number}
  */
 
-var divide = function(dividend, divisor) {
+var divide = function (dividend, divisor) {
 	//The largest number in A 32-bit signed interger ranger is 2147483647 which is 01111111111111111111111111111111 in binary
 	if (dividend === -2147483648 && divisor === -1) return 2147483647
 

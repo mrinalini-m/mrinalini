@@ -27,7 +27,7 @@ If you have figured out the O(n) solution, try coding another solution using the
  * @return {number}
  */
 //first try
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
 	const len = nums.length
 	let curr = nums[0],
 		highestSoFar = curr,
@@ -51,7 +51,7 @@ var maxSubArray = function(nums) {
 
 //Refactored. If element by itself is greater than the sum, dump the sum and use that element to "reset" the sum. And keep track of maxSum.
 //Time - O(n), space - O(1)
-var maxSubArray = function(nums) {
+var maxSubArray = function (nums) {
 	const len = nums.length
 	let sum = nums[0],
 		maxSum = sum

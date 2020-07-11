@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var subsetsWithDup = function(nums) {
+var subsetsWithDup = function (nums) {
 	const result = [],
 		len = nums.length
 	nums = nums.sort((a, b) => a - b)

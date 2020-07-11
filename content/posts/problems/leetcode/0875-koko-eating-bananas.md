@@ -15,8 +15,8 @@ category: problems
 //  * @return {number}
 //  */
 
-var minEatingSpeed = function(piles, H) {
-	const isPossibleK = k => {
+var minEatingSpeed = function (piles, H) {
+	const isPossibleK = (k) => {
 		let t = 0
 		for (const pile of piles) {
 			t += Math.ceil(pile / k)
@@ -61,7 +61,7 @@ piles = [
 	692137887,
 	718203285,
 	629455728,
-	941802184
+	941802184,
 ]
 h = 823855818
 

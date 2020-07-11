@@ -11,7 +11,7 @@ category: problems
 ---
 
 ```js
-var criticalConnections = function(n, connections) {
+var criticalConnections = function (n, connections) {
 	const adjList = buildGraph(n, connections),
 		visited = new Array(n).fill(-1),
 		arrival = new Array(n).fill(-1),
@@ -70,5 +70,12 @@ var criticalConnections = function(n, connections) {
 }
 
 // tests
-console.log(criticalConnections(4, [[0, 1], [1, 2], [2, 0], [1, 3]]))
+console.log(
+	criticalConnections(4, [
+		[0, 1],
+		[1, 2],
+		[2, 0],
+		[1, 3],
+	])
+)
 ```

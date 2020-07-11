@@ -28,7 +28,7 @@ function getNeighbors(x, y, grid) {
 ### With DFS:
 
 ```js
-var maxAreaOfIslandz = function(grid) {
+var maxAreaOfIslandz = function (grid) {
 	let maxCount = 0
 
 	for (let x = 0; x < grid.length; x++) {
@@ -59,7 +59,7 @@ var maxAreaOfIslandz = function(grid) {
 ### With BFS:
 
 ```js
-var maxAreaOfIsland = function(grid) {
+var maxAreaOfIsland = function (grid) {
 	let maxCount = 0
 
 	for (let x = 0; x < grid.length; x++) {
@@ -108,7 +108,7 @@ const grid = [
 	[0, 1, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
 	[0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0],
-	[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0]
+	[0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
 ]
 
 const grid1 = [[0, 0, 0, 0, 0, 0, 0, 0]]

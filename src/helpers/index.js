@@ -5,7 +5,7 @@ function flattenTags(tags) {
 		const tagObj = {
 			id: tag.node.id,
 			name: tag.node.name,
-			path: tag.node.path
+			path: tag.node.path,
 		}
 		parsedTags[tag.node.id] = tagObj
 	}
@@ -23,7 +23,7 @@ function flattenPosts(posts) {
 			id: post.node.id,
 			path: post.node.path,
 			title: post.node.title,
-			tags: tags
+			tags: tags,
 		}
 		parsedPosts.push(parsedPost)
 	}

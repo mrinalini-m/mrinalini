@@ -19,7 +19,7 @@ describe('insert', () => {
 		const root = {
 			key: 3,
 			left: { key: 1, left: null, right: null },
-			right: null
+			right: null,
 		}
 		expect(bst.root).toEqual(root)
 	})
@@ -82,13 +82,13 @@ describe('scoped bst tree', () => {
 					left: {
 						key: 2,
 						left: { key: 0, left: null, right: null },
-						right: null
+						right: null,
 					},
 					right: {
 						key: 5,
 						left: { key: 4, left: null, right: null },
-						right: { key: 6, left: null, right: null }
-					}
+						right: { key: 6, left: null, right: null },
+					},
 				}
 			bst.delete(valToDelete)
 
@@ -101,13 +101,13 @@ describe('scoped bst tree', () => {
 					left: {
 						key: 1,
 						left: { key: 0, left: null, right: null },
-						right: { key: 2, left: null, right: null }
+						right: { key: 2, left: null, right: null },
 					},
 					right: {
 						key: 5,
 						left: { key: 4, left: null, right: null },
-						right: { key: 6, left: null, right: null }
-					}
+						right: { key: 6, left: null, right: null },
+					},
 				}
 			bst.delete(valToDelete)
 

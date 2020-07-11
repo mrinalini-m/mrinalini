@@ -13,7 +13,7 @@ category: problems
  * @param {number} n
  * @return {string}
  */
-var findContestMatch = function(n) {
+var findContestMatch = function (n) {
 	let i = 1,
 		j = n,
 		matches = []
@@ -22,7 +22,7 @@ var findContestMatch = function(n) {
 		i++
 		j--
 	}
-	const makeMatches = matches => {
+	const makeMatches = (matches) => {
 		let i = 0,
 			j = matches.length - 1
 		const res = []

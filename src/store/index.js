@@ -8,7 +8,7 @@ export default new Vuex.Store({
 		tags: [],
 		categories: [],
 		posts: [],
-		sidebarWidth: '300'
+		sidebarWidth: '300',
 	},
 
 	mutations: {
@@ -23,7 +23,7 @@ export default new Vuex.Store({
 		},
 		SET_SIDEBAR_WIDTH(state, width) {
 			state.sidebarWidth = width
-		}
+		},
 	},
 
 	actions: {
@@ -44,7 +44,7 @@ export default new Vuex.Store({
 				const catObj = {
 					id: category.node.id,
 					name: category.node.name,
-					path: category.node.path
+					path: category.node.path,
 				}
 				parsedCategories[category.node.id] = catObj
 				try {
@@ -58,6 +58,6 @@ export default new Vuex.Store({
 			}
 			commit('SET_CATEGORIES', parsedCategories)
 			commit('SET_POSTS', parsedPosts) //posts will change based on which category you're in right now
-		}
-	}
+		},
+	},
 })

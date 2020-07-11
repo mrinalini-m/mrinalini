@@ -39,8 +39,8 @@ class TreeNode {
 
 //Recursive - Time Complexity - O(NlogN)
 //Space Complexity - O(logN)
-var sortedListToBST = function(head) {
-	const findMiddle = head => {
+var sortedListToBST = function (head) {
+	const findMiddle = (head) => {
 		let slow = head,
 			fast = head,
 			prev = null
@@ -53,7 +53,7 @@ var sortedListToBST = function(head) {
 		return slow
 	}
 
-	const recurse = head => {
+	const recurse = (head) => {
 		if (!head) return null
 		const mid = findMiddle(head)
 		const node = new TreeNode(mid.val)
@@ -70,8 +70,8 @@ var sortedListToBST = function(head) {
 //Converting sorted Linked List to Array then recursing
 // Time complexity - O(N)
 // Space Complexity - O(N)
-var sortedListToBST = function(head) {
-	const LLToArr = node => {
+var sortedListToBST = function (head) {
+	const LLToArr = (node) => {
 		const arr = []
 		while (node) {
 			arr.push(node.val)
@@ -97,8 +97,8 @@ var sortedListToBST = function(head) {
 	return recurse(0, sortedArr.length - 1)
 }
 
-var sortedListToBST = function(head) {
-	const findSize = head => {
+var sortedListToBST = function (head) {
+	const findSize = (head) => {
 		let size = 0,
 			pointer = head
 		while (pointer) {
@@ -128,8 +128,8 @@ const node1 = {
 	val: -10,
 	next: {
 		val: -3,
-		next: { val: 0, next: { val: 5, next: { val: 9, next: null } } }
-	}
+		next: { val: 0, next: { val: 5, next: { val: 9, next: null } } },
+	},
 }
 
 //Test cases
@@ -138,17 +138,17 @@ console.log(JSON.stringify(sortedListToBST(node1)))
 const no = {
 	val: 0,
 	right: { val: 5, right: { val: 9, right: null, left: null }, left: null },
-	left: { val: -10, right: null, left: null }
+	left: { val: -10, right: null, left: null },
 }
 const node = {
 	val: 0,
 	right: { val: 5, right: { val: 9, right: null, left: null }, left: null },
-	left: { val: -10, right: { val: -3, right: null, left: null }, left: null }
+	left: { val: -10, right: { val: -3, right: null, left: null }, left: null },
 }
 
 const node1 = {
 	val: 0,
 	right: { val: 5, right: { val: 9, right: null, left: null }, left: null },
-	left: { val: -10, right: { val: -3, right: null, left: null }, left: null }
+	left: { val: -10, right: { val: -3, right: null, left: null }, left: null },
 }
 ```

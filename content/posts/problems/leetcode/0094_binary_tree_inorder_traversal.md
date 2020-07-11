@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var inorderTraversal = function(root) {
+var inorderTraversal = function (root) {
 	if (!root) return []
 	const res = [],
 		stack = []

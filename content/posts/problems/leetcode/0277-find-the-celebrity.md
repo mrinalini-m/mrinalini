@@ -26,15 +26,19 @@ category: problems
  */
 
 const knows = (a, b) => {
-	const matrix = [[1, 1, 1], [1, 1, 0], [0, 0, 1]]
+	const matrix = [
+		[1, 1, 1],
+		[1, 1, 0],
+		[0, 0, 1],
+	]
 	return matrix[a] ? !!matrix[a][b] : false
 }
 
 //my ugly and brute force solution
-var solution = function(knows) {
+var solution = function (knows) {
 	const knowsHash = {},
 		possibleCelebs = {}
-	return function(n) {
+	return function (n) {
 		for (let i = 0; i < n; i++) {
 			knowsHash[i] = []
 			possibleCelebs[i] = true
@@ -70,7 +74,7 @@ var solution = function(knows) {
 
 // https://leetcode.com/problems/find-the-celebrity/discuss/71227/Java-Solution.-Two-Pass
 function solution(knows) {
-	return function(n) {
+	return function (n) {
 		let candidate = 0
 		for (let i = 1; i < n; i++) {
 			if (knows(candidate, i)) {
@@ -87,5 +91,13 @@ function solution(knows) {
 }
 
 //Test cases
-console.log(solution(knows)([[1, 1, 1], [1, 1, 0], [0, 0, 1]].length))
+console.log(
+	solution(knows)(
+		[
+			[1, 1, 1],
+			[1, 1, 0],
+			[0, 0, 1],
+		].length
+	)
+)
 ```

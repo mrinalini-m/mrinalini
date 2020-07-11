@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var levelOrder = function(root) {
+var levelOrder = function (root) {
 	const res = []
 	if (!root) return res
 	let q = [root]

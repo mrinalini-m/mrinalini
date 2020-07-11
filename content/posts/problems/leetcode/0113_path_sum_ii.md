@@ -13,7 +13,7 @@ category: problems
 /* 
 Dfs recursive with mutable slate
 */
-var pathSum = function(root, sum) {
+var pathSum = function (root, sum) {
 	// recursive dfs helper
 	function recurse(node, slate, target) {
 		target -= node.val

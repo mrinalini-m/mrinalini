@@ -21,7 +21,7 @@ Space Complexity - O(n) where n is length of shorter array
   - It's possible all elements are unique and in both arrays.
     Eg. arr1 = [1,2,3,4] , arr2 = [1,2,3,4,5], intersection = [1,2,3,4]
 */
-var twoArraysIntersection = function(arr1, arr2) {
+var twoArraysIntersection = function (arr1, arr2) {
 	const res = [],
 		len1 = arr1.length,
 		len2 = arr2.length
@@ -52,7 +52,7 @@ Space Complexity - O(n) where n is length of shorter array
 
 Notes: This one runs 4ms faster than the pointer solution in leetcode
 */
-var threeArraysIntersection = function(arr1, arr2, arr3) {
+var threeArraysIntersection = function (arr1, arr2, arr3) {
 	const twoArrsI = twoArraysIntersection(arr1, arr2)
 	const res = twoArraysIntersection(twoArrsI, arr3)
 
@@ -75,7 +75,7 @@ Notes: Use a nested while loops to keep incrementing pointers
 [2,3,4,5]
  k
 */
-var threeArraysIntersectionPointers = function(arr1, arr2, arr3) {
+var threeArraysIntersectionPointers = function (arr1, arr2, arr3) {
 	const res = [],
 		len1 = arr1.length,
 		len2 = arr2.length,
@@ -108,21 +108,26 @@ const tests = [
 		[2, 3, 3, 5, 5, 6, 7, 8, 12],
 		[5, 5, 6, 8, 9, 10, 10],
 		[8, 8, 8, 10, 11, 12],
-		[8]
+		[8],
 	],
 	[
 		[8, 8, 8, 10, 11, 12],
 		[5, 5, 6, 8, 9, 10, 10],
 		[2, 3, 3, 5, 5, 6, 7, 8, 12],
-		[8]
+		[8],
 	],
 	[
 		[0, 0, 0, 1, 2, 2, 3],
 		[0, 0, 0, 1, 2, 2, 3],
 		[0, 0, 0, 1, 2, 2, 3],
-		[0, 1, 2, 3]
+		[0, 1, 2, 3],
 	],
-	[[0, 0, 0, 1, 2, 2, 3], [0, 1, 2, 2, 3, 4, 5], [0, 1, 4, 5, 6, 7, 8], [0, 1]]
+	[
+		[0, 0, 0, 1, 2, 2, 3],
+		[0, 1, 2, 2, 3, 4, 5],
+		[0, 1, 4, 5, 6, 7, 8],
+		[0, 1],
+	],
 ]
 
 console.log('3 array with recycled 2 array')

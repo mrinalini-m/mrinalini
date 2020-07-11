@@ -13,7 +13,7 @@ category: problems
  * @param {number[][]} board
  * @return {void} Do not return anything, modify board in-place instead.
  */
-var gameOfLife = function(board) {
+var gameOfLife = function (board) {
 	const rowLen = board.length
 	if (!rowLen) return
 	const colLen = board[0].length,
@@ -62,7 +62,12 @@ var gameOfLife = function(board) {
 	}
 }
 
-const board = [[0, 1, 0], [0, 0, 1], [1, 1, 1], [0, 0, 0]]
+const board = [
+	[0, 1, 0],
+	[0, 0, 1],
+	[1, 1, 1],
+	[0, 0, 0],
+]
 //Test cases
 console.log(board)
 gameOfLife(board)

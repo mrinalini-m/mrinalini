@@ -25,7 +25,7 @@
 		},
 		components: {
 			Header,
-			Mobile
+			Mobile,
 		},
 		mounted() {
 			window.addEventListener('scroll', this.onScroll)
@@ -36,8 +36,8 @@
 		methods: {
 			onScroll() {
 				this.scrolled = window.scrollY > 20 ? true : false
-			}
-		}
+			},
+		},
 	}
 </script>
 
@@ -46,11 +46,11 @@
 		height: 1.5rem;
 		width: 1.5rem;
 		margin-bottom: 0;
-  }
-  
-  img.logo {
-    margin-bottom: 0;
-  }
+	}
+
+	img.logo {
+		margin-bottom: 0;
+	}
 
 	.custom-header {
 		background-color: $background;
@@ -97,7 +97,7 @@
 			padding: 0 1.5rem;
 			transition: height 0.3s ease, box-shadow 0.3s ease;
 			.brand {
-        font-family: 'Open Sans' !important;
+				font-family: 'Open Sans' !important;
 				display: flex;
 				flex-direction: row;
 				justify-content: flex-start;

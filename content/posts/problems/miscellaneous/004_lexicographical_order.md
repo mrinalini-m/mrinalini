@@ -89,7 +89,7 @@ const arr1 = [
 	'somewhere out',
 	'of reach',
 	'of an',
-	'ordinary man'
+	'ordinary man',
 ]
 
 console.log(solve(arr))

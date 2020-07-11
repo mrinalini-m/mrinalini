@@ -15,7 +15,7 @@ category: problems
 ### With BFS:
 
 ```js
-var isBipartite = function(graph) {
+var isBipartite = function (graph) {
 	const adjList = graph,
 		n = graph.length,
 		visited = new Array(n).fill(-1),
@@ -64,7 +64,7 @@ var isBipartite = function(graph) {
 ### With DFS:
 
 ```js
-var isBipartite = function(graph) {
+var isBipartite = function (graph) {
 	const adjList = graph,
 		n = graph.length,
 		visited = new Array(n).fill(-1),
@@ -99,6 +99,20 @@ var isBipartite = function(graph) {
 }
 
 // Tests
-console.log(isBipartite([[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]))
-console.log(isBipartite([[1, 2, 3], [0, 2], [0, 1, 3], [0, 2]]))
+console.log(
+	isBipartite([
+		[1, 2, 3],
+		[0, 2],
+		[0, 1, 3],
+		[0, 2],
+	])
+)
+console.log(
+	isBipartite([
+		[1, 2, 3],
+		[0, 2],
+		[0, 1, 3],
+		[0, 2],
+	])
+)
 ```

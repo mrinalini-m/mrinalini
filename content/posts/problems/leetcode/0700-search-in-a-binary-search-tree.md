@@ -36,7 +36,7 @@ const searchBSTIterative = (root, val) => {
 var node3 = {
 	val: 2,
 	right: { val: 3, right: null, left: null },
-	left: { val: 1, right: null, left: { val: -1, right: null, left: null } }
+	left: { val: 1, right: null, left: { val: -1, right: null, left: null } },
 }
 
 //Test cases

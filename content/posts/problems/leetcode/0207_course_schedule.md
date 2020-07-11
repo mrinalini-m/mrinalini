@@ -19,7 +19,7 @@ Related Problem: [210. Course Schedule II](/posts/0210-course-schedule-ii/).
 DFS on Directed Graph:
 
 ```js
-var canFinish = function(numCourses, prerequisites) {
+var canFinish = function (numCourses, prerequisites) {
 	const n = numCourses,
 		adjList = buildGraph(n, prerequisites),
 		// parent = new Array(n).fill(-1),
@@ -77,7 +77,12 @@ var canFinish = function(numCourses, prerequisites) {
 }
 
 // tests
-console.log(canFinish(2, [[1, 0], [0, 1]]))
+console.log(
+	canFinish(2, [
+		[1, 0],
+		[0, 1],
+	])
+)
 console.log(
 	canFinish(6, [
 		[1, 0],
@@ -88,7 +93,7 @@ console.log(
 		// [0, 2],
 		[2, 4],
 		[3, 5],
-		[0, 5]
+		[0, 5],
 	])
 )
 ```

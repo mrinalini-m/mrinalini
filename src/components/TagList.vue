@@ -8,7 +8,7 @@
 
 <script>
 	export default {
-		props: ['tag']
+		props: ['tag'],
 	}
 </script>
 

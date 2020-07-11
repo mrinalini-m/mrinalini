@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var bstFromPreorder = function(preorder) {
+var bstFromPreorder = function (preorder) {
 	// First sort preorder array to get inorder. Rest is same as 105.
 	const inorder = preorder.slice(0).sort((a, b) => a - b)
 

@@ -214,12 +214,17 @@ class MaxBinaryHeap extends BinaryHeap {
 }
 
 // Tests
-let arr1 = [[5, 6, 8, 16], [3, 7, 12, 13], [1, 10, 11, 15], [2, 4, 9, 14]]
+let arr1 = [
+	[5, 6, 8, 16],
+	[3, 7, 12, 13],
+	[1, 10, 11, 15],
+	[2, 4, 9, 14],
+]
 let arr2 = [
 	[200, 50, 18, 1],
 	[180, 45, 15, 9],
 	[30, 17, 8, 5],
-	[190, 40, 12, 7]
+	[190, 40, 12, 7],
 ]
 console.log(mergeArrays(arr1))
 console.log(mergeArrays(arr2))

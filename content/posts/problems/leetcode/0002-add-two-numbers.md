@@ -22,7 +22,7 @@ category: problems
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(node1, node2) {
+var addTwoNumbers = function (node1, node2) {
 	let addedLL = { val: 0, next: null },
 		carryOver = 0,
 		dummyHead = addedLL
@@ -62,7 +62,7 @@ var addTwoNumbers = function(node1, node2) {
 
 node1 = {
 	val: 2,
-	next: { val: 4, next: { val: 3, next: { val: 9, next: null } } }
+	next: { val: 4, next: { val: 3, next: { val: 9, next: null } } },
 }
 node1 = { val: 2, next: { val: 4, next: { val: 3, next: null } } }
 node2 = { val: 5, next: { val: 6, next: { val: 4, next: null } } }

@@ -19,7 +19,7 @@ function getDistance(x, y) {
 	return x * x + y * y
 }
 
-var kClosest = function(points, K) {
+var kClosest = function (points, K) {
 	let results = []
 	const closestSoFar = [],
 		pointsHash = {},
@@ -46,7 +46,7 @@ var kClosest = function(points, K) {
 			pointsHash[curr].push(points[i])
 		}
 	}
-	closestSoFar.forEach(item => {
+	closestSoFar.forEach((item) => {
 		results = results.concat(pointsHash[item])
 	})
 	return results
@@ -59,21 +59,18 @@ console.log(kClosest([([3, 3], [5, -1], [-2, 4])], 2))
  * @param {string[]} strs
  * @return {string[][]}
  */
-var groupAnagrams = function(strs) {
+var groupAnagrams = function (strs) {
 	const wordHash = {},
 		results = []
-	strs.forEach(word => {
-		const sorted = word
-			.split('')
-			.sort()
-			.join('')
+	strs.forEach((word) => {
+		const sorted = word.split('').sort().join('')
 		if (!wordHash[sorted]) {
 			wordHash[sorted] = [word]
 		} else {
 			wordHash[sorted].push(word)
 		}
 	})
-	Object.values(wordHash).forEach(arr => {
+	Object.values(wordHash).forEach((arr) => {
 		results.push(arr)
 	})
 	return results
@@ -90,7 +87,7 @@ function minMeetingRooms(times) {
 		maxCount,
 		i = 0,
 		j = 0
-	times.forEach(time => {
+	times.forEach((time) => {
 		start.push(time[0])
 		end.push(time[1])
 	})
@@ -117,7 +114,13 @@ function minMeetingRooms(times) {
 
 // console.log(minMeetingRooms([[0, 30], [5, 10], [15, 20]]))
 // console.log(minMeetingRooms([[1, 5], [8, 9], [8, 9]]))
-console.log(minMeetingRooms([[6, 10], [13, 14], [12, 14]]))
+console.log(
+	minMeetingRooms([
+		[6, 10],
+		[13, 14],
+		[12, 14],
+	])
+)
 
 graph = {
 	$id: '1',
@@ -130,16 +133,16 @@ graph = {
 					$id: '3',
 					neighbors: [
 						{ $ref: '2' },
-						{ $id: '4', neighbors: [{ $ref: '3' }, { $ref: '1' }], val: 4 }
+						{ $id: '4', neighbors: [{ $ref: '3' }, { $ref: '1' }], val: 4 },
 					],
-					val: 3
-				}
+					val: 3,
+				},
 			],
-			val: 2
+			val: 2,
 		},
-		{ $ref: '4' }
+		{ $ref: '4' },
 	],
-	val: 1
+	val: 1,
 }
 
 console.log(graph.neighbors[0])

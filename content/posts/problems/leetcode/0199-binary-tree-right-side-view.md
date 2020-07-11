@@ -11,7 +11,7 @@ category: problems
 ---
 
 ```js
-var rightSideView = function(root) {
+var rightSideView = function (root) {
 	const res = []
 	if (!root) return res
 	let q = [root]
@@ -48,7 +48,7 @@ Old: 2019-11-22
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function(root) {
+var rightSideView = function (root) {
 	const res = []
 	let maxDepth = 0
 
@@ -78,8 +78,8 @@ var node1 = {
 	left: {
 		val: 2,
 		right: { val: 5, right: null, left: { val: 7, right: null, left: null } },
-		left: null
-	}
+		left: null,
+	},
 }
 
 var node2 = {
@@ -87,24 +87,24 @@ var node2 = {
 	right: {
 		val: 3,
 		right: { val: 4, right: { val: 7, right: null, left: null }, left: null },
-		left: null
+		left: null,
 	},
 	left: {
 		val: 2,
 		right: { val: 5, right: null, left: { val: 6, right: null, left: null } },
-		left: null
-	}
+		left: null,
+	},
 }
 
 //[1,2,3,4]
 var node3 = {
 	val: 1,
 	right: { val: 3, right: null, left: null },
-	left: { val: 2, right: null, left: { val: 4, right: null, left: null } }
+	left: { val: 2, right: null, left: { val: 4, right: null, left: null } },
 }
 
 const inputArr = [node1, node2, node3]
-inputArr.forEach(node => {
+inputArr.forEach((node) => {
 	//Test cases
 	console.log(rightSideView(node))
 })

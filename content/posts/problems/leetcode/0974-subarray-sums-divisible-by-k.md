@@ -16,10 +16,10 @@ category: problems
  */
 
 //iterative O(n^2) runtime. Won't pass leetcode 'Status: Time Limit Exceeded'
-var subarraysDivByK = function(A, K) {
+var subarraysDivByK = function (A, K) {
 	let count = 0
 	const sum = []
-	A.forEach(curr => {
+	A.forEach((curr) => {
 		sum.push(0)
 		sum.forEach((elem, j) => {
 			sum[j] = curr + elem
@@ -33,7 +33,7 @@ var subarraysDivByK = function(A, K) {
 }
 
 //https://leetcode.com/problems/subarray-sums-divisible-by-k/discuss/217980/Java-O(N)-with-HashMap-and-prefix-Sum
-var subarraysDivByK = function(A, K) {
+var subarraysDivByK = function (A, K) {
 	const map = { 0: 1 }
 	let count = 0,
 		sum = 0

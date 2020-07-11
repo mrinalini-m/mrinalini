@@ -30,8 +30,8 @@
 				document.querySelector('#game').style.display = 'block'
 				game.init()
 				document.querySelector('#players').style.display = 'none'
-			}
-		}
+			},
+		},
 	}
 </script>
 

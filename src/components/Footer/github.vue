@@ -24,7 +24,7 @@
 
 <script>
 	export default {
-		name: 'Github'
+		name: 'Github',
 	}
 </script>
 

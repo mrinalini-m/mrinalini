@@ -13,8 +13,8 @@
 	import Posts from '~/pages/Index'
 	export default {
 		components: {
-			Posts
-		}
+			Posts,
+		},
 	}
 </script>
 

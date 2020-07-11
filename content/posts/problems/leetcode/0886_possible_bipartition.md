@@ -32,7 +32,7 @@ function buildGraph(n, edges) {
 ### With BFS:
 
 ```js
-var possibleBipartition = function(N, dislikes) {
+var possibleBipartition = function (N, dislikes) {
 	// Since N will be 1...N
 	const n = N + 1,
 		adjList = buildGraph(n, dislikes),
@@ -81,7 +81,7 @@ var possibleBipartition = function(N, dislikes) {
 ### With DFS:
 
 ```js
-var possibleBipartition = function(N, dislikes) {
+var possibleBipartition = function (N, dislikes) {
 	// Since N will be 1...N
 	const n = N + 1,
 		adjList = buildGraph(n, dislikes),

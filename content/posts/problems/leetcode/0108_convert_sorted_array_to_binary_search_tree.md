@@ -16,7 +16,7 @@ Space Complexity - O(log(n)) from stack space + O(n) output
 
 Like merge sort but just the division part. 
 */
-var sortedArrayToBST = function(nums) {
+var sortedArrayToBST = function (nums) {
 	// Recursive helper
 	function recurse(arr, start, end) {
 		if (start > end) return null

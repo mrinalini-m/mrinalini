@@ -80,7 +80,7 @@ function permuteNoSlate(nums) {
 
 ```js
 // First attempt
-var permute = function(nums) {
+var permute = function (nums) {
 	const result = []
 
 	function pHelper(slate, arr) {

@@ -19,7 +19,7 @@ category: problems
 const { ListNode, arrToLL, LLToArr } = require('./utils.js')
 
 //iterative mine
-var mergeTwoLists = function(l1, l2) {
+var mergeTwoLists = function (l1, l2) {
 	if (!l1) return l2
 	if (!l2) return l1
 	const root = l1.val <= l2.val ? l1 : l2
@@ -43,7 +43,7 @@ var mergeTwoLists = function(l1, l2) {
 }
 
 // iterative leetcode solution
-var mergeTwoLists = function(l1, l2) {
+var mergeTwoLists = function (l1, l2) {
 	if (!l1) return l2
 	if (!l2) return l1
 
@@ -65,7 +65,7 @@ var mergeTwoLists = function(l1, l2) {
 }
 
 //recursive
-var mergeTwoListsRecurse = function(l1, l2) {
+var mergeTwoListsRecurse = function (l1, l2) {
 	if (!l1) return l2
 	if (!l2) return l1
 	if (l1.val < l2.val) {

@@ -13,7 +13,7 @@ category: problems
  * @param {number[][]} grid
  * @return {number}
  */
-var shortestPathBinaryMatrix = function(grid) {
+var shortestPathBinaryMatrix = function (grid) {
 	const len = grid.length,
 		last = len - 1
 	if (grid[0][0] || grid[last][last]) return -1
@@ -26,14 +26,14 @@ var shortestPathBinaryMatrix = function(grid) {
 			[1, 1],
 			[1, 0],
 			[1, -1],
-			[0, -1]
+			[0, -1],
 		],
 		isValidCord = (x, y) => x >= 0 && x < len && y >= 0 && y < len
 	grid[0][0] = 1
 	while (queue.length) {
 		const {
 			coord: [x, y],
-			k
+			k,
 		} = queue.shift()
 		if (x === last && y === last) return k
 		for (let [moveX, moveY] of directions) {
@@ -49,5 +49,10 @@ var shortestPathBinaryMatrix = function(grid) {
 }
 
 //Test cases
-console.log(shortestPathBinaryMatrix([[0, 1], [1, 0]]))
+console.log(
+	shortestPathBinaryMatrix([
+		[0, 1],
+		[1, 0],
+	])
+)
 ```

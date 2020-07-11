@@ -14,7 +14,7 @@ category: problems
  * @param {number} limit
  * @return {number}
  */
-var numRescueBoats = function(people, limit) {
+var numRescueBoats = function (people, limit) {
 	let boatCount = 0,
 		i = 0,
 		j = people.length - 1

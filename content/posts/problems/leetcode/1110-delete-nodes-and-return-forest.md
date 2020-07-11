@@ -22,7 +22,7 @@ category: problems
  * @param {number[]} to_delete
  * @return {TreeNode[]}
  */
-var delNodes = function(root, to_delete) {
+var delNodes = function (root, to_delete) {
 	if (!root) return []
 	const remaining = [],
 		queue = [root]
@@ -57,7 +57,7 @@ var delNodes = function(root, to_delete) {
 	return remaining
 }
 // https://leetcode.com/problems/delete-nodes-and-return-forest/discuss/328924/Javascript-Solution
-var delNodes = function(root, to_delete) {
+var delNodes = function (root, to_delete) {
 	if (!root) return []
 	const res = [],
 		dfs = (node, isRoot) => {
@@ -79,13 +79,13 @@ console.log(
 			right: {
 				val: 3,
 				right: { val: 7, right: null, left: null },
-				left: { val: 6, right: null, left: null }
+				left: { val: 6, right: null, left: null },
 			},
 			left: {
 				val: 2,
 				right: { val: 5, right: null, left: null },
-				left: { val: 4, right: null, left: null }
-			}
+				left: { val: 4, right: null, left: null },
+			},
 		},
 		[3, 5]
 	)
@@ -99,8 +99,8 @@ console.log(
 			left: {
 				val: 2,
 				right: { val: 3, right: null, left: null },
-				left: { val: 4, right: null, left: null }
-			}
+				left: { val: 4, right: null, left: null },
+			},
 		},
 		[2, 3]
 	)

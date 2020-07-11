@@ -49,7 +49,7 @@ function bfs(source, visited, adjList) {
 	}
 }
 
-var countComponents = function(n, edges) {
+var countComponents = function (n, edges) {
 	const visited = new Array(n).fill(-1),
 		adjList = buildGraph(n, edges)
 	let components = 0
@@ -67,5 +67,11 @@ var countComponents = function(n, edges) {
 
 // Tests
 console.log(countComponents(2, [[1, 0]]))
-console.log(countComponents(5, [[0, 1], [1, 2], [3, 4]]))
+console.log(
+	countComponents(5, [
+		[0, 1],
+		[1, 2],
+		[3, 4],
+	])
+)
 ```

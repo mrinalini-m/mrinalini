@@ -1,4 +1,4 @@
-const createTags = tags => {
+const createTags = (tags) => {
 	const arr = JSON.parse(tags)
 	let res = ``
 	for (const tag of arr) {

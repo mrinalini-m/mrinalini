@@ -43,7 +43,7 @@ function getNeighbors(x, y, grid) {
 ### With DFS:
 
 ```js
-var numIslands = function(grid) {
+var numIslands = function (grid) {
 	let islands = 0
 
 	for (let x = 0; x < grid.length; x++) {
@@ -72,7 +72,7 @@ var numIslands = function(grid) {
 ### With BFS:
 
 ```js
-var numIslands = function(grid) {
+var numIslands = function (grid) {
 	let islands = 0
 
 	for (let x = 0; x < grid.length; x++) {
@@ -114,7 +114,7 @@ console.log(
 		['1', '1', '0', '0', '0'],
 		['1', '1', '0', '0', '0'],
 		['0', '0', '1', '0', '0'],
-		['0', '0', '0', '1', '1']
+		['0', '0', '0', '1', '1'],
 	])
 )
 ```

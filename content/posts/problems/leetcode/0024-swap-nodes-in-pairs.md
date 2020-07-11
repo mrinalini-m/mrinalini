@@ -16,7 +16,7 @@ category: problems
  */
 
 const { ListNode, arrToLL, LLToArr } = require('./utils.js')
-var swapPairs = function(head) {
+var swapPairs = function (head) {
 	if (!head || !head.next) return head
 	let node1 = head,
 		node2 = head.next,

@@ -43,7 +43,11 @@ Tests:
 
 ```js
 // Tests ------------------------------------------
-const tests = [[2, 4, 16], [2, 0, 1], [12, 5, 248832]]
+const tests = [
+	[2, 4, 16],
+	[2, 0, 1],
+	[12, 5, 248832],
+]
 console.log('Recursive tests')
 for (const test of tests) {
 	console.log(rRaiseIntToPower(test[0], test[1]) === test[2])

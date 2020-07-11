@@ -57,17 +57,17 @@
 				calculatedWidth: { width: '0.1px' },
 				isFocused: false,
 				empty: true,
-				value: []
+				value: [],
 			}
 		},
 
 		components: {
-			Multiselect
+			Multiselect,
 		},
 		computed: {
 			tags() {
 				return Object.keys(this.$store.state.tags)
-			}
+			},
 		},
 		methods: {
 			onInput(event) {
@@ -87,14 +87,14 @@
 			},
 			customLabel(option) {
 				return `${option.library} - ${option.language}`
-			}
+			},
 		},
 
 		async mounted() {
 			const fetch = this.$fetch,
 				width = this.$refs.label.getBoundingClientRect().width * 0.75 + 8
 			this.calculatedWidth = { width: width + 'px' }
-		}
+		},
 	}
 </script>
 

@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var distanceK = function(root, target, K) {
+var distanceK = function (root, target, K) {
 	root.parent = null
 
 	function findKNodes(node, K) {
@@ -71,17 +71,17 @@ const root = {
 	right: {
 		val: 1,
 		right: { val: 8, right: null, left: null },
-		left: { val: 0, right: null, left: null }
+		left: { val: 0, right: null, left: null },
 	},
 	left: {
 		val: 5,
 		right: {
 			val: 2,
 			right: { val: 4, right: null, left: null },
-			left: { val: 7, right: null, left: null }
+			left: { val: 7, right: null, left: null },
 		},
-		left: { val: 6, right: null, left: null }
-	}
+		left: { val: 6, right: null, left: null },
+	},
 }
 
 //Test cases
@@ -93,9 +93,9 @@ console.log(
 			right: {
 				val: 2,
 				right: { val: 4, right: null, left: null },
-				left: { val: 7, right: null, left: null }
+				left: { val: 7, right: null, left: null },
 			},
-			left: { val: 6, right: null, left: null }
+			left: { val: 6, right: null, left: null },
 		},
 		2
 	)

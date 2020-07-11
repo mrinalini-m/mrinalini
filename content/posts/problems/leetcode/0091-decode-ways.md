@@ -13,9 +13,9 @@ category: problems
  * @param {string} s
  * @return {number}
  */
-var numDecodings = function(s) {
+var numDecodings = function (s) {
 	if (!s || s[0] === '0') return 0
-	const recurse = len => {
+	const recurse = (len) => {
 		if (len === 0 || len === 1) return 1
 		let count = 0
 		if (s[len - 1] > '0') {
@@ -30,7 +30,7 @@ var numDecodings = function(s) {
 }
 
 const testCases = ['0', '226134', '17', '226']
-testCases.forEach(item => {
+testCases.forEach((item) => {
 	//Test cases
 	console.log(numDecodings(item))
 })

@@ -24,8 +24,8 @@
 			toggleMenu() {
 				this.opened = !this.opened
 				this.toggleSidebar()
-			}
-		}
+			},
+		},
 	}
 </script>
 

@@ -1,7 +1,7 @@
 const Stack = require('./Stack')
 const Queue = require('./Queue')
 
-const BFS = function(root) {
+const BFS = function (root) {
 	const res = [],
 		queue = new Queue()
 	queue.enqueue(root)
@@ -53,7 +53,7 @@ const DFSRecursive = {
 		}
 		recurse(root)
 		return res
-	}
+	},
 }
 
 const DFSIterative = {
@@ -110,7 +110,7 @@ const DFSIterative = {
 			res.push(curr.key)
 		}
 		return res
-	}
+	},
 }
 
 module.exports = { BFS, DFSIterative, DFSRecursive }

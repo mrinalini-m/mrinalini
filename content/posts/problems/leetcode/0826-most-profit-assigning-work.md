@@ -15,7 +15,7 @@ category: problems
  * @param {number[]} worker
  * @return {number}
  */
-var maxProfitAssignment = function(difficulty, profit, workers) {
+var maxProfitAssignment = function (difficulty, profit, workers) {
 	const diffProf = []
 	let total = 0,
 		maxP = 0,

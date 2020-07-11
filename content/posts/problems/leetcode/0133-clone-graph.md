@@ -27,16 +27,16 @@ function Node(val, neighbors) {
 }
 
 //DFS
-var cloneGraph = function(nodeToClone) {
+var cloneGraph = function (nodeToClone) {
 	const seen = {}
-	const clone = node => {
+	const clone = (node) => {
 		if (node === null) return null
 		if (seen[node.val]) {
 			return seen[node.val]
 		}
 		const newNode = new Node(node.val, [])
 		seen[newNode.val] = newNode
-		node.neighbors.forEach(neighbor => {
+		node.neighbors.forEach((neighbor) => {
 			newNode.neighbors.push(clone(neighbor))
 		})
 		return newNode
@@ -45,7 +45,7 @@ var cloneGraph = function(nodeToClone) {
 }
 
 //BFS with while loop
-var cloneGraph = function(nodeToClone) {
+var cloneGraph = function (nodeToClone) {
 	const seen = {}
 	const queue = [nodeToClone]
 	let newHead, cloneNode, node
@@ -57,7 +57,7 @@ var cloneGraph = function(nodeToClone) {
 			newHead = cloneNode
 			seen[node.val] = cloneNode
 		}
-		node.neighbors.forEach(neighbor => {
+		node.neighbors.forEach((neighbor) => {
 			let cloneChild = seen[neighbor.val]
 			if (!cloneChild) {
 				cloneChild = new Node(neighbor.val, [])

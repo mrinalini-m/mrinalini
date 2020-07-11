@@ -38,7 +38,7 @@ arr[++i] --> increment i first THEN get arr element at i
 */
 
 // With pointers start at 0 and len - 1
-var sortColors = function(nums) {
+var sortColors = function (nums) {
 	const len = nums.length
 
 	let low = 0,
@@ -54,7 +54,7 @@ var sortColors = function(nums) {
 }
 
 // With pointers start at -1 and len
-var sortColors = function(nums) {
+var sortColors = function (nums) {
 	const len = nums.length
 
 	let low = -1,

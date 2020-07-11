@@ -85,7 +85,15 @@ Tests:
 
 ```js
 // Tests ------------------------------------------
-const tests = [[0, 0], [1, 1], [2, 1], [4, 3], [9, 34], [15, 610], [30, 832040]]
+const tests = [
+	[0, 0],
+	[1, 1],
+	[2, 1],
+	[4, 3],
+	[9, 34],
+	[15, 610],
+	[30, 832040],
+]
 
 console.log('Recursive exponential time tests')
 for (const test of tests) {

@@ -17,7 +17,7 @@
 				</g-link>
 			</ul>
 		</div>
-    <p class="link-wrapper" v-if="$page.post.link">
+		<p class="link-wrapper" v-if="$page.post.link">
 			<a :href="$page.post.link">Problem Link</a>
 		</p>
 		<VueRemarkContent class="post-content" />
@@ -32,11 +32,11 @@
 	.post-title {
 		font-size: 1.9rem;
 	}
-  .link-wrapper {
-    text-align: start;
-    font-size: 1.125rem;
-    margin-top: 1.5rem;
-  }
+	.link-wrapper {
+		text-align: start;
+		font-size: 1.125rem;
+		margin-top: 1.5rem;
+	}
 	.post-meta {
 		text-align: start;
 		.date {

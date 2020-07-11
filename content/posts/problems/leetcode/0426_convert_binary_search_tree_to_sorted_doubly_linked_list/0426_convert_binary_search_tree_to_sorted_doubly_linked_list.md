@@ -11,7 +11,7 @@ category: problems
 
 ```js
 // Boundary Walk - Inorder dfs
-var treeToDoublyList = function(root) {
+var treeToDoublyList = function (root) {
 	// recursive helper
 	function dfs(node) {
 		if (node.left) dfs(node.left)
@@ -54,7 +54,7 @@ const tree = {
 	left: {
 		val: 2,
 		left: { val: 1, left: null, right: null },
-		right: { val: 4, left: { val: 3, left: null, right: null }, right: null }
+		right: { val: 4, left: { val: 3, left: null, right: null }, right: null },
 	},
 	right: {
 		val: 6,
@@ -62,9 +62,9 @@ const tree = {
 		right: {
 			val: 9,
 			left: { val: 8, left: { val: 7, left: null, right: null }, right: null },
-			right: { val: 10, left: null, right: null }
-		}
-	}
+			right: { val: 10, left: null, right: null },
+		},
+	},
 }
 
 let head = treeToDoublyList(tree)

@@ -46,11 +46,11 @@ Output: true */
  */
 
 //Time = O(n), Sapce = O(n)
-var isValid = function(s) {
+var isValid = function (s) {
 	const bracketHash = {
 			'{': '}',
 			'[': ']',
-			'(': ')'
+			'(': ')',
 		},
 		stack = [],
 		len = s.length

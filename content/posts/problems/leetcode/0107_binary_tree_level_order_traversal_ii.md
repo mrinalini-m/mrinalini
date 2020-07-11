@@ -12,7 +12,7 @@ category: problems
 ```js
 // Same as level order traversal (Leetcode 102) but reverse the res array at end
 
-var levelOrderBottom = function(root) {
+var levelOrderBottom = function (root) {
 	const res = []
 	if (!root) return res
 	let q = [root]

@@ -144,9 +144,9 @@ const tests = [
 			'96',
 			'97',
 			'98',
-			'99'
-		]
-	]
+			'99',
+		],
+	],
 ]
 
 console.log('Recursive divide-and-conquer')

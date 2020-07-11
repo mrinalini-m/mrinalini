@@ -1,6 +1,6 @@
 const exec = require('child_process').exec
 
-const getName = str => {
+const getName = (str) => {
 	let arr = str.split('.')
 
 	arr.pop()
@@ -14,7 +14,7 @@ const getName = str => {
 	return split
 }
 
-const convertToMd = js => {
+const convertToMd = (js) => {
 	return js.replace('.js', '.md')
 }
 const name = getName(process.argv[2]),
@@ -32,9 +32,5 @@ const title = `${no} - ${name.join(' ')} [Cracking the Coding Interview]`,
 	fileName = convertToMd(process.argv[2])
 
 exec(
-	`touch ${fileName} && code ${fileName} && node ./../create_md/file_content.js "${title}" "${date}" "${slug}" "${tags}" > ${fileName} && cat ${
-		process.argv[2]
-	} >> ${fileName} && node ./../create_md/end.js >> ${fileName} && rm ${
-		process.argv[2]
-	}`
+	`touch ${fileName} && code ${fileName} && node ./../create_md/file_content.js "${title}" "${date}" "${slug}" "${tags}" > ${fileName} && cat ${process.argv[2]} >> ${fileName} && node ./../create_md/end.js >> ${fileName} && rm ${process.argv[2]}`
 )

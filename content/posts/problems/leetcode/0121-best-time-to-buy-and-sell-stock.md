@@ -33,7 +33,7 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0. */
  */
 
 //Time - O(n), Space = O(1)
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
 	const len = prices.length
 	let buyingPrice = 0,
 		sellingPrice = 0,
@@ -55,7 +55,7 @@ var maxProfit = function(prices) {
 
 //Time - O(n2), Space = O(1) (from solutions)
 //In formal terms, we need to find max(prices[j] - prices[i]) for every i and j such that j > i
-var maxProfit = function(prices) {
+var maxProfit = function (prices) {
 	const len = prices.length
 	let maxProfit = 0
 	for (let i = 0; i < len; i++) {

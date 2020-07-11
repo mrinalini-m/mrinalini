@@ -19,7 +19,7 @@ const others = ['to', 'a', 'an', 'the'],
 		'past',
 		'to',
 		'upon',
-		'with'
+		'with',
 	],
 	conjunctions = [
 		'and',
@@ -35,12 +35,12 @@ const others = ['to', 'a', 'an', 'the'],
 		'that',
 		'till',
 		'when',
-		'yet'
+		'yet',
 	]
 
 const lowercase = new Set([...others, ...prepositions, ...conjunctions])
 
-const getName = str => {
+const getName = (str) => {
 	str = str.replace('.js', '')
 	const arr = str.split('_'),
 		num = Number(arr.shift()),
@@ -54,11 +54,11 @@ const getName = str => {
 	return split
 }
 
-const convertToMd = js => {
+const convertToMd = (js) => {
 	return js.replace('.js', '.md')
 }
 
-const getSlug = js => {
+const getSlug = (js) => {
 	const slug = js.replace('.js', '')
 	return slug.replace(/_/g, '-')
 }
@@ -72,9 +72,5 @@ const title = `${num}. ${name.join(' ')}`,
 	fileName = convertToMd(process.argv[2])
 
 exec(
-	`touch ${fileName} && code ${fileName} && node create_md/file_content.js "${title}" "${date}" "${slug}" > ${fileName} && cat ${
-		process.argv[2]
-	} >> ${fileName} && node create_md/end.js >> ${fileName} && rm ${
-		process.argv[2]
-	}`
+	`touch ${fileName} && code ${fileName} && node create_md/file_content.js "${title}" "${date}" "${slug}" > ${fileName} && cat ${process.argv[2]} >> ${fileName} && node create_md/end.js >> ${fileName} && rm ${process.argv[2]}`
 )

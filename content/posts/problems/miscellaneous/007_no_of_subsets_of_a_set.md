@@ -98,7 +98,12 @@ Tests:
 
 ```js
 // Tests ------------------------------------------
-const tests = [[2, 4], [0, 1], [5, 32], [10, 1024]]
+const tests = [
+	[2, 4],
+	[0, 1],
+	[5, 32],
+	[10, 1024],
+]
 console.log('Iterative tests')
 for (const test of tests) {
 	console.log(iCountSubsetsOfSet(test[0]) === test[1])

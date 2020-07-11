@@ -25,7 +25,7 @@ const manDistance = (p1, p2) => {
 	return Math.abs(p1[0] - p2[0]) + Math.abs(p1[1] - p2[1])
 }
 
-var assignBikes = function(workers, bikes) {
+var assignBikes = function (workers, bikes) {
 	const buckets = [],
 		bikesUsed = [],
 		res = []
@@ -54,8 +54,15 @@ var assignBikes = function(workers, bikes) {
 	}
 	return res
 }
-const workers = [[0, 0], [1, 1], [2, 0]],
-	bikes = [[1, 0], [2, 2]]
+const workers = [
+		[0, 0],
+		[1, 1],
+		[2, 0],
+	],
+	bikes = [
+		[1, 0],
+		[2, 2],
+	]
 
 //Test cases
 console.log(assignBikes(workers, bikes))

@@ -16,7 +16,7 @@ category: problems
  */
 
 //iterative O(n^2) time complexity
-var subarraySum = function(nums, k) {
+var subarraySum = function (nums, k) {
 	const len = nums.length
 	let count = 0
 	for (let i = 0; i < len; i++) {
@@ -38,7 +38,7 @@ var subarraySum = function(nums, k) {
 //Time complexity - O(n)
 //Space complexity -O(n) (for the hash map)
 
-var subarraySum = function(nums, k) {
+var subarraySum = function (nums, k) {
 	const len = nums.length,
 		cumSumHash = { 0: 1 }
 	let cumSum = 0,

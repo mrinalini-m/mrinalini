@@ -34,7 +34,7 @@ class Node {
 // Time - O(n)
 //Space - O(n)
 
-var copyRandomList = function(head) {
+var copyRandomList = function (head) {
 	if (!head) return null
 	let node = head,
 		i = 0,
@@ -64,9 +64,9 @@ var copyRandomList = function(head) {
 }
 
 //Recursive Using Map so node objects can be used as object keys
-var copyRandomList = function(root) {
+var copyRandomList = function (root) {
 	const visited = new Map()
-	const recurse = head => {
+	const recurse = (head) => {
 		if (!head) return null
 		if (visited.get(head)) return visited.get(head)
 		const node = new Node(head.val)
@@ -80,9 +80,9 @@ var copyRandomList = function(root) {
 }
 
 //Mapping the head vals to nodes assuming vals are unique
-var copyRandomList = function(root) {
+var copyRandomList = function (root) {
 	const visited = {}
-	const recurse = head => {
+	const recurse = (head) => {
 		if (!head) return null
 		if (visited[head.val]) return visited[head.val]
 		const node = new Node(head.val)

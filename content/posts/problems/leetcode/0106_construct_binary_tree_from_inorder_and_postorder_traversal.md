@@ -10,7 +10,7 @@ category: problems
 ---
 
 ```js
-var buildTree = function(inorder, postorder) {
+var buildTree = function (inorder, postorder) {
 	// Store the index of every number in inorder traversal in a hashMap
 	const inOMap = {}
 	for (let i = 0; i < inorder.length; i++) {

@@ -52,7 +52,7 @@ console.log(permute([1, 2, 3]))
 ```
 
 <span style="display:block; text-align: center;">Tree Diagram</span>
-![Permutations diagram](./0046_permutations.png)
+![Permutations diagram](./0046_permutations.jpg)
 
 ### Recursive DFS - With mutable params, no separate slate
 

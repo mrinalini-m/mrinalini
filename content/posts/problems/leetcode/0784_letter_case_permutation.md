@@ -9,6 +9,8 @@ tags:
 category: problems
 ---
 
+![Top-down DFS Tree Diagram](./0784_letter_case_permutation.jpg)
+
 ### Top-down DFS
 
 ```js
@@ -59,5 +61,37 @@ for (const test of tests) {
 	const res = letterCasePermutation(test[0])
 	console.log(res)
 	console.log(JSON.stringify(res) === JSON.stringify(test[1]))
+}
+```
+
+With string concatenation (slate is a string):
+
+```js
+// With string concatenation (slate is a string)
+var letterCasePermutation = function (str) {
+	const result = []
+
+	function recurse(str, i, slate) {
+		// Base case
+		if (i === str.length) {
+			result.push(slate) //O(n) time
+			return
+		}
+
+		// numbers
+		if (!isNaN(str[i])) {
+			recurse(str, i + 1, slate + str[i])
+
+			// letters
+		} else {
+			// lowercase
+			recurse(str, i + 1, slate + str[i].toLowerCase())
+			// uppercase
+			recurse(str, i + 1, slate + str[i].toUpperCase())
+		}
+	}
+
+	recurse(str, 0, '')
+	return result
 }
 ```

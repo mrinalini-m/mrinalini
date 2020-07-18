@@ -60,6 +60,8 @@ function subsets(array) {
 <span style="display:block; text-align: center;">Tree Diagram - Time Complexity and Recursive path</span>
 ![Subsets diagram](./0078-subsets.jpg)
 
+![Alternate Tree diagram](./0078-subsets-1.jpg)
+
 ### Iterative version
 
 ```js

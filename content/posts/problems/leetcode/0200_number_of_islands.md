@@ -10,11 +10,11 @@ tags:
 category: problems
 ---
 
-This is same as 323. connected components - we're counting number connected of connected components. But instead of an explicit edge list (from which we were able to build an adjacency list), we're given a matrix — each cell has four neighbors (4 corner cells have 2 neighbors and edge cells have 3).
+This is same as [323. connected components](/posts/0323-number-of-connected-components-in-an-undirected-graph/) - we're counting number of connected components. But instead of an explicit edge list (from which we were able to build an adjacency list), we're given a matrix(an implicit adjacency list) — each cell has four neighbors (4 corner cells have 2 neighbors and edge cells have 3).
 
 ```js
 /*
-Here the things that are different from the connected components problem:
+Here are the things that are different from the connected components problem:
 
 |                       | Count Connected components       | Count no. of islands         |
 | --------------------- | -------------------------------- | ---------------------------- |
@@ -24,6 +24,8 @@ Here the things that are different from the connected components problem:
 |                       |                                  | Each cell has 4 neighbors    |
 */
 ```
+
+### Common Helper
 
 Function to get neighbors of each cell - common to both bfs and dfs traversals:
 

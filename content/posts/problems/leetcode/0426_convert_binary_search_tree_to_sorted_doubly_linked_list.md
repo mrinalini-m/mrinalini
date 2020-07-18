@@ -44,7 +44,10 @@ function TreeNode(val, left, right) {
 }
 ```
 
-![binary-search-tree-to-sorted-doubly-linked-list](./binary-search-tree-to-sorted-doubly-linked-list.png)
+<a href="/img/binary-search-tree-to-sorted-doubly-linked-list.png" target="_blank">
+<img src="../../../../static/img/binary-search-tree-to-sorted-doubly-linked-list.png"/>
+</a>
+
 Tests:
 
 ```js

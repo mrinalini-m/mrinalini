@@ -14,14 +14,14 @@
  * @param {number} target
  * @return {number[]}
  */
-//Time - O(n2), space - O(1)
-// var twoSum = function(nums, target) {
-//     for (let i = 0; i < nums.length; i++) {
-//         for (let j = i + 1; j < nums.length; j++) {
-//           if (nums[i] + nums[j] === target) return [i, j]
-//         }
-//     }
-// };
+//Time - O(n^2), space - O(1)
+var twoSumBruteForce = function (nums, target) {
+	for (let i = 0; i < nums.length; i++) {
+		for (let j = i + 1; j < nums.length; j++) {
+			if (nums[i] + nums[j] === target) return [i, j]
+		}
+	}
+}
 
 //Time - O(n), space - O(n)
 var twoSum = (nums, target) => {
@@ -35,6 +35,6 @@ var twoSum = (nums, target) => {
 	}
 }
 
-//Test cases
-console.log(twoSum([1, 3, 4, 5, 6, 7], 4))
+// Tests
+console.log(twoSumBruteForce([1, 3, 4, 5, 6, 7], 4))
 console.log(twoSum([1, 3, 4, 5, 6, 7], 4))

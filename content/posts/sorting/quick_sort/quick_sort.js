@@ -1,16 +1,3 @@
-// Helper util functions
-function swapArrItemsInPlace(array, i, j) {
-	let temp = array[i]
-	array[i] = array[j]
-	array[j] = temp
-}
-
-function getRandomIntInclusive(min, max) {
-	min = Math.ceil(min)
-	max = Math.floor(max)
-	return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
-}
-
 // Quick Sort - With Lomuto partition
 function quickSort(arr) {
 	function recurse(start, end) {
@@ -18,26 +5,36 @@ function quickSort(arr) {
 
 		const randomIndex = getRandomIntInclusive(start, end)
 
-		swapArrItemsInPlace(arr, randomIndex, start)
+		swap(arr, randomIndex, start)
 
 		const pivot = arr[start]
 		let smaller = start,
-			bigger
+			bigger = start + 1
 
-		for (bigger = start + 1; bigger <= end; bigger++) {
+		for (bigger; bigger <= end; bigger++) {
 			if (arr[bigger] < pivot) {
 				smaller++
-				swapArrItemsInPlace(arr, smaller, bigger)
+				swap(arr, smaller, bigger)
 			}
 		}
-		bigger--
 
-		swapArrItemsInPlace(arr, start, smaller)
+		swap(arr, start, smaller)
 
 		recurse(start, smaller - 1)
-		recurse(smaller + 1, bigger)
+		recurse(smaller + 1, end)
 	}
 	recurse(0, arr.length - 1)
+}
+
+// Helper util functions
+function swap(array, i, j) {
+	let temp = array[i]
+	array[i] = array[j]
+	array[j] = temp
+}
+
+function getRandomIntInclusive(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
 }
 
 /*
@@ -66,8 +63,7 @@ const testCases = [
 ]
 
 for (const test of testCases) {
-	const arr = JSON.parse(JSON.stringify(test[0])) //copy of array
-	quickSort(arr)
-	console.log(arr)
-	console.log(JSON.stringify(arr) === JSON.stringify(test[1]))
+	quickSort(test[0])
+	console.log(test[0])
+	console.log(JSON.stringify(test[0]) === JSON.stringify(test[1]))
 }

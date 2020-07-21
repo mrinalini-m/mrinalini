@@ -1,19 +1,20 @@
-function swapArrItemsInPlace(array, i, j) {
-	let temp = array[i]
-	array[i] = array[j]
-	array[j] = temp
-}
-
 function bubbleSort(arr) {
 	const len = arr.length
 
 	for (let i = 0; i < len; i++) {
-		for (let j = 0; j < len - i - 1; j++) {
-			if (arr[j] > arr[j + 1]) {
-				swapArrItemsInPlace(arr, j, j + 1)
+		for (let j = len - 1; j > i; j--) {
+			if (arr[j - 1] > arr[j]) {
+				swap(arr, j, j - 1)
 			}
 		}
 	}
+}
+
+// Helper function
+function swap(array, i, j) {
+	let temp = array[i]
+	array[i] = array[j]
+	array[j] = temp
 }
 
 /*
@@ -40,7 +41,6 @@ const testCases = [
 ]
 
 for (const test of testCases) {
-	const arr = JSON.parse(JSON.stringify(test[0])) //copy of array
-	bubbleSort(arr)
-	console.log(JSON.stringify(arr) === JSON.stringify(test[1]))
+	bubbleSort(test[0])
+	console.log(JSON.stringify(test[0]) === JSON.stringify(test[1]))
 }

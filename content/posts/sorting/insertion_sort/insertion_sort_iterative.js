@@ -1,6 +1,5 @@
 function insertionSortIterative(arr) {
 	const len = arr.length
-	if (len <= 1) return
 
 	for (let i = 1; i < len; i++) {
 		const ith = arr[i]
@@ -42,7 +41,6 @@ const testCases = [
 ]
 
 for (const test of testCases) {
-	const arr = JSON.parse(JSON.stringify(test[0])) //copy of array
-	insertionSortIterative(arr)
-	console.log(JSON.stringify(arr) === JSON.stringify(test[1]))
+	insertionSortIterative(test[0])
+	console.log(JSON.stringify(test[0]) === JSON.stringify(test[1]))
 }

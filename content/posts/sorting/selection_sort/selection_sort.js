@@ -1,9 +1,3 @@
-function swapArrItemsInPlace(array, i, j) {
-	let temp = array[i]
-	array[i] = array[j]
-	array[j] = temp
-}
-
 function selectionSort(arr) {
 	const len = arr.length
 	let currMinIndex
@@ -16,8 +10,15 @@ function selectionSort(arr) {
 				currMinIndex = j
 			}
 		}
-		if (i !== currMinIndex) swapArrItemsInPlace(arr, i, currMinIndex)
+		if (i !== currMinIndex) swap(arr, i, currMinIndex)
 	}
+}
+
+//Helper function
+function swap(array, i, j) {
+	let temp = array[i]
+	array[i] = array[j]
+	array[j] = temp
 }
 
 /*
@@ -45,7 +46,6 @@ const testCases = [
 ]
 
 for (const test of testCases) {
-	const arr = JSON.parse(JSON.stringify(test[0])) //copy of array
-	selectionSort(arr)
-	console.log(JSON.stringify(arr) === JSON.stringify(test[1]))
+	selectionSort(test[0])
+	console.log(JSON.stringify(test[0]) === JSON.stringify(test[1]))
 }

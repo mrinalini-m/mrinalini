@@ -12,10 +12,6 @@ category: problems
 ---
 
 ```js
-// https://leetcode.com/problems/kth-largest-element-in-an-array/
-
-const { getRandomIntInclusive, swapArrItemsInPlace } = require('../../utils')
-
 /* 
 1. If you sort array, then kth largest value will be n-k from beginning.
  eg: [3, 2, 1, 5, 6, 4], k=2 [1,2,3,4,5,6], n-k=4
@@ -39,7 +35,7 @@ function findKthLargest(arr, k) {
 
 		const randomIndex = getRandomIntInclusive(start, end)
 
-		swapArrItemsInPlace(arr, randomIndex, start)
+		swap(arr, randomIndex, start)
 
 		const pivot = arr[start]
 		let smaller = start,
@@ -48,11 +44,11 @@ function findKthLargest(arr, k) {
 		for (bigger; bigger <= end; bigger++) {
 			if (arr[bigger] < pivot) {
 				smaller++
-				swapArrItemsInPlace(arr, smaller, bigger)
+				swap(arr, smaller, bigger)
 			}
 		}
 
-		swapArrItemsInPlace(arr, start, smaller)
+		swap(arr, start, smaller)
 
 		if (smaller === kthFromlast) {
 			return arr[smaller]
@@ -63,6 +59,19 @@ function findKthLargest(arr, k) {
 		}
 	}
 	return recurse(0, arr.length - 1)
+}
+
+// Helper functions:
+function getRandomIntInclusive(min, max) {
+	min = Math.ceil(min)
+	max = Math.floor(max)
+	return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive
+}
+
+function swap(array, i, j) {
+	let temp = array[i]
+	array[i] = array[j]
+	array[j] = temp
 }
 
 /* 

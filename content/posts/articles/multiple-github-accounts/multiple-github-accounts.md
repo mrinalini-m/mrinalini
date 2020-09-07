@@ -5,8 +5,6 @@ slug: 'multiple-github-accounts'
 category: articles
 ---
 
-
-
 <span style="font-weight: 600;">Issue</span>: You need to use two different github accounts from one computer. You don't want to have to configure your ssh keys every time you switch accounts. And you don't want to edit the repo's ssh address every time you clone a repo either [as suggested by a lot of online tutorials](https://medium.com/@xiaolishen/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693).
 
 <span style="font-weight: 600;">Solution</span>: You put all your work repos in one folder and update your ssh config to conditionally use a different SSH key. Everything else will use the default ssh key (your personal account).
@@ -17,14 +15,14 @@ If you've already generated and added your SSH keys to your github account, skip
 
 ## Generating and Adding SSH keys to your github account.
 
-**Checking for existing keys**
+### Checking for existing keys
 
-1. First, check if there are SSH keys present on your machine by going to terminal and entering `ls -al ~/.ssh` . By default, the filenames of the public keys start with `id_rsa` and end in `.pub` .
-2. If you're not sure which key belongs to which account and want to start with new keys, you can delete your keys by entering `ssh-add -D` from terminal. This only removes manually added keys so if you're running into issues, take a look at this [stackoverflow answer](https://stackoverflow.com/a/25465155/11279811). Make sure to go to the folder where your SSH keys are located - type `open ~/.ssh` from terminal and save a copy before overwriting them.
+1. First, check if there are SSH keys present on your machine by going to terminal and run `ls -al ~/.ssh` . By default, the filenames of the public keys start with `id_rsa` and end in `.pub` .
+2. If you're not sure which key belongs to which account and want to start with new keys, you can delete your keys by running `ssh-add -D` from terminal. This only removes manually added keys so if you're running into issues, take a look at this [stackoverflow answer](https://stackoverflow.com/a/25465155/11279811). Make sure to go to the folder where your SSH keys are located - run `open ~/.ssh` from terminal and save a copy before overwriting them.
 
-**Generating new keys**
+### Generating new keys
 
-1. From terminal, type
+1. From terminal, run
 
    ```bash
    ssh-keygen -t rsa -f ~/.ssh/id_rsa -C "your.personal.email@exmaple.com"
@@ -33,7 +31,7 @@ If you've already generated and added your SSH keys to your github account, skip
    If you get asked to overwrite an existing key of the same name, type `y` if you want to overwrite it. If you don't want to overwrite it, type `n` and reenter the above command with a new filename. Just change `id_rsa` to something else like `id_rsa_PERSONAL` .
 
 2. Enter a secure passphrase. This will generate two a private key `id_rsa` and a public key `id_rsa.pub`.
-3. Copy the public key `id_rsa.pub` by typing `pbcopy < ~/.ssh/id_rsa.pub` from terminal. You can also open the SSH key directory by entering `open ~/.ssh` , dragging the `id_rsa.pub` file into your code editor and copying the contents of the file.
+3. Copy the public key `id_rsa.pub` by running `pbcopy < ~/.ssh/id_rsa.pub` from terminal. You can also open the SSH key directory by running `open ~/.ssh` , dragging the `id_rsa.pub` file into your code editor and copying the contents of the file.
 4. From a browser, go to the settings of your github account by clicking your profile picture from the top right corner.
 
    ![Screen_Shot_2020-09-06_at_3.54.56_PM.png](./Screen_Shot_2020-09-06_at_3.54.56_PM.png)
@@ -56,25 +54,25 @@ Repeat the above steps to generate and add a new key for your second github acco
 
 ## Setting up SSH config
 
-1. In terminal, type `cd ~/.ssh` .
-2. Check if a config file exists by typing - `ls config` . If you see `ls: config: No such file or directory` , create a new config file by typing `touch config` .
+1. From terminal, run `cd ~/.ssh` .
+2. Check if a config file exists by running - `ls config` . If you see `ls: config: No such file or directory` , create a new config file by running `touch config` .
 3. Open the config file by dragging it into your code editor.
 4. Paste the following into the file:
 
-    ```bash
-      Host github.com
-        HostName github.com
-        User git
-        IdentitiesOnly yes
-        AddKeysToAgent yes
-        UseKeychain yes
+   ```bash
+     Host github.com
+       HostName github.com
+       User git
+       IdentitiesOnly yes
+       AddKeysToAgent yes
+       UseKeychain yes
 
-      Match Host github.com !exec "pwd | grep '/COMPANY' > /dev/null"
-        IdentityFile ~/.ssh/id_rsa
+     Match Host github.com !exec "pwd | grep '/COMPANY' > /dev/null"
+       IdentityFile ~/.ssh/id_rsa
 
-      Match Host github.com exec "pwd | grep '/COMPANY' > /dev/null"
-        IdentityFile ~/.ssh/id_rsa_$COMPANY
-    ```
+     Match Host github.com exec "pwd | grep '/COMPANY' > /dev/null"
+       IdentityFile ~/.ssh/id_rsa_$COMPANY
+   ```
 
    [Source](https://gist.github.com/Hefeweizen/a4c6ffb6e06a87ac338ffce3d13512f1) for the above snippet.
 
@@ -90,29 +88,29 @@ Now that you've set up your SSH keys, you still need to configure your user.name
 2. Do the same for your work directory.
 3. Open the `.gitconfig` in your root and inside there add your personal git user name and email.
 
-```bash
-[user]
-email = your.personal.email@exmaple.com
-name = your-user-name
-```
+   ```bash
+   [user]
+   email = your.personal.email@exmaple.com
+   name = your-user-name
+   ```
 
 4. Add the following underneath it:
 
-```bash
-[user]
-email = your.personal.email@exmaple.com
-name = your-user-name
-[includeIf "gitdir:~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT"]
-    path = ~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT/.gitconfig
-```
+   ```bash
+   [user]
+   email = your.personal.email@exmaple.com
+   name = your-user-name
+   [includeIf "gitdir:~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT"]
+       path = ~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT/.gitconfig
+   ```
 
 5. Inside the `.gitconfig` in your work directory, add your work email and work user name.
 
-```bash
-[user]
-email = your.work.email@exmaple.com
-name = your-work-user-name
-```
+   ```bash
+   [user]
+   email = your.work.email@exmaple.com
+   name = your-work-user-name
+   ```
 
 Now you'll be able to use both git accounts with SSH and your commits will have the right email and name for author.
 

@@ -1,17 +1,14 @@
 <template>
 	<div class="resize-observer">
-		<section>
-			<!-- more info on refs: https://vuejs.org/v2/api/#ref -->
-			<div class="box" ref="box">
-				<h4>Resize Me</h4>
-				<p>
-					<span>width: </span><span class="size">{{ width }}</span>
-				</p>
-				<p>
-					<span>height: </span><span class="size">{{ height }}</span>
-				</p>
-			</div>
-		</section>
+		<div class="box" ref="box">
+			<h4>Resize Me</h4>
+			<p>
+				width: <span class="size">{{ width }}</span>
+			</p>
+			<p>
+				height: <span class="size">{{ height }}</span>
+			</p>
+		</div>
 	</div>
 </template>
 
@@ -26,7 +23,6 @@
 		},
 
 		mounted() {
-			//get initial dimensions. Mutation observer will observe mutations only
 			const box = this.$refs.box,
 				boxSize = box.getBoundingClientRect()
 
@@ -50,8 +46,7 @@
 
 				this.width = width
 				this.height = height
-				// emit event with dimensions
-				// More info on emitting custom events --> https://vuejs.org/v2/guide/components-custom-events.html
+				// Optionally, emit event with dimensions
 				this.$emit('resize', { width, height })
 			},
 
@@ -64,7 +59,8 @@
 				// create the observer
 				const observer = new MutationObserver(function (mutations) {
 					mutations.forEach(function (mutation) {
-						// check if the mutation is attributes and update the width and height data if it is.
+						// check if the mutation is attributes and
+						// update the width and height data if it is.
 						if (mutation.type === 'attributes') {
 							// call resize handler on mutation
 							vm.onResize()
@@ -84,12 +80,12 @@
 <style lang="scss" scoped>
 	.resize-observer {
 		text-align: center;
-		section {
-			h4 {
-				margin-top: 30px;
-				text-align: center;
-			}
+
+		h4 {
+			margin-top: 30px;
+			text-align: center;
 		}
+
 		.box {
 			box-sizing: border-box;
 			width: 210px;

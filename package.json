@@ -9,7 +9,7 @@
 	},
 	"keywords": [
 		"mrinalini manandhar",
-		"mrinalini sam",
+		"sam m. manandhar",
 		"development",
 		"dev",
 		"blog",
@@ -25,19 +25,19 @@
 	},
 	"dependencies": {
 		"@gridsome/source-filesystem": "^0.6.2",
-		"@gridsome/transformer-remark": "^0.6.1",
-		"@gridsome/vue-remark": "^0.2.2",
-		"gridsome": "^0.7.19",
+		"@gridsome/transformer-remark": "^0.6.2",
+		"@gridsome/vue-remark": "^0.2.4",
+		"gridsome": "^0.7.20",
 		"gridsome-plugin-remark-shiki": "^0.3.1",
 		"gridsome-plugin-sass-resources-loader": "^0.0.3",
 		"gridsome-remark-embed-snippet": "^1.0.3",
-		"vue-gtag": "^1.7.0",
+		"vue-gtag": "^1.9.0",
 		"vue-multiselect": "^2.1.6",
 		"vuex": "^3.5.1"
 	},
 	"devDependencies": {
 		"node-sass": "^4.14.1",
-		"prettier": "2.0.5",
-		"sass-loader": "^9.0.2"
+		"prettier": "^2.1.1",
+		"sass-loader": "^10.0.2"
 	}
 }

@@ -3,6 +3,12 @@
   Space Complexity - O(nk) 
 */
 
+function mergeArrays(arrays) {
+	const increasingOrder = isIncreasingOrder(arrays)
+	return mergeSort(arrays, increasingOrder)
+}
+
+// --------------------------------------------------------------
 function mergeSort(arr, increasingOrder) {
 	const len = arr.length
 
@@ -15,9 +21,4 @@ function mergeSort(arr, increasingOrder) {
 		right = mergeSort(arr.slice(mid), increasingOrder)
 
 	return merge(left, right, increasingOrder)
-}
-
-function mergeArrays(arrays) {
-	const increasingOrder = isIncreasingOrder(arrays)
-	return mergeSort(arrays, increasingOrder)
 }

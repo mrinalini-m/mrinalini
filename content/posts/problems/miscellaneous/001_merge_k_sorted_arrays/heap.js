@@ -9,8 +9,7 @@
 */
 
 function mergeArrays(arrays) {
-	const n = arrays[0].length,
-		merged = [],
+	const merged = [],
 		increasingOrder = isIncreasingOrder(arrays)
 	// [0]
 	const heap = increasingOrder ? new MinBinaryHeap() : new MaxBinaryHeap()
@@ -25,11 +24,11 @@ function mergeArrays(arrays) {
 	if (increasingOrder) {
 		// [2]
 		while (heap.top.value !== Infinity) {
-			getAndInsertNextVal(arrays, heap, merged, Infinity, n)
+			getAndInsertNextVal(arrays, heap, merged, Infinity)
 		}
 	} else {
 		while (heap.top.value !== -Infinity) {
-			getAndInsertNextVal(arrays, heap, merged, -Infinity, n)
+			getAndInsertNextVal(arrays, heap, merged, -Infinity)
 		}
 	}
 
@@ -43,11 +42,11 @@ Notes:
     - Each heap item will be an instance of HeapNode which will keep track of 
       the arrIndex, elementIndex & value.
 [2] - Keep getting heap top(min) & pushing it into the merged array.
-    - If the min value if Infinity, we've reached the end of all arrays
+    - If the min value is Infinity, we've reached the end of all arrays
 */
 
 /* 
- Helper functions
+getAndInsertNextVal:
   - Function to get the top(min or max val), push top val into merged
     & insert next array value into heap
   - instead of extracting & inserting, we're going to swap the new value with the top value.
@@ -55,8 +54,10 @@ Notes:
   - We'll use the arrIndex, elementIndex from the heap top to get the next item to insert
   - If we're at the end of the array insert Infinity(min heap or increasing order) or -Infinity
 */
-function getAndInsertNextVal(arrays, heap, merged, infinity, n) {
+function getAndInsertNextVal(arrays, heap, merged, infinity) {
+	const n = arrays[0].length
 	let top = heap.top
+
 	merged.push(top.value)
 
 	const arrIndex = top.arrIndex,
@@ -65,36 +66,6 @@ function getAndInsertNextVal(arrays, heap, merged, infinity, n) {
 
 	heap.swapTop(new HeapNode(arrIndex, elementIndex, value))
 	heap.sinkDown(0)
-}
-
-/* 
- - Function to get the sort order of the arrays
- - Can't just check the first two values of the first array cause they might be repeated values
- - So keep checking until two values are different & return true or false
-*/
-function isIncreasingOrder(arrays) {
-	let i = 0,
-		k = arrays.length
-
-	while (i < k) {
-		const arr = arrays[i],
-			len = arr.length
-
-		for (let j = 1; j < len; j++) {
-			const diff = arr[j] - arr[j - 1]
-			if (diff > 0) return true
-			else if (diff < 0) return false
-			else continue
-		}
-		i++
-	}
-	return false
-}
-
-function swap(arr, i, j) {
-	const temp = arr[i]
-	arr[i] = arr[j]
-	arr[j] = temp
 }
 
 // HeapNode will keep track of the array index, the element index & the value
@@ -213,18 +184,30 @@ class MaxBinaryHeap extends BinaryHeap {
 	}
 }
 
-// Tests
-let arr1 = [
-	[5, 6, 8, 16],
-	[3, 7, 12, 13],
-	[1, 10, 11, 15],
-	[2, 4, 9, 14],
-]
-let arr2 = [
-	[200, 50, 18, 1],
-	[180, 45, 15, 9],
-	[30, 17, 8, 5],
-	[190, 40, 12, 7],
-]
-console.log(mergeArrays(arr1))
-console.log(mergeArrays(arr2))
+/* 
+isIncreasingOrder - Function to get the sort order of the arrays
+*/
+function isIncreasingOrder(arrays) {
+	let i = 0,
+		k = arrays.length
+
+	while (i < k) {
+		const arr = arrays[i],
+			len = arr.length
+
+		for (let j = 1; j < len; j++) {
+			const diff = arr[j] - arr[j - 1]
+			if (diff > 0) return true
+			else if (diff < 0) return false
+			else continue
+		}
+		i++
+	}
+	return false
+}
+
+function swap(arr, i, j) {
+	const temp = arr[i]
+	arr[i] = arr[j]
+	arr[j] = temp
+}

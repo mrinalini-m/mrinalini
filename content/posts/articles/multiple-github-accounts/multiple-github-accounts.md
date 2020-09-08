@@ -3,9 +3,16 @@ title: 'Setting up multiple github accounts on the same computer (without having
 date: 2020-09-06
 slug: 'multiple-github-accounts'
 category: articles
+tags:
+  - tutorial
+  - git
 ---
 
-<span style="font-weight: 600;">Issue</span>: You need to use two different github accounts from one computer. You don't want to have to configure your ssh keys every time you switch accounts. And you don't want to edit the repo's ssh address every time you clone a repo either [as suggested by a lot of online tutorials](https://medium.com/@xiaolishen/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693).
+<span style="font-weight: 600;">Issue</span>:
+
+1. You need to use two different github accounts from one computer.
+2. You don't want to have to configure your ssh keys every time you switch accounts.
+3. You don't want to edit the repo's ssh address every time you clone a repo either [as suggested by a lot of online tutorials](https://medium.com/@xiaolishen/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693).
 
 <span style="font-weight: 600;">Solution</span>: You put all your work repos in one folder and update your ssh config to conditionally use a different SSH key. Everything else will use the default ssh key (your personal account).
 
@@ -25,7 +32,7 @@ If you've already generated and added your SSH keys to your github account, skip
 1. From terminal, run
 
    ```bash
-   ssh-keygen -t rsa -f ~/.ssh/id_rsa -C "your.personal.email@exmaple.com"
+   ssh-keygen -t rsa -f ~/.ssh/id_rsa -C "your.personal.email@example.com"
    ```
 
    If you get asked to overwrite an existing key of the same name, type `y` if you want to overwrite it. If you don't want to overwrite it, type `n` and reenter the above command with a new filename. Just change `id_rsa` to something else like `id_rsa_PERSONAL` .
@@ -86,29 +93,26 @@ Now that you've set up your SSH keys, you still need to configure your user.name
 
 1. Check if you have an existing `.gitconfig` in your root by running `ls ~/.gitconfig` . If you don't have one, create one by running `touch ~/.gitconfig` .
 2. Do the same for your work directory.
-3. Open the `.gitconfig` in your root and inside there add your personal git user name and email.
+3. Open the `.gitconfig` in your root and inside there add your personal git user name and email. Also include an `includeIf` path that tells git to use a different `.gitconfig` for your work repos.
 
    ```bash
+   # ~/.gitconfig
    [user]
-   email = your.personal.email@exmaple.com
+   email = your.email@example.com
    name = your-user-name
+   [user]
+   email = your.email@example.com
+   name = your-user-name
+   [includeIf "gitdir:~/PATH/TO/WORK/DIR/RELATIVE/TO/ROOT"]
+       path = ~/PATH/TO/WORK/DIR/RELATIVE/TO/ROOT/.gitconfig
    ```
 
-4. Add the following underneath it:
+4. Inside the `.gitconfig` in your work directory, add your work email and work user name.
 
    ```bash
+   # ~/PATH/TO/WORK/DIR/RELATIVE/TO/ROOT/.gitconfig
    [user]
-   email = your.personal.email@exmaple.com
-   name = your-user-name
-   [includeIf "gitdir:~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT"]
-       path = ~/PATH/TO/WORK/DIR/RElATIVE/TO/ROOT/.gitconfig
-   ```
-
-5. Inside the `.gitconfig` in your work directory, add your work email and work user name.
-
-   ```bash
-   [user]
-   email = your.work.email@exmaple.com
+   email = your.work.email@example.com
    name = your-work-user-name
    ```
 

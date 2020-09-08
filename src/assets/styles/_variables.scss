@@ -89,7 +89,12 @@ $large: 1200px;
 			$secondary-dark,
 			$transition
 		);
-		&.active {
+		font-weight: 400;
+		&:hover {
+			background-color: scale-color($primary, $lightness: 90%);
+		}
+		&.active--exact {
+			font-weight: 500;
 			color: $link-hover-color;
 			&:hover {
 				color: $link-hover-color;

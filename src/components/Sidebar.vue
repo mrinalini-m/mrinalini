@@ -1,13 +1,20 @@
 <template>
 	<div class="sidebar">
 		<transition name="slide">
-			<nav v-show="show" class="menu" :style="[menuWidth]">
+			<nav
+				v-show="show"
+				class="menu"
+				:style="{
+					width: menuWidth,
+					marginTop: navHeight,
+				}"
+			>
 				<div v-if="showTags" class="tags">
 					<ul>
 						<li v-for="tag in tags" :key="tag.id" class="tag">
 							<h3>
 								<g-link
-									style="padding-left: 2rem;"
+									style="padding-left: 2rem"
 									class="style-as-link-header"
 									:to="tag.path"
 								>
@@ -58,6 +65,8 @@
 
 <script>
 	import { mapActions, mapState } from 'vuex'
+	import { scrollSidebarActiveIntoView } from '~/helpers'
+
 	export default {
 		name: 'sidebar',
 		props: {
@@ -80,23 +89,19 @@
 		},
 		data() {
 			return {
-				menuWidth: {
-					width: 200 + 'px',
-				},
+				menuWidth: 200 + 'px',
 				paddingLeft: { 'padding-left': '1rem' },
 				show: false,
 			}
 		},
 
 		computed: {
-			...mapState(['tags', 'categories', 'posts']),
+			...mapState(['tags', 'categories', 'posts', 'navHeight']),
 		},
 
 		async mounted() {
 			if ((this.showCategories && this.showPosts) || this.showPosts) {
-				this.menuWidth = {
-					width: '300px',
-				}
+				this.menuWidth = '300px'
 				this.getSidebarWidth(300)
 			}
 
@@ -121,6 +126,7 @@
 			}
 			this.$root.$on('toggle-sidebar', (data) => {
 				this.show = data && !this.show
+				scrollSidebarActiveIntoView()
 			})
 		},
 	}
@@ -144,13 +150,13 @@
 			width: 0;
 			position: fixed;
 			left: 0;
-			margin-top: calc(#{$nav-height} - 1rem);
 			z-index: 2;
 			top: 0;
 			background: $background-secondary;
 			overflow-x: hidden;
 			padding: 2rem 0;
 			padding-bottom: 6rem;
+
 			a {
 				font-weight: 400;
 			}
@@ -203,7 +209,6 @@
 							}
 							border: 1px solid transparent;
 							&:hover {
-								background-color: scale-color($primary, $lightness: 90%);
 								border: 1px solid $link-hover-color;
 								position: relative;
 								&:before {
@@ -307,6 +312,7 @@
 		@media screen and (min-width: 900px) {
 			.menu {
 				display: block !important;
+				transition: margin-top 0.3s ease;
 				&.index {
 					display: none !important;
 				}

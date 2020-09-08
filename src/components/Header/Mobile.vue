@@ -3,7 +3,7 @@
 		type="button"
 		@click="toggleMenu()"
 		class="navbar-toggle"
-		v-bind:class="{ open: opened }"
+		:class="{ open: opened }"
 	>
 		<span class="icon-bar"></span>
 		<span class="icon-bar"></span>

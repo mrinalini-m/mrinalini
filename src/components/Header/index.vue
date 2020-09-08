@@ -1,31 +1,34 @@
 <template>
-	<header class="custom-header" v-bind:class="{ scroll: scrolled }">
-		<nav class="nav">
+	<header class="custom-header" :class="{ scroll: scrolled }">
+		<nav :style="{ height: navHeight }" class="nav">
 			<Mobile />
 			<div class="brand">
 				<a href="https://mrinalini.dev/">
-					<span class="text" style="color: rgb(246, 213, 92);">S</span>
-					<!-- <span class="text">am&nbsp;</span> -->
-					<span class="text" style="color: rgb(63, 187, 131);">M</span>
-					<!-- <span>.</span> -->
+					<span class="text" style="color: rgb(246, 213, 92)">S</span>
+					<span class="text" style="color: rgb(63, 187, 131)">M</span>
 				</a>
 			</div>
-			<Header />
+			<div class="links">
+				<g-link class="style-as-link-header" to="/">All Posts</g-link>
+			</div>
 		</nav>
 	</header>
 </template>
 
 <script>
-	import Header from './Header'
+	import { mapActions, mapState } from 'vuex'
 	import Mobile from './Mobile'
+
 	export default {
 		name: 'custom-header',
 		data() {
 			return { scrolled: false }
 		},
 		components: {
-			Header,
 			Mobile,
+		},
+		computed: {
+			...mapState(['navHeight']),
 		},
 		mounted() {
 			window.addEventListener('scroll', this.onScroll)
@@ -34,8 +37,11 @@
 			window.removeEventListener('scroll', this.onScroll)
 		},
 		methods: {
+			...mapActions(['getNavHeight']),
+
 			onScroll() {
 				this.scrolled = window.scrollY > 20 ? true : false
+				this.scrolled ? this.getNavHeight('3rem') : this.getNavHeight('4rem')
 			},
 		},
 	}
@@ -71,7 +77,6 @@
 				0 4px 4px rgba(0, 0, 0, 0.03), 0 8px 8px rgba(0, 0, 0, 0.03),
 				0 16px 16px rgba(0, 0, 0, 0.03);
 			.nav {
-				height: calc(#{$nav-height} - 1rem);
 				.navbar-toggle {
 					margin: 6px 0 6px 8px;
 					transition: margin 0.3s ease;
@@ -131,15 +136,62 @@
 		.custom-header {
 			padding: 0;
 			.nav {
+				width: 100vw;
 				margin: 0;
 				padding: 0;
-				.brand {
+				.links {
 					display: flex;
 					flex-direction: row;
 					justify-content: center;
 					align-items: center;
 					flex: 1;
 					margin: 0;
+				}
+			}
+		}
+	}
+
+	.scroll {
+		.nav {
+			.links {
+				a {
+					height: calc(#{$nav-height} - 1rem);
+					transition: height 0.3s ease, color $transition;
+				}
+			}
+		}
+	}
+	.nav {
+		.links {
+			display: flex;
+			align-items: center;
+			margin-left: auto; //flex item will align to the right since you can't use justify-items or justify-self with flexbox
+			a {
+				display: flex;
+				align-items: center;
+				text-align: center;
+				margin: 0;
+				height: $nav-height;
+				padding: 0 0.75rem;
+				// font-size: 1.25rem;
+			}
+			@include style-as-link-header('height 0.3s ease, color $transition');
+			.active--exact {
+				border-bottom: 1px solid $link-color;
+			}
+		}
+	}
+
+	@include medium-breakpoint {
+		.custom-header {
+			.nav {
+				.brand {
+					// display: none;
+					position: absolute;
+					right: 0;
+					a {
+						padding-right: 13px;
+					}
 				}
 			}
 		}

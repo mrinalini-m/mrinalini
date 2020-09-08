@@ -9,6 +9,7 @@ export default new Vuex.Store({
 		categories: [],
 		posts: [],
 		sidebarWidth: '300',
+		navHeight: '4rem',
 	},
 
 	mutations: {
@@ -24,11 +25,13 @@ export default new Vuex.Store({
 		SET_SIDEBAR_WIDTH(state, width) {
 			state.sidebarWidth = width
 		},
+		SET_NAV_HEIGHT(state, height) {
+			state.navHeight = height
+		},
 	},
 
 	actions: {
 		getSidebarWidth({ commit }, width) {
-			console.log(width)
 			commit('SET_SIDEBAR_WIDTH', width)
 		},
 		getPosts({ commit }, data) {
@@ -58,6 +61,9 @@ export default new Vuex.Store({
 			}
 			commit('SET_CATEGORIES', parsedCategories)
 			commit('SET_POSTS', parsedPosts) //posts will change based on which category you're in right now
+		},
+		getNavHeight({ commit }, height) {
+			commit('SET_NAV_HEIGHT', height)
 		},
 	},
 })

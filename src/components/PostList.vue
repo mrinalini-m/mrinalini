@@ -1,5 +1,5 @@
 <template>
-	<div class="post">
+	<div class="post" @click="handleClickLink">
 		<g-link :to="post.path" class="post-link">
 			<h3 class="title">{{ post.title }}</h3>
 			<div class="post-meta">
@@ -24,8 +24,18 @@
 </template>
 
 <script>
+	import { scrollSidebarActiveIntoView } from '~/helpers'
+
 	export default {
 		props: ['post'],
+		methods: {
+			handleClickLink() {
+				/* TODO: DO THIS THE RIGHT WAY.
+        Right now, it's redudantly calling on mobile view too. But since the sidebar isn't even there yet,
+        scrollSidebarActiveIntoView is being called again from /components/Sidebar */
+				scrollSidebarActiveIntoView()
+			},
+		},
 	}
 </script>
 

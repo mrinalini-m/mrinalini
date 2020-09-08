@@ -30,4 +30,11 @@ function flattenPosts(posts) {
 	return parsedPosts
 }
 
-export { flattenTags, flattenPosts }
+function scrollSidebarActiveIntoView() {
+	// TODO: FIX THIS AND DO IT THE RIGHT WAY
+	setTimeout(() => {
+		const activePost = document.getElementsByClassName('active--exact')
+		if (activePost && activePost.length) activePost[0].scrollIntoView()
+	}, 200)
+}
+export { flattenTags, flattenPosts, scrollSidebarActiveIntoView }
